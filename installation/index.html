@@ -1837,37 +1837,37 @@
 <h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h1>
 <h2 id="install-from-pypi">Install from PyPI<a class="headerlink" href="#install-from-pypi" title="Permanent link">&para;</a></h2>
 <p><strong>leafmap</strong> is available on <a href="https://pypi.org/project/leafmap/">PyPI</a>. To install <strong>leafmap</strong>, run this command in your terminal:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>    pip install leafmap
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span>pip<span class="w"> </span>install<span class="w"> </span>leafmap
 </code></pre></div></td></tr></table></div>
 <h2 id="install-from-conda-forge">Install from conda-forge<a class="headerlink" href="#install-from-conda-forge" title="Permanent link">&para;</a></h2>
 <p><strong>leafmap</strong> is also available on <a href="https://anaconda.org/conda-forge/leafmap">conda-forge</a>. If you have
 <a href="https://www.anaconda.com/distribution/#download-section">Anaconda</a> or <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a> installed on your computer, you can install leafmap using the following command:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>    conda install leafmap -c conda-forge
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span>conda<span class="w"> </span>install<span class="w"> </span>leafmap<span class="w"> </span>-c<span class="w"> </span>conda-forge
 </code></pre></div></td></tr></table></div>
 <p>The leafmap package has some optional dependencies (e.g., <a href="https://geopandas.org/">geopandas</a> and <a href="https://github.com/banesullivan/localtileserver">localtileserver</a>), which can be challenging to install on some computers, especially Windows. It is highly recommended that you create a fresh conda environment to install geopandas and leafmap. Follow the commands below to set up a conda env and isntall <a href="https://geopandas.org">geopandas</a>, <a href="https://github.com/banesullivan/localtileserver">localtileserver</a>, <a href="https://docs.kepler.gl/docs/keplergl-jupyter">keplergl</a>, <a href="https://deckgl.readthedocs.io/">pydeck</a>, and leafmap.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>    conda create -n geo <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9
-    conda activate geo
-    conda install geopandas
-    conda install mamba -c conda-forge
-    mamba install localtileserver keplergl pydeck leafmap -c conda-forge
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>geo<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9
+<span class="w">    </span>conda<span class="w"> </span>activate<span class="w"> </span>geo
+<span class="w">    </span>conda<span class="w"> </span>install<span class="w"> </span>geopandas
+<span class="w">    </span>conda<span class="w"> </span>install<span class="w"> </span>mamba<span class="w"> </span>-c<span class="w"> </span>conda-forge
+<span class="w">    </span>mamba<span class="w"> </span>install<span class="w"> </span>localtileserver<span class="w"> </span>keplergl<span class="w"> </span>pydeck<span class="w"> </span>leafmap<span class="w"> </span>-c<span class="w"> </span>conda-forge
 </code></pre></div></td></tr></table></div>
 <p>Optionally, you can install some <a href="https://github.com/ipython-contrib/jupyter_contrib_nbextensions">Jupyter notebook extensions</a>, which can improve your productivity in the notebook environment. Some useful extensions include Table of Contents, Gist-it, Autopep8, Variable Inspector, etc. See this <a href="https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231">post</a> for more information.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>    conda install jupyter_contrib_nbextensions -c conda-forge
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span>conda<span class="w"> </span>install<span class="w"> </span>jupyter_contrib_nbextensions<span class="w"> </span>-c<span class="w"> </span>conda-forge
 </code></pre></div></td></tr></table></div>
 <h2 id="install-from-github">Install from GitHub<a class="headerlink" href="#install-from-github" title="Permanent link">&para;</a></h2>
 <p>To install the development version from GitHub using <a href="https://git-scm.com/">Git</a>, run the following command in your terminal:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>    pip install git+https://github.com/giswqs/leafmap
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/giswqs/leafmap
 </code></pre></div></td></tr></table></div>
 <h2 id="upgrade-leafmap">Upgrade leafmap<a class="headerlink" href="#upgrade-leafmap" title="Permanent link">&para;</a></h2>
 <p>If you have installed <strong>leafmap</strong> before and want to upgrade to the latest version, you can run the following command in your terminal:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>    pip install -U leafmap
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>leafmap
 </code></pre></div></td></tr></table></div>
 <p>If you use conda, you can update leafmap to the latest version by running the following command in your terminal:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>    conda update -c conda-forge leafmap
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span>conda<span class="w"> </span>update<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>leafmap
 </code></pre></div></td></tr></table></div>
 <p>To install the development version from GitHub directly within Jupyter notebook without using Git, run the following code:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>

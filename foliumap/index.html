@@ -3159,13 +3159,13 @@ Adopted from https://github.com/python-visualization/folium/pull/1662</p>
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">CustomControl</span><span class="p">(</span><span class="n">MacroElement</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Put any HTML on the map as a Leaflet Control.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Put any HTML on the map as a Leaflet Control.</span>
 <span class="sd">    Adopted from https://github.com/python-visualization/folium/pull/1662</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">_template</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        {% macro script(this, kwargs) %}</span>
 <span class="sd">        L.Control.CustomControl = L.Control.extend({</span>
 <span class="sd">            onAdd: function(map) {</span>
@@ -3189,7 +3189,7 @@ Adopted from https://github.com/python-visualization/folium/pull/1662</p>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">html</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomleft&quot;</span><span class="p">):</span>
         <span class="k">def</span> <span class="nf">escape_backticks</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-            <span class="sd">&quot;&quot;&quot;Escape backticks so text can be used in a JS template.&quot;&quot;&quot;</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Escape backticks so text can be used in a JS template.&quot;&quot;&quot;</span>
             <span class="kn">import</span> <span class="nn">re</span>
 
             <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(?&lt;!</span><span class="se">\\</span><span class="s2">)`&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;\`&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
@@ -3243,10 +3243,10 @@ FloatText            (<span title="branca.element.MacroElement">MacroElement</sp
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">FloatText</span><span class="p">(</span><span class="n">MacroElement</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a floating image in HTML canvas on top of the map.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a floating image in HTML canvas on top of the map.&quot;&quot;&quot;</span>
 
     <span class="n">_template</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            {% macro header(this,kwargs) %}</span>
 <span class="sd">                &lt;style&gt;</span>
 <span class="sd">                    #{{this.get_name()}} {</span>
@@ -3354,7 +3354,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Map</span><span class="p">(</span><span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;The Map class inherits folium.Map. By default, the Map will add OpenStreetMap as the basemap.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The Map class inherits folium.Map. By default, the Map will add OpenStreetMap as the basemap.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        object: folium map object.</span>
@@ -3489,7 +3489,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="bp">self</span><span class="o">.</span><span class="n">fit_bounds</span><span class="p">([</span><span class="n">latlon</span><span class="p">,</span> <span class="n">latlon</span><span class="p">],</span> <span class="n">max_zoom</span><span class="o">=</span><span class="n">zoom</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a layer to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a layer to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            layer (TileLayer): A TileLayer instance.</span>
@@ -3497,7 +3497,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">layer</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_layer_control</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds layer control to the map.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds layer control to the map.&quot;&quot;&quot;</span>
         <span class="n">layer_ctrl</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()[</span><span class="s2">&quot;children&quot;</span><span class="p">]:</span>
             <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;layer_control&quot;</span><span class="p">):</span>
@@ -3507,12 +3507,12 @@ Map            (<span title="folium.folium.Map">Map</span>)
             <span class="n">folium</span><span class="o">.</span><span class="n">LayerControl</span><span class="p">()</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_repr_mimebundle_</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds Layer control to the map. Reference: https://ipython.readthedocs.io/en/stable/config/integrating.html#MyObject._repr_mimebundle_&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds Layer control to the map. Reference: https://ipython.readthedocs.io/en/stable/config/integrating.html#MyObject._repr_mimebundle_&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;layersControl&quot;</span><span class="p">]:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">add_layer_control</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">set_center</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Centers the map view at a given coordinates with the given zoom level.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Centers the map view at a given coordinates with the given zoom level.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            lon (float): The longitude of the center, in degrees.</span>
@@ -3524,7 +3524,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">arc_zoom_to_extent</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">zoom_to_bounds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bounds</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Zooms to a bounding box in the form of [minx, miny, maxx, maxy].</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Zooms to a bounding box in the form of [minx, miny, maxx, maxy].</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            bounds (list | tuple): A list/tuple containing minx, miny, maxx, maxy values for the bounds.</span>
@@ -3533,7 +3533,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="bp">self</span><span class="o">.</span><span class="n">fit_bounds</span><span class="p">([[</span><span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">bounds</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">2</span><span class="p">]]])</span>
 
     <span class="k">def</span> <span class="nf">zoom_to_gdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gdf</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Zooms to the bounding box of a GeoPandas GeoDataFrame.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Zooms to the bounding box of a GeoPandas GeoDataFrame.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            gdf (GeoDataFrame): A GeoPandas GeoDataFrame.</span>
@@ -3542,7 +3542,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="bp">self</span><span class="o">.</span><span class="n">zoom_to_bounds</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_basemap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="s2">&quot;HYBRID&quot;</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a basemap to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a basemap to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            basemap (str, optional): Can be one of string from ee_basemaps. Defaults to &#39;HYBRID&#39;.</span>
@@ -3608,7 +3608,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
 
-        <span class="sd">&quot;&quot;&quot;Add a WMS layer to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a WMS layer to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            url (str): The URL of the WMS web service.</span>
@@ -3653,7 +3653,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">API_key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add a XYZ tile layer to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a XYZ tile layer to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            url (str): The URL of the XYZ tile service.</span>
@@ -3700,7 +3700,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Local COG&quot;</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add a local raster dataset to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a local raster dataset to the map.</span>
 
 <span class="sd">            If you are using this function in JupyterHub on a remote server (e.g., Binder, Microsoft Planetary Computer) and</span>
 <span class="sd">            if the raster does not render properly, try running the following code before calling this function:</span>
@@ -3760,7 +3760,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">layer_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add a remote Cloud Optimized GeoTIFF (COG) to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a remote Cloud Optimized GeoTIFF (COG) to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            source (str): The path to the remote Cloud Optimized GeoTIFF.</span>
@@ -3802,7 +3802,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">lon</span><span class="o">=</span><span class="s2">&quot;lon&quot;</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Generate an ipyleaflet/folium TileLayer from a netCDF file.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Generate an ipyleaflet/folium TileLayer from a netCDF file.</span>
 <span class="sd">            If you are using this function in JupyterHub on a remote server (e.g., Binder, Microsoft Planetary Computer),</span>
 <span class="sd">            try adding to following two lines to the beginning of the notebook if the raster does not render properly.</span>
 
@@ -3861,7 +3861,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">radius</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a heat map to the map. Reference: https://stackoverflow.com/a/54756617</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a heat map to the map. Reference: https://stackoverflow.com/a/54756617</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            data (str | list | pd.DataFrame): File path or HTTP URL to the input file or a list of data points in the format of [[x1, y1, z1], [x2, y2, z2]]. For example, https://raw.githubusercontent.com/giswqs/leafmap/master/examples/data/world_cities.csv</span>
@@ -3907,7 +3907,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
         <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds OSM data of place(s) by name or ID to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds OSM data of place(s) by name or ID to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            query (str | dict | list): Query string(s) or structured dict(s) to geocode.</span>
@@ -3951,7 +3951,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
         <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds OSM entities within some distance N, S, E, W of address to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds OSM entities within some distance N, S, E, W of address to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            address (str): The address to geocode and use as the central point around which to get the geometries.</span>
@@ -3992,7 +3992,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
         <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds OSM entities within boundaries of geocodable place(s) to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds OSM entities within boundaries of geocodable place(s) to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            query (str | dict | list): Query string(s) or structured dict(s) to geocode.</span>
@@ -4033,7 +4033,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
         <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds OSM entities within some distance N, S, E, W of a point to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds OSM entities within some distance N, S, E, W of a point to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            center_point (tuple): The (lat, lng) center point around which to get the geometries.</span>
@@ -4072,7 +4072,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
         <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds OSM entities within boundaries of a (multi)polygon to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds OSM entities within boundaries of a (multi)polygon to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            polygon (shapely.geometry.Polygon | shapely.geometry.MultiPolygon): Geographic boundaries to fetch geometries within</span>
@@ -4113,7 +4113,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
         <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds OSM entities within a N, S, E, W bounding box to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds OSM entities within a N, S, E, W bounding box to the map.</span>
 
 
 <span class="sd">        Args:</span>
@@ -4154,7 +4154,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
         <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds OSM entities within the current map view to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds OSM entities within the current map view to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            tags (dict): Dict of tags used for finding objects in the selected area. Results returned are the union, not intersection of each individual tag. Each result matches at least one given tag. The dict keys should be OSM tags, (e.g., building, landuse, highway, etc) and the dict values should be either True to retrieve all items with the given tag, or a string to get a single tag-value combination, or a list of strings to get multiple values for the given tag. For example, tags = {‘building’: True} would return all building footprints in the area. tags = {‘amenity’:True, ‘landuse’:[‘retail’,’commercial’], ‘highway’:’bus_stop’} would return all amenities, landuse=retail, landuse=commercial, and highway=bus_stop.</span>
@@ -4200,7 +4200,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">titiler_endpoint</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a COG TileLayer to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a COG TileLayer to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            url (str): The URL of the COG tile layer.</span>
@@ -4251,7 +4251,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">shown</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a STAC TileLayer to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a STAC TileLayer to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            url (str): HTTP URL to a STAC item, e.g., https://canada-spot-ortho.s3.amazonaws.com/canada_spot_orthoimages/canada_spot5_orthoimages/S5_2007/S5_11055_6057_20070622/S5_11055_6057_20070622.json</span>
@@ -4289,7 +4289,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">shown</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a STAC TileLayer to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a STAC TileLayer to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            url (str): HTTP URL to a MosaicJSON.</span>
@@ -4322,7 +4322,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">draggable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="n">style</span><span class="o">=</span><span class="p">{},</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a customized legend to the map. Reference: https://bit.ly/3oV6vnH.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a customized legend to the map. Reference: https://bit.ly/3oV6vnH.</span>
 <span class="sd">            If you want to add multiple legends to the map, you need to set the `draggable` argument to False.</span>
 
 <span class="sd">        Args:</span>
@@ -4389,7 +4389,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">step</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add a colorbar to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a colorbar to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            colors (list): The set of colors to be used for interpolation. Colors can be provided in the form: * tuples of RGBA ints between 0 and 255 (e.g: (255, 255, 0) or (255, 255, 0, 255)) * tuples of RGBA floats between 0. and 1. (e.g: (1.,1.,0.) or (1., 1., 0., 1.)) * HTML-like string (e.g: “#ffff00) * a color name or shortcut (e.g: “y” or “yellow”)</span>
@@ -4428,7 +4428,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="bp">self</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">colormap</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_shp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">in_shp</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Untitled&quot;</span><span class="p">,</span> <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a shapefile to the map. See https://python-visualization.github.io/folium/modules.html#folium.features.GeoJson for more info about setting style.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a shapefile to the map. See https://python-visualization.github.io/folium/modules.html#folium.features.GeoJson for more info about setting style.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            in_shp (str): The input file path or HTTP URL (*.zip) to the shapefile.</span>
@@ -4472,7 +4472,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a GeoJSON file to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a GeoJSON file to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            in_geojson (str): The input file path to the GeoJSON.</span>
@@ -4587,7 +4587,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a GeoPandas GeoDataFrameto the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a GeoPandas GeoDataFrameto the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            gdf (GeoDataFrame): A GeoPandas GeoDataFrame.</span>
@@ -4620,7 +4620,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a GeoPandas GeoDataFrameto the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a GeoPandas GeoDataFrameto the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            sql (str): SQL query to execute in selecting entries from database, or name of the table to read from the database.</span>
@@ -4648,7 +4648,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
             <span class="bp">self</span><span class="o">.</span><span class="n">fit_bounds</span><span class="p">([[</span><span class="n">south</span><span class="p">,</span> <span class="n">east</span><span class="p">],</span> <span class="p">[</span><span class="n">north</span><span class="p">,</span> <span class="n">west</span><span class="p">]])</span>
 
     <span class="k">def</span> <span class="nf">add_kml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">in_kml</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Untitled&quot;</span><span class="p">,</span> <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a KML file to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a KML file to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            in_kml (str): The input file path to the KML.</span>
@@ -4685,7 +4685,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds any geopandas-supported vector dataset to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds any geopandas-supported vector dataset to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            filename (str): Either the absolute or relative path to the file or URL to be opened, or any object with a read() method (such as an open file or StringIO).</span>
@@ -4725,7 +4725,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">token_name</span><span class="o">=</span><span class="s2">&quot;PLANET_API_KEY&quot;</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a Planet global mosaic by month to the map. To get a Planet API key, see https://developers.planet.com/quickstart/apis</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a Planet global mosaic by month to the map. To get a Planet API key, see https://developers.planet.com/quickstart/apis</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            year (int, optional): The year of Planet global mosaic, must be &gt;=2016. Defaults to 2016.</span>
@@ -4750,7 +4750,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">token_name</span><span class="o">=</span><span class="s2">&quot;PLANET_API_KEY&quot;</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a Planet global mosaic by quarter to the map. To get a Planet API key, see https://developers.planet.com/quickstart/apis</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a Planet global mosaic by quarter to the map. To get a Planet API key, see https://developers.planet.com/quickstart/apis</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            year (int, optional): The year of Planet global mosaic, must be &gt;=2016. Defaults to 2016.</span>
@@ -4778,7 +4778,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">token</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Publish the map to datapane.com</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Publish the map to datapane.com</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            name (str, optional): The document name - can include spaces, caps, symbols, etc., e.g. &quot;Profit &amp; Loss 2020&quot;. Defaults to &quot;Folium Map&quot;.</span>
@@ -4832,7 +4832,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
             <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">to_html</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">outfile</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Exports a map as an HTML file.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Exports a map as an HTML file.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            outfile (str, optional): File path to the output HTML. Defaults to None.</span>
@@ -4874,7 +4874,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">bidirectional</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Renders `folium.Figure` or `folium.Map` in a Streamlit app. This method is a static Streamlit Component, meaning, no information is passed back from Leaflet on browser interaction.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Renders `folium.Figure` or `folium.Map` in a Streamlit app. This method is a static Streamlit Component, meaning, no information is passed back from Leaflet on browser interaction.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            width (int, optional): Width of the map. Defaults to None.</span>
@@ -4918,7 +4918,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
             <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">st_map_center</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">st_component</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Get the center of the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the center of the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            st_component (st_folium): The streamlit component.</span>
@@ -4935,7 +4935,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="k">return</span> <span class="p">(</span><span class="n">south</span> <span class="o">+</span> <span class="p">(</span><span class="n">north</span> <span class="o">-</span> <span class="n">south</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">west</span> <span class="o">+</span> <span class="p">(</span><span class="n">east</span> <span class="o">-</span> <span class="n">west</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">st_map_bounds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">st_component</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Get the bounds of the map in the format of (miny, minx, maxy, maxx).</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the bounds of the map in the format of (miny, minx, maxy, maxx).</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            st_component (st_folium): The streamlit component.</span>
@@ -4954,7 +4954,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="k">return</span> <span class="n">bounds</span>
 
     <span class="k">def</span> <span class="nf">st_fit_bounds</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Fit the map to the bounds of the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Fit the map to the bounds of the map.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            folium.Map: The map.</span>
@@ -4973,7 +4973,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
             <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">st_last_draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">st_component</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Get the last draw feature of the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the last draw feature of the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            st_component (st_folium): The streamlit component.</span>
@@ -4985,7 +4985,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="k">return</span> <span class="n">st_component</span><span class="p">[</span><span class="s2">&quot;last_active_drawing&quot;</span><span class="p">]</span>
 
     <span class="k">def</span> <span class="nf">st_last_click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">st_component</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Get the last click feature of the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the last click feature of the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            st_component (st_folium): The streamlit component.</span>
@@ -4998,7 +4998,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="k">return</span> <span class="p">(</span><span class="n">coords</span><span class="p">[</span><span class="s2">&quot;lat&quot;</span><span class="p">],</span> <span class="n">coords</span><span class="p">[</span><span class="s2">&quot;lng&quot;</span><span class="p">])</span>
 
     <span class="k">def</span> <span class="nf">st_draw_features</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">st_component</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Get the draw features of the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the draw features of the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            st_component (st_folium): The streamlit component.</span>
@@ -5010,7 +5010,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="k">return</span> <span class="n">st_component</span><span class="p">[</span><span class="s2">&quot;all_drawings&quot;</span><span class="p">]</span>
 
     <span class="k">def</span> <span class="nf">add_title</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="s2">&quot;16px&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a title to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a title to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            title (str): The title to use.</span>
@@ -5033,7 +5033,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="bp">self</span><span class="o">.</span><span class="n">get_root</span><span class="p">()</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">folium</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="n">title_html</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="nf">static_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">950</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">out_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Display a folium static map in a Jupyter Notebook.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Display a folium static map in a Jupyter Notebook.</span>
 
 <span class="sd">        Args</span>
 <span class="sd">            m (folium.Map): A folium map.</span>
@@ -5055,7 +5055,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;The provided map is not a folium map.&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_census_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wms</span><span class="p">,</span> <span class="n">layer</span><span class="p">,</span> <span class="n">census_dict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a census data layer to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a census data layer to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            wms (str): The wms to use. For example, &quot;Current&quot;, &quot;ACS 2021&quot;, &quot;Census 2020&quot;.  See the complete list at https://tigerweb.geo.census.gov/tigerwebmain/TIGERweb_wms.html</span>
@@ -5094,7 +5094,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
             <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_xyz_service</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">provider</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add a XYZ tile layer to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a XYZ tile layer to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            provider (str): A tile layer name starts with xyz or qms. For example, xyz.OpenTopoMap,</span>
@@ -5129,7 +5129,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
     <span class="k">def</span> <span class="nf">add_marker</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">popup</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tooltip</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">icon</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">draggable</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a marker to the map. More info about marker options at https://python-visualization.github.io/folium/modules.html#folium.map.Marker.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a marker to the map. More info about marker options at https://python-visualization.github.io/folium/modules.html#folium.map.Marker.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            location (list | tuple): The location of the marker in the format of [lat, lng].</span>
@@ -5174,7 +5174,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">position</span><span class="o">=</span><span class="p">(</span><span class="mi">70</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add a colorbar to the map. Under the hood, it uses matplotlib to generate the colorbar, save it as a png file, and add it to the map using m.add_image().</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a colorbar to the map. Under the hood, it uses matplotlib to generate the colorbar, save it as a png file, and add it to the map using m.add_image().</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            width (float): Width of the colorbar in inches. Default is 4.0.</span>
@@ -5243,7 +5243,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">add_legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a marker cluster to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a marker cluster to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            data (str | pd.DataFrame): A csv or Pandas DataFrame containing x, y, z values.</span>
@@ -5386,7 +5386,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">max_width</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a marker cluster to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a marker cluster to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            data (str | pd.DataFrame): A csv or Pandas DataFrame containing x, y, z values.</span>
@@ -5472,7 +5472,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Labels&quot;</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a label layer to the map. Reference: https://python-visualization.github.io/folium/modules.html#folium.features.DivIcon</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a label layer to the map. Reference: https://python-visualization.github.io/folium/modules.html#folium.features.DivIcon</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            data (pd.DataFrame | gpd.GeoDataFrame | str): The input data to label.</span>
@@ -5555,7 +5555,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">right_position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a split-panel map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a split-panel map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            left_layer (str, optional): The left tile layer. Can be a local file path, HTTP URL, or a basemap name. Defaults to &#39;TERRAIN&#39;.</span>
@@ -5712,7 +5712,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add vector data to the map with a variety of classification schemes.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add vector data to the map with a variety of classification schemes.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            data (str | pd.DataFrame | gpd.GeoDataFrame): The data to classify. It can be a filepath to a vector dataset, a pandas dataframe, or a geopandas geodataframe.</span>
@@ -5841,7 +5841,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
             <span class="bp">self</span><span class="o">.</span><span class="n">add_legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="n">legend_title</span><span class="p">,</span> <span class="n">legend_dict</span><span class="o">=</span><span class="n">legend_dict</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add an image to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add an image to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            image (str | ipywidgets.Image): The image to add.</span>
@@ -5882,7 +5882,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
             <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Invalid image&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add a widget (e.g., text, HTML, figure) to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a widget (e.g., text, HTML, figure) to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            content (str): The widget to add.</span>
@@ -5920,7 +5920,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
             <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error adding widget: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_html</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">html</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add HTML to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add HTML to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            html (str): The HTML to add.</span>
@@ -5942,7 +5942,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add text to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add text to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            text (str): The text to add.</span>
@@ -5957,21 +5957,21 @@ Map            (<span title="folium.folium.Map">Map</span>)
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="k">if</span> <span class="n">background</span><span class="p">:</span>
-            <span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;&lt;div style=&quot;font-size: </span><span class="si">{</span><span class="n">fontsize</span><span class="si">}</span><span class="s2">px; color: </span><span class="si">{</span><span class="n">fontcolor</span><span class="si">}</span><span class="s2">; font-weight: </span><span class="si">{</span><span class="s1">&#39;bold&#39;</span> <span class="k">if</span> <span class="n">bold</span> <span class="k">else</span> <span class="s1">&#39;normal&#39;</span><span class="si">}</span><span class="s2">; </span>
+            <span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;&lt;div style=&quot;font-size: </span><span class="si">{</span><span class="n">fontsize</span><span class="si">}</span><span class="s2">px; color: </span><span class="si">{</span><span class="n">fontcolor</span><span class="si">}</span><span class="s2">; font-weight: </span><span class="si">{</span><span class="s1">&#39;bold&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">bold</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;normal&#39;</span><span class="si">}</span><span class="s2">; </span>
 <span class="s2">            padding: </span><span class="si">{</span><span class="n">padding</span><span class="si">}</span><span class="s2">; background-color: </span><span class="si">{</span><span class="n">bg_color</span><span class="si">}</span><span class="s2">; </span>
 <span class="s2">            border-radius: </span><span class="si">{</span><span class="n">border_radius</span><span class="si">}</span><span class="s2">;&quot;&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&lt;/div&gt;&quot;&quot;&quot;</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;&lt;div style=&quot;font-size: </span><span class="si">{</span><span class="n">fontsize</span><span class="si">}</span><span class="s2">px; color: </span><span class="si">{</span><span class="n">fontcolor</span><span class="si">}</span><span class="s2">; font-weight: </span><span class="si">{</span><span class="s1">&#39;bold&#39;</span> <span class="k">if</span> <span class="n">bold</span> <span class="k">else</span> <span class="s1">&#39;normal&#39;</span><span class="si">}</span><span class="s2">; </span>
+            <span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;&lt;div style=&quot;font-size: </span><span class="si">{</span><span class="n">fontsize</span><span class="si">}</span><span class="s2">px; color: </span><span class="si">{</span><span class="n">fontcolor</span><span class="si">}</span><span class="s2">; font-weight: </span><span class="si">{</span><span class="s1">&#39;bold&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">bold</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;normal&#39;</span><span class="si">}</span><span class="s2">; </span>
 <span class="s2">            padding: </span><span class="si">{</span><span class="n">padding</span><span class="si">}</span><span class="s2">;&quot;&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&lt;/div&gt;&quot;&quot;&quot;</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">add_html</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">remove_labels</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Removes a layer from the map.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Removes a layer from the map.&quot;&quot;&quot;</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The folium plotting backend does not support removing labels.&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_minimap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a minimap (overview) to the ipyleaflet map.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a minimap (overview) to the ipyleaflet map.&quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
             <span class="s2">&quot;The folium plotting backend does not support this function. Use the ipyleaflet plotting backend instead.&quot;</span>
         <span class="p">)</span>
@@ -5979,7 +5979,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
     <span class="k">def</span> <span class="nf">add_point_layer</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">popup</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Marker Cluster&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a point layer to the map with a popup attribute.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a point layer to the map with a popup attribute.&quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
             <span class="s2">&quot;The folium plotting backend does not support this function. Use the ipyleaflet plotting backend instead.&quot;</span>
         <span class="p">)</span>
@@ -5993,7 +5993,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">x_dim</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
         <span class="n">y_dim</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a local raster dataset to the map.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a local raster dataset to the map.&quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
             <span class="s2">&quot;The folium plotting backend does not support this function. Use the ipyleaflet plotting backend instead.&quot;</span>
         <span class="p">)</span>
@@ -6006,7 +6006,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span>
         <span class="n">slider_length</span><span class="o">=</span><span class="s2">&quot;150px&quot;</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a time slider to the map.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a time slider to the map.&quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
             <span class="s2">&quot;The folium plotting backend does not support this function. Use the ipyleaflet plotting backend instead.&quot;</span>
         <span class="p">)</span>
@@ -6018,7 +6018,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">vector_tile_layer_styles</span><span class="o">=</span><span class="nb">dict</span><span class="p">(),</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a VectorTileLayer to the map.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a VectorTileLayer to the map.&quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
             <span class="s2">&quot;The folium plotting backend does not support this function. Use the ipyleaflet plotting backend instead.&quot;</span>
         <span class="p">)</span>
@@ -6031,43 +6031,43 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Marker cluster&quot;</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds points from a CSV file containing lat/lon information and display data on the map.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds points from a CSV file containing lat/lon information and display data on the map.&quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
             <span class="s2">&quot;The folium plotting backend does not support this function. Use the ipyleaflet plotting backend instead.&quot;</span>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">basemap_demo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;A demo for using leafmap basemaps.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;A demo for using leafmap basemaps.&quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
             <span class="s2">&quot;The folium plotting backend does not support this function. Use the ipyleaflet plotting backend instead.&quot;</span>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">find_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Finds layer by name.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Finds layer by name.&quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
             <span class="s2">&quot;The folium plotting backend does not support this function. Use the ipyleaflet plotting backend instead.&quot;</span>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">find_layer_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Finds layer index by name.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Finds layer index by name.&quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
             <span class="s2">&quot;The folium plotting backend does not support this function. Use the ipyleaflet plotting backend instead.&quot;</span>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">get_layer_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Gets layer names as a list.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Gets layer names as a list.&quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
             <span class="s2">&quot;The folium plotting backend does not support this function. Use the ipyleaflet plotting backend instead.&quot;</span>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">get_scale</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns the approximate pixel scale of the current map view, in meters.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the approximate pixel scale of the current map view, in meters.&quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
             <span class="s2">&quot;The folium plotting backend does not support this function. Use the ipyleaflet plotting backend instead.&quot;</span>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">image_overlay</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">bounds</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Overlays an image from the Internet or locally on the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Overlays an image from the Internet or locally on the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            url (str): http URL or local file path to the image.</span>
@@ -6079,25 +6079,25 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">layer_opacity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Changes layer opacity.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Changes layer opacity.&quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
             <span class="s2">&quot;The folium plotting backend does not support this function. Use the ipyleaflet plotting backend instead.&quot;</span>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">to_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">outfile</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">monitor</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Saves the map as a PNG or JPG image.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Saves the map as a PNG or JPG image.&quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
             <span class="s2">&quot;The folium plotting backend does not support this function. Use the ipyleaflet plotting backend instead.&quot;</span>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">toolbar_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Reset the toolbar so that no tool is selected.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Reset the toolbar so that no tool is selected.&quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
             <span class="s2">&quot;The folium plotting backend does not support this function. Use the ipyleaflet plotting backend instead.&quot;</span>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">video_overlay</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">bounds</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Overlays a video from the Internet on the map.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Overlays a video from the Internet on the map.&quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
             <span class="s2">&quot;The folium plotting backend does not support this function. Use the ipyleaflet plotting backend instead.&quot;</span>
         <span class="p">)</span>
@@ -6105,11 +6105,11 @@ Map            (<span title="folium.folium.Map">Map</span>)
     <span class="k">def</span> <span class="nf">add_search_control</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;topleft&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a search control to the map.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a search control to the map.&quot;&quot;&quot;</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The folium plotting backend does not support this function.&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">save_draw_features</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">out_file</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Save the draw features to a file.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Save the draw features to a file.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            out_file (str): The output file path.</span>
@@ -6118,7 +6118,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The folium plotting backend does not support this function.&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">edit_vector</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Edit a vector layer.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Edit a vector layer.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            data (dict | str): The data to edit. It can be a GeoJSON dictionary or a file path.</span>
@@ -6141,7 +6141,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The folium plotting backend does not support this function.&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">user_roi_bounds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Get the bounds of the user drawn ROI as a tuple of (minx, miny, maxx, maxy).</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the bounds of the user drawn ROI as a tuple of (minx, miny, maxx, maxy).</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            decimals (int, optional): The number of decimals to round the coordinates to. Defaults to 4.</span>
@@ -6202,7 +6202,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_basemap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="s2">&quot;HYBRID&quot;</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a basemap to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a basemap to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        basemap (str, optional): Can be one of string from ee_basemaps. Defaults to &#39;HYBRID&#39;.</span>
@@ -6307,7 +6307,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_census_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wms</span><span class="p">,</span> <span class="n">layer</span><span class="p">,</span> <span class="n">census_dict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a census data layer to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a census data layer to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        wms (str): The wms to use. For example, &quot;Current&quot;, &quot;ACS 2021&quot;, &quot;Census 2020&quot;.  See the complete list at https://tigerweb.geo.census.gov/tigerwebmain/TIGERweb_wms.html</span>
@@ -6441,7 +6441,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
     <span class="n">max_width</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a marker cluster to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a marker cluster to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        data (str | pd.DataFrame): A csv or Pandas DataFrame containing x, y, z values.</span>
@@ -6611,7 +6611,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
     <span class="n">titiler_endpoint</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a COG TileLayer to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a COG TileLayer to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        url (str): The URL of the COG tile layer.</span>
@@ -6729,7 +6729,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
     <span class="n">step</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Add a colorbar to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add a colorbar to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        colors (list): The set of colors to be used for interpolation. Colors can be provided in the form: * tuples of RGBA ints between 0 and 255 (e.g: (255, 255, 0) or (255, 255, 0, 255)) * tuples of RGBA floats between 0. and 1. (e.g: (1.,1.,0.) or (1., 1., 0., 1.)) * HTML-like string (e.g: “#ffff00) * a color name or shortcut (e.g: “y” or “yellow”)</span>
@@ -6948,7 +6948,7 @@ the percentage ranging from 0 to 100, starting from the lower-left corner. Defau
     <span class="n">position</span><span class="o">=</span><span class="p">(</span><span class="mi">70</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Add a colorbar to the map. Under the hood, it uses matplotlib to generate the colorbar, save it as a png file, and add it to the map using m.add_image().</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add a colorbar to the map. Under the hood, it uses matplotlib to generate the colorbar, save it as a png file, and add it to the map using m.add_image().</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        width (float): Width of the colorbar in inches. Default is 4.0.</span>
@@ -7194,7 +7194,7 @@ highlight_function = lambda feat: {"fillColor": feat["properties"][&quot;color&q
     <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Add vector data to the map with a variety of classification schemes.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add vector data to the map with a variety of classification schemes.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        data (str | pd.DataFrame | gpd.GeoDataFrame): The data to classify. It can be a filepath to a vector dataset, a pandas dataframe, or a geopandas geodataframe.</span>
@@ -7390,7 +7390,7 @@ highlight_function = lambda feat: {"fillColor": feat["properties"][&quot;color&q
     <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a GeoPandas GeoDataFrameto the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a GeoPandas GeoDataFrameto the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        gdf (GeoDataFrame): A GeoPandas GeoDataFrame.</span>
@@ -7489,7 +7489,7 @@ highlight_function = lambda feat: {"fillColor": feat["properties"][&quot;color&q
     <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a GeoPandas GeoDataFrameto the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a GeoPandas GeoDataFrameto the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        sql (str): SQL query to execute in selecting entries from database, or name of the table to read from the database.</span>
@@ -7599,7 +7599,7 @@ highlight_function = lambda feat: {"fillColor": feat["properties"][&quot;color&q
     <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a GeoJSON file to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a GeoJSON file to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        in_geojson (str): The input file path to the GeoJSON.</span>
@@ -7803,7 +7803,7 @@ highlight_function = lambda feat: {"fillColor": feat["properties"][&quot;color&q
     <span class="n">radius</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a heat map to the map. Reference: https://stackoverflow.com/a/54756617</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a heat map to the map. Reference: https://stackoverflow.com/a/54756617</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        data (str | list | pd.DataFrame): File path or HTTP URL to the input file or a list of data points in the format of [[x1, y1, z1], [x2, y2, z2]]. For example, https://raw.githubusercontent.com/giswqs/leafmap/master/examples/data/world_cities.csv</span>
@@ -7885,7 +7885,7 @@ highlight_function = lambda feat: {"fillColor": feat["properties"][&quot;color&q
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_html</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">html</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Add HTML to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add HTML to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        html (str): The HTML to add.</span>
@@ -7944,7 +7944,7 @@ the percentage ranging from 0 to 100, starting from the lower-left corner. Defau
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Add an image to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add an image to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        image (str | ipywidgets.Image): The image to add.</span>
@@ -8054,7 +8054,7 @@ the percentage ranging from 0 to 100, starting from the lower-left corner. Defau
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_kml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">in_kml</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Untitled&quot;</span><span class="p">,</span> <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a KML file to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a KML file to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        in_kml (str): The input file path to the KML.</span>
@@ -8191,7 +8191,7 @@ the percentage ranging from 0 to 100, starting from the lower-left corner. Defau
     <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Labels&quot;</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a label layer to the map. Reference: https://python-visualization.github.io/folium/modules.html#folium.features.DivIcon</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a label layer to the map. Reference: https://python-visualization.github.io/folium/modules.html#folium.features.DivIcon</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        data (pd.DataFrame | gpd.GeoDataFrame | str): The input data to label.</span>
@@ -8305,7 +8305,7 @@ the percentage ranging from 0 to 100, starting from the lower-left corner. Defau
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a layer to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a layer to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        layer (TileLayer): A TileLayer instance.</span>
@@ -8336,7 +8336,7 @@ the percentage ranging from 0 to 100, starting from the lower-left corner. Defau
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_layer_control</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds layer control to the map.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds layer control to the map.&quot;&quot;&quot;</span>
     <span class="n">layer_ctrl</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()[</span><span class="s2">&quot;children&quot;</span><span class="p">]:</span>
         <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;layer_control&quot;</span><span class="p">):</span>
@@ -8462,7 +8462,7 @@ style = {
     <span class="n">draggable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">style</span><span class="o">=</span><span class="p">{},</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a customized legend to the map. Reference: https://bit.ly/3oV6vnH.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a customized legend to the map. Reference: https://bit.ly/3oV6vnH.</span>
 <span class="sd">        If you want to add multiple legends to the map, you need to set the `draggable` argument to False.</span>
 
 <span class="sd">    Args:</span>
@@ -8624,7 +8624,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Local COG&quot;</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Add a local raster dataset to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add a local raster dataset to the map.</span>
 
 <span class="sd">        If you are using this function in JupyterHub on a remote server (e.g., Binder, Microsoft Planetary Computer) and</span>
 <span class="sd">        if the raster does not render properly, try running the following code before calling this function:</span>
@@ -8739,7 +8739,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_marker</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">popup</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tooltip</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">icon</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">draggable</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a marker to the map. More info about marker options at https://python-visualization.github.io/folium/modules.html#folium.map.Marker.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a marker to the map. More info about marker options at https://python-visualization.github.io/folium/modules.html#folium.map.Marker.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        location (list | tuple): The location of the marker in the format of [lat, lng].</span>
@@ -8787,7 +8787,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_minimap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a minimap (overview) to the ipyleaflet map.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a minimap (overview) to the ipyleaflet map.&quot;&quot;&quot;</span>
     <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
         <span class="s2">&quot;The folium plotting backend does not support this function. Use the ipyleaflet plotting backend instead.&quot;</span>
     <span class="p">)</span>
@@ -8874,7 +8874,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">shown</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a STAC TileLayer to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a STAC TileLayer to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        url (str): HTTP URL to a MosaicJSON.</span>
@@ -9024,7 +9024,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
     <span class="n">lon</span><span class="o">=</span><span class="s2">&quot;lon&quot;</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Generate an ipyleaflet/folium TileLayer from a netCDF file.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate an ipyleaflet/folium TileLayer from a netCDF file.</span>
 <span class="sd">        If you are using this function in JupyterHub on a remote server (e.g., Binder, Microsoft Planetary Computer),</span>
 <span class="sd">        try adding to following two lines to the beginning of the notebook if the raster does not render properly.</span>
 
@@ -9175,7 +9175,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
     <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
     <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds OSM entities within some distance N, S, E, W of address to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds OSM entities within some distance N, S, E, W of address to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        address (str): The address to geocode and use as the central point around which to get the geometries.</span>
@@ -9319,7 +9319,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
     <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
     <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds OSM entities within a N, S, E, W bounding box to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds OSM entities within a N, S, E, W bounding box to the map.</span>
 
 
 <span class="sd">    Args:</span>
@@ -9459,7 +9459,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
     <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
     <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds OSM data of place(s) by name or ID to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds OSM data of place(s) by name or ID to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        query (str | dict | list): Query string(s) or structured dict(s) to geocode.</span>
@@ -9600,7 +9600,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
     <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
     <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds OSM entities within boundaries of geocodable place(s) to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds OSM entities within boundaries of geocodable place(s) to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        query (str | dict | list): Query string(s) or structured dict(s) to geocode.</span>
@@ -9731,7 +9731,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
     <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
     <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds OSM entities within some distance N, S, E, W of a point to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds OSM entities within some distance N, S, E, W of a point to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        center_point (tuple): The (lat, lng) center point around which to get the geometries.</span>
@@ -9854,7 +9854,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
     <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
     <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds OSM entities within boundaries of a (multi)polygon to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds OSM entities within boundaries of a (multi)polygon to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        polygon (shapely.geometry.Polygon | shapely.geometry.MultiPolygon): Geographic boundaries to fetch geometries within</span>
@@ -9969,7 +9969,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
     <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
     <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds OSM entities within the current map view to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds OSM entities within the current map view to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        tags (dict): Dict of tags used for finding objects in the selected area. Results returned are the union, not intersection of each individual tag. Each result matches at least one given tag. The dict keys should be OSM tags, (e.g., building, landuse, highway, etc) and the dict values should be either True to retrieve all items with the given tag, or a string to get a single tag-value combination, or a list of strings to get multiple values for the given tag. For example, tags = {‘building’: True} would return all building footprints in the area. tags = {‘amenity’:True, ‘landuse’:[‘retail’,’commercial’], ‘highway’:’bus_stop’} would return all amenities, landuse=retail, landuse=commercial, and highway=bus_stop.</span>
@@ -10079,7 +10079,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
     <span class="n">token_name</span><span class="o">=</span><span class="s2">&quot;PLANET_API_KEY&quot;</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a Planet global mosaic by month to the map. To get a Planet API key, see https://developers.planet.com/quickstart/apis</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a Planet global mosaic by month to the map. To get a Planet API key, see https://developers.planet.com/quickstart/apis</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        year (int, optional): The year of Planet global mosaic, must be &gt;=2016. Defaults to 2016.</span>
@@ -10170,7 +10170,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
     <span class="n">token_name</span><span class="o">=</span><span class="s2">&quot;PLANET_API_KEY&quot;</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a Planet global mosaic by quarter to the map. To get a Planet API key, see https://developers.planet.com/quickstart/apis</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a Planet global mosaic by quarter to the map. To get a Planet API key, see https://developers.planet.com/quickstart/apis</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        year (int, optional): The year of Planet global mosaic, must be &gt;=2016. Defaults to 2016.</span>
@@ -10212,7 +10212,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_point_layer</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">popup</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Marker Cluster&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a point layer to the map with a popup attribute.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a point layer to the map with a popup attribute.&quot;&quot;&quot;</span>
     <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
         <span class="s2">&quot;The folium plotting backend does not support this function. Use the ipyleaflet plotting backend instead.&quot;</span>
     <span class="p">)</span>
@@ -10355,7 +10355,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
     <span class="n">add_legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a marker cluster to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a marker cluster to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        data (str | pd.DataFrame): A csv or Pandas DataFrame containing x, y, z values.</span>
@@ -10592,7 +10592,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Local COG&quot;</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Add a local raster dataset to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add a local raster dataset to the map.</span>
 
 <span class="sd">        If you are using this function in JupyterHub on a remote server (e.g., Binder, Microsoft Planetary Computer) and</span>
 <span class="sd">        if the raster does not render properly, try running the following code before calling this function:</span>
@@ -10670,7 +10670,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">x_dim</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
     <span class="n">y_dim</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a local raster dataset to the map.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a local raster dataset to the map.&quot;&quot;&quot;</span>
     <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
         <span class="s2">&quot;The folium plotting backend does not support this function. Use the ipyleaflet plotting backend instead.&quot;</span>
     <span class="p">)</span>
@@ -10771,7 +10771,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">layer_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Add a remote Cloud Optimized GeoTIFF (COG) to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add a remote Cloud Optimized GeoTIFF (COG) to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        source (str): The path to the remote Cloud Optimized GeoTIFF.</span>
@@ -10824,7 +10824,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_search_control</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;topleft&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a search control to the map.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a search control to the map.&quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The folium plotting backend does not support this function.&quot;</span><span class="p">)</span>
 </code></pre></div>
         </details>
@@ -10897,7 +10897,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_shp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">in_shp</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Untitled&quot;</span><span class="p">,</span> <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a shapefile to the map. See https://python-visualization.github.io/folium/modules.html#folium.features.GeoJson for more info about setting style.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a shapefile to the map. See https://python-visualization.github.io/folium/modules.html#folium.features.GeoJson for more info about setting style.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        in_shp (str): The input file path or HTTP URL (*.zip) to the shapefile.</span>
@@ -11043,7 +11043,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">shown</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a STAC TileLayer to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a STAC TileLayer to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        url (str): HTTP URL to a STAC item, e.g., https://canada-spot-ortho.s3.amazonaws.com/canada_spot_orthoimages/canada_spot5_orthoimages/S5_2007/S5_11055_6057_20070622/S5_11055_6057_20070622.json</span>
@@ -11174,7 +11174,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Add text to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add text to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        text (str): The text to add.</span>
@@ -11189,11 +11189,11 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">if</span> <span class="n">background</span><span class="p">:</span>
-        <span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;&lt;div style=&quot;font-size: </span><span class="si">{</span><span class="n">fontsize</span><span class="si">}</span><span class="s2">px; color: </span><span class="si">{</span><span class="n">fontcolor</span><span class="si">}</span><span class="s2">; font-weight: </span><span class="si">{</span><span class="s1">&#39;bold&#39;</span> <span class="k">if</span> <span class="n">bold</span> <span class="k">else</span> <span class="s1">&#39;normal&#39;</span><span class="si">}</span><span class="s2">; </span>
+        <span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;&lt;div style=&quot;font-size: </span><span class="si">{</span><span class="n">fontsize</span><span class="si">}</span><span class="s2">px; color: </span><span class="si">{</span><span class="n">fontcolor</span><span class="si">}</span><span class="s2">; font-weight: </span><span class="si">{</span><span class="s1">&#39;bold&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">bold</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;normal&#39;</span><span class="si">}</span><span class="s2">; </span>
 <span class="s2">        padding: </span><span class="si">{</span><span class="n">padding</span><span class="si">}</span><span class="s2">; background-color: </span><span class="si">{</span><span class="n">bg_color</span><span class="si">}</span><span class="s2">; </span>
 <span class="s2">        border-radius: </span><span class="si">{</span><span class="n">border_radius</span><span class="si">}</span><span class="s2">;&quot;&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&lt;/div&gt;&quot;&quot;&quot;</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;&lt;div style=&quot;font-size: </span><span class="si">{</span><span class="n">fontsize</span><span class="si">}</span><span class="s2">px; color: </span><span class="si">{</span><span class="n">fontcolor</span><span class="si">}</span><span class="s2">; font-weight: </span><span class="si">{</span><span class="s1">&#39;bold&#39;</span> <span class="k">if</span> <span class="n">bold</span> <span class="k">else</span> <span class="s1">&#39;normal&#39;</span><span class="si">}</span><span class="s2">; </span>
+        <span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;&lt;div style=&quot;font-size: </span><span class="si">{</span><span class="n">fontsize</span><span class="si">}</span><span class="s2">px; color: </span><span class="si">{</span><span class="n">fontcolor</span><span class="si">}</span><span class="s2">; font-weight: </span><span class="si">{</span><span class="s1">&#39;bold&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">bold</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;normal&#39;</span><span class="si">}</span><span class="s2">; </span>
 <span class="s2">        padding: </span><span class="si">{</span><span class="n">padding</span><span class="si">}</span><span class="s2">;&quot;&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&lt;/div&gt;&quot;&quot;&quot;</span>
 
     <span class="bp">self</span><span class="o">.</span><span class="n">add_html</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -11294,7 +11294,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">API_key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Add a XYZ tile layer to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add a XYZ tile layer to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        url (str): The URL of the XYZ tile service.</span>
@@ -11360,7 +11360,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span>
     <span class="n">slider_length</span><span class="o">=</span><span class="s2">&quot;150px&quot;</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a time slider to the map.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a time slider to the map.&quot;&quot;&quot;</span>
     <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
         <span class="s2">&quot;The folium plotting backend does not support this function. Use the ipyleaflet plotting backend instead.&quot;</span>
     <span class="p">)</span>
@@ -11426,7 +11426,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_title</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="s2">&quot;16px&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a title to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a title to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        title (str): The title to use.</span>
@@ -11530,7 +11530,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds any geopandas-supported vector dataset to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds any geopandas-supported vector dataset to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        filename (str): Either the absolute or relative path to the file or URL to be opened, or any object with a read() method (such as an open file or StringIO).</span>
@@ -11591,7 +11591,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">vector_tile_layer_styles</span><span class="o">=</span><span class="nb">dict</span><span class="p">(),</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a VectorTileLayer to the map.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a VectorTileLayer to the map.&quot;&quot;&quot;</span>
     <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
         <span class="s2">&quot;The folium plotting backend does not support this function. Use the ipyleaflet plotting backend instead.&quot;</span>
     <span class="p">)</span>
@@ -11646,7 +11646,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Add a widget (e.g., text, HTML, figure) to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add a widget (e.g., text, HTML, figure) to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        content (str): The widget to add.</span>
@@ -11801,7 +11801,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
 
-    <span class="sd">&quot;&quot;&quot;Add a WMS layer to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add a WMS layer to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        url (str): The URL of the WMS web service.</span>
@@ -11865,7 +11865,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Marker cluster&quot;</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds points from a CSV file containing lat/lon information and display data on the map.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds points from a CSV file containing lat/lon information and display data on the map.&quot;&quot;&quot;</span>
     <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
         <span class="s2">&quot;The folium plotting backend does not support this function. Use the ipyleaflet plotting backend instead.&quot;</span>
     <span class="p">)</span>
@@ -11928,7 +11928,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_xyz_service</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">provider</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Add a XYZ tile layer to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add a XYZ tile layer to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        provider (str): A tile layer name starts with xyz or qms. For example, xyz.OpenTopoMap,</span>
@@ -11984,7 +11984,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">basemap_demo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;A demo for using leafmap basemaps.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A demo for using leafmap basemaps.&quot;&quot;&quot;</span>
     <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
         <span class="s2">&quot;The folium plotting backend does not support this function. Use the ipyleaflet plotting backend instead.&quot;</span>
     <span class="p">)</span>
@@ -12032,7 +12032,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">edit_vector</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Edit a vector layer.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Edit a vector layer.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        data (dict | str): The data to edit. It can be a GeoJSON dictionary or a file path.</span>
@@ -12063,7 +12063,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">find_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Finds layer by name.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Finds layer by name.&quot;&quot;&quot;</span>
     <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
         <span class="s2">&quot;The folium plotting backend does not support this function. Use the ipyleaflet plotting backend instead.&quot;</span>
     <span class="p">)</span>
@@ -12092,7 +12092,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">find_layer_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Finds layer index by name.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Finds layer index by name.&quot;&quot;&quot;</span>
     <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
         <span class="s2">&quot;The folium plotting backend does not support this function. Use the ipyleaflet plotting backend instead.&quot;</span>
     <span class="p">)</span>
@@ -12121,7 +12121,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_layer_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Gets layer names as a list.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gets layer names as a list.&quot;&quot;&quot;</span>
     <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
         <span class="s2">&quot;The folium plotting backend does not support this function. Use the ipyleaflet plotting backend instead.&quot;</span>
     <span class="p">)</span>
@@ -12150,7 +12150,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_scale</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns the approximate pixel scale of the current map view, in meters.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns the approximate pixel scale of the current map view, in meters.&quot;&quot;&quot;</span>
     <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
         <span class="s2">&quot;The folium plotting backend does not support this function. Use the ipyleaflet plotting backend instead.&quot;</span>
     <span class="p">)</span>
@@ -12210,7 +12210,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">image_overlay</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">bounds</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Overlays an image from the Internet or locally on the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Overlays an image from the Internet or locally on the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        url (str): http URL or local file path to the image.</span>
@@ -12245,7 +12245,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">layer_opacity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Changes layer opacity.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Changes layer opacity.&quot;&quot;&quot;</span>
     <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
         <span class="s2">&quot;The folium plotting backend does not support this function. Use the ipyleaflet plotting backend instead.&quot;</span>
     <span class="p">)</span>
@@ -12346,7 +12346,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">token</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Publish the map to datapane.com</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Publish the map to datapane.com</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        name (str, optional): The document name - can include spaces, caps, symbols, etc., e.g. &quot;Profit &amp; Loss 2020&quot;. Defaults to &quot;Folium Map&quot;.</span>
@@ -12423,7 +12423,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">remove_labels</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Removes a layer from the map.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Removes a layer from the map.&quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The folium plotting backend does not support removing labels.&quot;</span><span class="p">)</span>
 </code></pre></div>
         </details>
@@ -12475,7 +12475,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">save_draw_features</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">out_file</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Save the draw features to a file.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Save the draw features to a file.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        out_file (str): The output file path.</span>
@@ -12538,7 +12538,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">set_center</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Centers the map view at a given coordinates with the given zoom level.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Centers the map view at a given coordinates with the given zoom level.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        lon (float): The longitude of the center, in degrees.</span>
@@ -12621,7 +12621,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">right_position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a split-panel map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a split-panel map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        left_layer (str, optional): The left tile layer. Can be a local file path, HTTP URL, or a basemap name. Defaults to &#39;TERRAIN&#39;.</span>
@@ -12815,7 +12815,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">st_draw_features</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">st_component</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Get the draw features of the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the draw features of the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        st_component (st_folium): The streamlit component.</span>
@@ -12865,7 +12865,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">st_fit_bounds</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Fit the map to the bounds of the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Fit the map to the bounds of the map.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        folium.Map: The map.</span>
@@ -12941,7 +12941,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">st_last_click</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">st_component</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Get the last click feature of the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the last click feature of the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        st_component (st_folium): The streamlit component.</span>
@@ -13011,7 +13011,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">st_last_draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">st_component</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Get the last draw feature of the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the last draw feature of the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        st_component (st_folium): The streamlit component.</span>
@@ -13080,7 +13080,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">st_map_bounds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">st_component</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Get the bounds of the map in the format of (miny, minx, maxy, maxx).</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the bounds of the map in the format of (miny, minx, maxy, maxx).</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        st_component (st_folium): The streamlit component.</span>
@@ -13156,7 +13156,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">st_map_center</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">st_component</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Get the center of the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the center of the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        st_component (st_folium): The streamlit component.</span>
@@ -13202,7 +13202,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">static_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">950</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">out_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Display a folium static map in a Jupyter Notebook.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Display a folium static map in a Jupyter Notebook.</span>
 
 <span class="sd">    Args</span>
 <span class="sd">        m (folium.Map): A folium map.</span>
@@ -13296,7 +13296,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">to_html</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">outfile</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Exports a map as an HTML file.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Exports a map as an HTML file.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        outfile (str, optional): File path to the output HTML. Defaults to None.</span>
@@ -13353,7 +13353,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">to_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">outfile</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">monitor</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Saves the map as a PNG or JPG image.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Saves the map as a PNG or JPG image.&quot;&quot;&quot;</span>
     <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
         <span class="s2">&quot;The folium plotting backend does not support this function. Use the ipyleaflet plotting backend instead.&quot;</span>
     <span class="p">)</span>
@@ -13463,7 +13463,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">bidirectional</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Renders `folium.Figure` or `folium.Map` in a Streamlit app. This method is a static Streamlit Component, meaning, no information is passed back from Leaflet on browser interaction.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Renders `folium.Figure` or `folium.Map` in a Streamlit app. This method is a static Streamlit Component, meaning, no information is passed back from Leaflet on browser interaction.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        width (int, optional): Width of the map. Defaults to None.</span>
@@ -13530,7 +13530,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">toolbar_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Reset the toolbar so that no tool is selected.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Reset the toolbar so that no tool is selected.&quot;&quot;&quot;</span>
     <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
         <span class="s2">&quot;The folium plotting backend does not support this function. Use the ipyleaflet plotting backend instead.&quot;</span>
     <span class="p">)</span>
@@ -13593,7 +13593,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">user_roi_bounds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Get the bounds of the user drawn ROI as a tuple of (minx, miny, maxx, maxy).</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the bounds of the user drawn ROI as a tuple of (minx, miny, maxx, maxy).</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        decimals (int, optional): The number of decimals to round the coordinates to. Defaults to 4.</span>
@@ -13627,7 +13627,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">video_overlay</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">bounds</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Overlays a video from the Internet on the map.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Overlays a video from the Internet on the map.&quot;&quot;&quot;</span>
     <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
         <span class="s2">&quot;The folium plotting backend does not support this function. Use the ipyleaflet plotting backend instead.&quot;</span>
     <span class="p">)</span>
@@ -13675,7 +13675,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">zoom_to_bounds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bounds</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Zooms to a bounding box in the form of [minx, miny, maxx, maxy].</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Zooms to a bounding box in the form of [minx, miny, maxx, maxy].</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        bounds (list | tuple): A list/tuple containing minx, miny, maxx, maxy values for the bounds.</span>
@@ -13726,7 +13726,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">zoom_to_gdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gdf</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Zooms to the bounding box of a GeoPandas GeoDataFrame.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Zooms to the bounding box of a GeoPandas GeoDataFrame.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        gdf (GeoDataFrame): A GeoPandas GeoDataFrame.</span>
@@ -13795,7 +13795,7 @@ sidebyside.add_to(m)</p>
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">SideBySideLayers</span><span class="p">(</span><span class="n">JSCSSMixin</span><span class="p">,</span> <span class="n">Layer</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Creates a SideBySideLayers that takes two Layers and adds a sliding</span>
 <span class="sd">    control with the leaflet-side-by-side plugin.</span>
 <span class="sd">    Uses the Leaflet leaflet-side-by-side plugin https://github.com/digidem/leaflet-side-by-side.</span>
@@ -13815,7 +13815,7 @@ sidebyside.add_to(m)</p>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">_template</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        {% macro script(this, kwargs) %}</span>
 <span class="sd">            var {{ this.get_name() }} = L.control.sideBySide(</span>
 <span class="sd">                {{ this.layer_left.get_name() }}, {{ this.layer_right.get_name() }}</span>
@@ -13915,7 +13915,7 @@ sidebyside.add_to(m)</p>
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">SplitControl</span><span class="p">(</span><span class="n">Layer</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Creates a SplitControl that takes two Layers and adds a sliding control with the leaflet-side-by-side plugin.</span>
 <span class="sd">    Uses the Leaflet leaflet-side-by-side plugin https://github.com/digidem/leaflet-side-by-side Parameters.</span>
 <span class="sd">    The source code is adapted from https://github.com/python-visualization/folium/pull/1292</span>
@@ -13941,7 +13941,7 @@ sidebyside.add_to(m)</p>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">_template</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        {% macro script(this, kwargs) %}</span>
 <span class="sd">            var {{ this.get_name() }} = L.control.sideBySide(</span>
 <span class="sd">                {{ this.layer_left.get_name() }}, {{ this.layer_right.get_name() }}</span>
@@ -14075,7 +14075,7 @@ sidebyside.add_to(m)</p>
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">delete_dp_report</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Deletes a datapane report.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Deletes a datapane report.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        name (str): Name of the report to delete.</span>
@@ -14118,7 +14118,7 @@ sidebyside.add_to(m)</p>
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">delete_dp_reports</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Deletes all datapane reports.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Deletes all datapane reports.&quot;&quot;&quot;</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="kn">import</span> <span class="nn">datapane</span> <span class="k">as</span> <span class="nn">dp</span>
 
@@ -14214,7 +14214,7 @@ sidebyside.add_to(m)</p>
     <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a GeoJSON file to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a GeoJSON file to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        in_geojson (str): The input file path to the GeoJSON.</span>
@@ -14340,7 +14340,7 @@ sidebyside.add_to(m)</p>
     <span class="n">label_position</span><span class="o">=</span><span class="s2">&quot;topright&quot;</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Create linked maps of XYZ tile layers.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create linked maps of XYZ tile layers.&quot;&quot;&quot;</span>
     <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
         <span class="s2">&quot;The folium plotting backend does not support this function. Use the ipyleaflet plotting backend instead.&quot;</span>
     <span class="p">)</span>
@@ -14376,7 +14376,7 @@ sidebyside.add_to(m)</p>
     <span class="n">label_position</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Creates a split-panel map.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Creates a split-panel map.&quot;&quot;&quot;</span>
     <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
         <span class="s2">&quot;The folium plotting backend does not support this function. Use the ipyleaflet plotting backend instead.&quot;</span>
     <span class="p">)</span>
@@ -14460,7 +14460,7 @@ sidebyside.add_to(m)</p>
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">st_map_center</span><span class="p">(</span><span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns the map center coordinates for a given latitude and longitude. If the system variable &#39;map_center&#39; exists, it is used. Otherwise, the default is returned.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns the map center coordinates for a given latitude and longitude. If the system variable &#39;map_center&#39; exists, it is used. Otherwise, the default is returned.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        lat (float): Latitude.</span>
@@ -14526,7 +14526,7 @@ sidebyside.add_to(m)</p>
         <details class="quote">
           <summary>Source code in <code>leafmap/foliumap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">st_save_bounds</span><span class="p">(</span><span class="n">st_component</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Saves the map bounds to the session state.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Saves the map bounds to the session state.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        map (folium.folium.Map): The map to save the bounds from.</span>

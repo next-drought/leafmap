@@ -2033,7 +2033,7 @@ at https://here-map-widget-for-jupyter.readthedocs.io/en/latest/api_reference/ma
         <details class="quote">
           <summary>Source code in <code>leafmap/heremap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Map</span><span class="p">(</span><span class="n">here_map_widget</span><span class="o">.</span><span class="n">Map</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    The Map class inherits here_map_widget.Map. The arguments you can pass to the Map can be found</span>
 <span class="sd">    at https://here-map-widget-for-jupyter.readthedocs.io/en/latest/api_reference/map.html.</span>
 
@@ -2091,7 +2091,7 @@ at https://here-map-widget-for-jupyter.readthedocs.io/en/latest/api_reference/ma
             <span class="bp">self</span><span class="o">.</span><span class="n">add_control</span><span class="p">(</span><span class="n">ScaleBar</span><span class="p">(</span><span class="n">alignment</span><span class="o">=</span><span class="s2">&quot;LEFT_BOTTOM&quot;</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="nf">set_center</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Centers the map view at a given coordinates with the given zoom level.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Centers the map view at a given coordinates with the given zoom level.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            lon (float): The longitude of the center, in degrees.</span>
@@ -2103,7 +2103,7 @@ at https://here-map-widget-for-jupyter.readthedocs.io/en/latest/api_reference/ma
             <span class="bp">self</span><span class="o">.</span><span class="n">zoom</span> <span class="o">=</span> <span class="n">zoom</span>
 
     <span class="k">def</span> <span class="nf">zoom_to_bounds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bounds</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Zooms to a bounding box in the form of [south, west, north, east].</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Zooms to a bounding box in the form of [south, west, north, east].</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            bounds (list | tuple): A list/tuple containing south, west, north, east values for the bounds.</span>
@@ -2111,7 +2111,7 @@ at https://here-map-widget-for-jupyter.readthedocs.io/en/latest/api_reference/ma
         <span class="bp">self</span><span class="o">.</span><span class="n">bounds</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">zoom_to_gdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gdf</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Zooms to the bounding box of a GeoPandas GeoDataFrame.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Zooms to the bounding box of a GeoPandas GeoDataFrame.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            gdf (GeoDataFrame): A GeoPandas GeoDataFrame.</span>
@@ -2120,7 +2120,7 @@ at https://here-map-widget-for-jupyter.readthedocs.io/en/latest/api_reference/ma
         <span class="bp">self</span><span class="o">.</span><span class="n">zoom_to_bounds</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_basemap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="s2">&quot;HYBRID&quot;</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a basemap to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a basemap to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            basemap (str, optional): Can be one of string from ee_basemaps. Defaults to &#39;HYBRID&#39;.</span>
@@ -2159,7 +2159,7 @@ at https://here-map-widget-for-jupyter.readthedocs.io/en/latest/api_reference/ma
         <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a TileLayer to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a TileLayer to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            url (str): The URL of the tile layer.</span>
@@ -2193,7 +2193,7 @@ at https://here-map-widget-for-jupyter.readthedocs.io/en/latest/api_reference/ma
         <span class="n">point_style</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">default_popup</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a GeoJSON file to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a GeoJSON file to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            in_geojson (str | dict): The file path or http URL to the input GeoJSON or a dictionary containing the geojson.</span>
@@ -2341,7 +2341,7 @@ at https://here-map-widget-for-jupyter.readthedocs.io/en/latest/api_reference/ma
         <span class="n">point_style</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">default_popup</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a shapefile to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a shapefile to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            in_shp (str): The input file path to the shapefile.</span>
@@ -2387,7 +2387,7 @@ at https://here-map-widget-for-jupyter.readthedocs.io/en/latest/api_reference/ma
         <span class="n">point_style</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">default_popup</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a GeoJSON file to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a GeoJSON file to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            gdf (GeoDataFrame): A GeoPandas GeoDataFrame.</span>
@@ -2436,7 +2436,7 @@ at https://here-map-widget-for-jupyter.readthedocs.io/en/latest/api_reference/ma
         <span class="n">point_style</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">default_popup</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a GeoJSON file to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a GeoJSON file to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            in_kml (str): The input file path to the KML.</span>
@@ -2484,7 +2484,7 @@ at https://here-map-widget-for-jupyter.readthedocs.io/en/latest/api_reference/ma
         <span class="n">default_popup</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds any geopandas-supported vector dataset to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds any geopandas-supported vector dataset to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            filename (str): Either the absolute or relative path to the file or URL to be opened, or any object with a read() method (such as an open file or StringIO).</span>
@@ -2559,7 +2559,7 @@ at https://here-map-widget-for-jupyter.readthedocs.io/en/latest/api_reference/ma
         <span class="n">height</span><span class="o">=</span><span class="s2">&quot;880px&quot;</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Saves the map as an HTML file.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Saves the map as an HTML file.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            outfile (str, optional): The output file path to the HTML file.</span>
@@ -2624,7 +2624,7 @@ at https://here-map-widget-for-jupyter.readthedocs.io/en/latest/api_reference/ma
     <span class="k">def</span> <span class="nf">to_streamlit</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">responsive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">scrolling</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Renders map figure in a Streamlit app.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Renders map figure in a Streamlit app.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            width (int, optional): Width of the map. Defaults to 700.</span>
@@ -2705,7 +2705,7 @@ at https://here-map-widget-for-jupyter.readthedocs.io/en/latest/api_reference/ma
         <details class="quote">
           <summary>Source code in <code>leafmap/heremap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_basemap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="s2">&quot;HYBRID&quot;</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a basemap to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a basemap to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        basemap (str, optional): Can be one of string from ee_basemaps. Defaults to &#39;HYBRID&#39;.</span>
@@ -2845,7 +2845,7 @@ at https://here-map-widget-for-jupyter.readthedocs.io/en/latest/api_reference/ma
     <span class="n">point_style</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">default_popup</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a GeoJSON file to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a GeoJSON file to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        gdf (GeoDataFrame): A GeoPandas GeoDataFrame.</span>
@@ -2999,7 +2999,7 @@ at https://here-map-widget-for-jupyter.readthedocs.io/en/latest/api_reference/ma
     <span class="n">point_style</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">default_popup</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a GeoJSON file to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a GeoJSON file to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        in_geojson (str | dict): The file path or http URL to the input GeoJSON or a dictionary containing the geojson.</span>
@@ -3252,7 +3252,7 @@ at https://here-map-widget-for-jupyter.readthedocs.io/en/latest/api_reference/ma
     <span class="n">point_style</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">default_popup</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a GeoJSON file to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a GeoJSON file to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        in_kml (str): The input file path to the KML.</span>
@@ -3401,7 +3401,7 @@ at https://here-map-widget-for-jupyter.readthedocs.io/en/latest/api_reference/ma
     <span class="n">point_style</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">default_popup</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a shapefile to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a shapefile to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        in_shp (str): The input file path to the shapefile.</span>
@@ -3502,7 +3502,7 @@ at https://here-map-widget-for-jupyter.readthedocs.io/en/latest/api_reference/ma
     <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a TileLayer to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a TileLayer to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        url (str): The URL of the tile layer.</span>
@@ -3648,7 +3648,7 @@ at https://here-map-widget-for-jupyter.readthedocs.io/en/latest/api_reference/ma
     <span class="n">default_popup</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds any geopandas-supported vector dataset to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds any geopandas-supported vector dataset to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        filename (str): Either the absolute or relative path to the file or URL to be opened, or any object with a read() method (such as an open file or StringIO).</span>
@@ -3770,7 +3770,7 @@ at https://here-map-widget-for-jupyter.readthedocs.io/en/latest/api_reference/ma
         <details class="quote">
           <summary>Source code in <code>leafmap/heremap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">set_center</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Centers the map view at a given coordinates with the given zoom level.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Centers the map view at a given coordinates with the given zoom level.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        lon (float): The longitude of the center, in degrees.</span>
@@ -3849,7 +3849,7 @@ at https://here-map-widget-for-jupyter.readthedocs.io/en/latest/api_reference/ma
     <span class="n">height</span><span class="o">=</span><span class="s2">&quot;880px&quot;</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Saves the map as an HTML file.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Saves the map as an HTML file.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        outfile (str, optional): The output file path to the HTML file.</span>
@@ -3989,7 +3989,7 @@ at https://here-map-widget-for-jupyter.readthedocs.io/en/latest/api_reference/ma
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">to_streamlit</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">responsive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">scrolling</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Renders map figure in a Streamlit app.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Renders map figure in a Streamlit app.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        width (int, optional): Width of the map. Defaults to 700.</span>
@@ -4062,7 +4062,7 @@ at https://here-map-widget-for-jupyter.readthedocs.io/en/latest/api_reference/ma
         <details class="quote">
           <summary>Source code in <code>leafmap/heremap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">zoom_to_bounds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bounds</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Zooms to a bounding box in the form of [south, west, north, east].</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Zooms to a bounding box in the form of [south, west, north, east].</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        bounds (list | tuple): A list/tuple containing south, west, north, east values for the bounds.</span>
@@ -4112,7 +4112,7 @@ at https://here-map-widget-for-jupyter.readthedocs.io/en/latest/api_reference/ma
         <details class="quote">
           <summary>Source code in <code>leafmap/heremap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">zoom_to_gdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gdf</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Zooms to the bounding box of a GeoPandas GeoDataFrame.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Zooms to the bounding box of a GeoPandas GeoDataFrame.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        gdf (GeoDataFrame): A GeoPandas GeoDataFrame.</span>

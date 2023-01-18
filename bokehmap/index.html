@@ -2062,14 +2062,14 @@ Map        </code>
         <span class="bp">self</span><span class="o">.</span><span class="n">output_notebook_done</span> <span class="o">=</span> <span class="kc">False</span>
 
     <span class="k">def</span> <span class="nf">_repr_mimebundle_</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Display the bokeh map. Reference: https://ipython.readthedocs.io/en/stable/config/integrating.html#MyObject._repr_mimebundle_&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Display the bokeh map. Reference: https://ipython.readthedocs.io/en/stable/config/integrating.html#MyObject._repr_mimebundle_&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_notebook</span> <span class="ow">and</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;OUTPUT_NOTEBOOK&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;False&quot;</span><span class="p">):</span>
             <span class="n">output_notebook</span><span class="p">()</span>
             <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;OUTPUT_NOTEBOOK&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;True&quot;</span>
         <span class="n">show</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_basemap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="s2">&quot;OpenStreetMap&quot;</span><span class="p">,</span> <span class="n">retina</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a basemap to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a basemap to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            basemap (str, optional): Can be one of string from basemaps. Defaults to &#39;OpenStreetMap&#39;.</span>
@@ -2107,7 +2107,7 @@ Map        </code>
                     <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_tile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tile</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a tile to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a tile to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            tile (bokeh.models.tiles.WMTSTileSource): A bokeh tile.</span>
@@ -2130,7 +2130,7 @@ Map        </code>
         <span class="n">fit_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a COG TileLayer to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a COG TileLayer to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            url (str): The URL of the COG tile layer.</span>
@@ -2168,7 +2168,7 @@ Map        </code>
         <span class="n">open_args</span><span class="o">=</span><span class="p">{},</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add a local raster dataset to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a local raster dataset to the map.</span>
 <span class="sd">            If you are using this function in JupyterHub on a remote server (e.g., Binder, Microsoft Planetary Computer) and</span>
 <span class="sd">            if the raster does not render properly, try running the following code before calling this function:</span>
 
@@ -2230,7 +2230,7 @@ Map        </code>
         <span class="n">open_args</span><span class="o">=</span><span class="p">{},</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a STAC TileLayer to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a STAC TileLayer to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            url (str): HTTP URL to a STAC item, e.g., https://canada-spot-ortho.s3.amazonaws.com/canada_spot_orthoimages/canada_spot5_orthoimages/S5_2007/S5_11055_6057_20070622/S5_11055_6057_20070622.json</span>
@@ -2261,7 +2261,7 @@ Map        </code>
     <span class="k">def</span> <span class="nf">add_gdf</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">gdf</span><span class="p">,</span> <span class="n">to_crs</span><span class="o">=</span><span class="s2">&quot;epsg:3857&quot;</span><span class="p">,</span> <span class="n">tooltips</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fit_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a GeoDataFrame to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a GeoDataFrame to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            gdf (GeoDataFrame): The GeoDataFrame to add to the map.</span>
@@ -2313,7 +2313,7 @@ Map        </code>
         <span class="n">fit_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a GeoJSON file to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a GeoJSON file to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            filename (str): The path to the GeoJSON file. Can be a local file or a URL.</span>
@@ -2345,7 +2345,7 @@ Map        </code>
         <span class="n">fit_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a shapefile to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a shapefile to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            filename (str): The path to the shapefile.</span>
@@ -2398,7 +2398,7 @@ Map        </code>
         <span class="n">fit_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a vector dataset to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a vector dataset to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            filename (str): The path to the vector dataset. Can be a local file or a URL.</span>
@@ -2425,7 +2425,7 @@ Map        </code>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">to_html</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Converts the map to HTML.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Converts the map to HTML.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            filename (str, optional): The filename to save the HTML to. Defaults to None.</span>
@@ -2435,7 +2435,7 @@ Map        </code>
         <span class="n">save</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="n">filename</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">fit_bounds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bounds</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Fits the map to the specified bounds in the form of [xmin, ymin, xmax, ymax].</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Fits the map to the specified bounds in the form of [xmin, ymin, xmax, ymax].</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            bounds (list): A list of bounds in the form of [xmin, ymin, xmax, ymax].</span>
@@ -2449,7 +2449,7 @@ Map        </code>
         <span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">y_range</span><span class="o">.</span><span class="n">end</span> <span class="o">=</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
 
     <span class="k">def</span> <span class="nf">to_streamlit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">use_container_width</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Displays the map in a Streamlit app.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Displays the map in a Streamlit app.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            width (int, optional): The width of the map. Defaults to 800.</span>
@@ -2531,7 +2531,7 @@ Map        </code>
         <details class="quote">
           <summary>Source code in <code>leafmap/bokehmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_basemap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="s2">&quot;OpenStreetMap&quot;</span><span class="p">,</span> <span class="n">retina</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a basemap to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a basemap to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        basemap (str, optional): Can be one of string from basemaps. Defaults to &#39;OpenStreetMap&#39;.</span>
@@ -2653,7 +2653,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
     <span class="n">fit_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a COG TileLayer to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a COG TileLayer to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        url (str): The URL of the COG tile layer.</span>
@@ -2741,7 +2741,7 @@ https://docs.bokeh.org/en/latest/docs/reference/plotting/figure.html#bokeh.plott
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_gdf</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span> <span class="n">gdf</span><span class="p">,</span> <span class="n">to_crs</span><span class="o">=</span><span class="s2">&quot;epsg:3857&quot;</span><span class="p">,</span> <span class="n">tooltips</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fit_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a GeoDataFrame to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a GeoDataFrame to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        gdf (GeoDataFrame): The GeoDataFrame to add to the map.</span>
@@ -2872,7 +2872,7 @@ https://docs.bokeh.org/en/latest/docs/reference/plotting/figure.html#bokeh.plott
     <span class="n">fit_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a GeoJSON file to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a GeoJSON file to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        filename (str): The path to the GeoJSON file. Can be a local file or a URL.</span>
@@ -3016,7 +3016,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">open_args</span><span class="o">=</span><span class="p">{},</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Add a local raster dataset to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add a local raster dataset to the map.</span>
 <span class="sd">        If you are using this function in JupyterHub on a remote server (e.g., Binder, Microsoft Planetary Computer) and</span>
 <span class="sd">        if the raster does not render properly, try running the following code before calling this function:</span>
 
@@ -3154,7 +3154,7 @@ https://docs.bokeh.org/en/latest/docs/reference/plotting/figure.html#bokeh.plott
     <span class="n">fit_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a shapefile to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a shapefile to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        filename (str): The path to the shapefile.</span>
@@ -3306,7 +3306,7 @@ https://docs.bokeh.org/en/latest/docs/reference/plotting/figure.html#bokeh.plott
     <span class="n">open_args</span><span class="o">=</span><span class="p">{},</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a STAC TileLayer to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a STAC TileLayer to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        url (str): HTTP URL to a STAC item, e.g., https://canada-spot-ortho.s3.amazonaws.com/canada_spot_orthoimages/canada_spot5_orthoimages/S5_2007/S5_11055_6057_20070622/S5_11055_6057_20070622.json</span>
@@ -3383,7 +3383,7 @@ https://docs.bokeh.org/en/latest/docs/reference/plotting/figure.html#bokeh.plott
         <details class="quote">
           <summary>Source code in <code>leafmap/bokehmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_tile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tile</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a tile to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a tile to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        tile (bokeh.models.tiles.WMTSTileSource): A bokeh tile.</span>
@@ -3485,7 +3485,7 @@ https://docs.bokeh.org/en/latest/docs/reference/plotting/figure.html#bokeh.plott
     <span class="n">fit_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a vector dataset to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a vector dataset to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        filename (str): The path to the vector dataset. Can be a local file or a URL.</span>
@@ -3554,7 +3554,7 @@ https://docs.bokeh.org/en/latest/docs/reference/plotting/figure.html#bokeh.plott
         <details class="quote">
           <summary>Source code in <code>leafmap/bokehmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">fit_bounds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bounds</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Fits the map to the specified bounds in the form of [xmin, ymin, xmax, ymax].</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Fits the map to the specified bounds in the form of [xmin, ymin, xmax, ymax].</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        bounds (list): A list of bounds in the form of [xmin, ymin, xmax, ymax].</span>
@@ -3622,7 +3622,7 @@ https://docs.bokeh.org/en/latest/docs/reference/plotting/figure.html#bokeh.plott
         <details class="quote">
           <summary>Source code in <code>leafmap/bokehmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">to_html</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Converts the map to HTML.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Converts the map to HTML.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        filename (str, optional): The filename to save the HTML to. Defaults to None.</span>
@@ -3692,7 +3692,7 @@ https://docs.bokeh.org/en/latest/docs/reference/plotting/figure.html#bokeh.plott
         <details class="quote">
           <summary>Source code in <code>leafmap/bokehmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">to_streamlit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">use_container_width</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Displays the map in a Streamlit app.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Displays the map in a Streamlit app.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        width (int, optional): The width of the map. Defaults to 800.</span>

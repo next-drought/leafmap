@@ -2361,7 +2361,7 @@ Canvas        </code>
         <details class="quote">
           <summary>Source code in <code>leafmap/plotlymap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Canvas</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;The widgets.HBox containing the map and a toolbar.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The widgets.HBox containing the map and a toolbar.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
@@ -2371,7 +2371,7 @@ Canvas        </code>
         <span class="n">map_refresh</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Initialize the Canvas.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize the Canvas.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            map (go.FigureWidget): The map to display.</span>
@@ -2402,7 +2402,7 @@ Canvas        </code>
         <span class="bp">self</span><span class="o">.</span><span class="n">toolbar_widget</span> <span class="o">=</span> <span class="n">toolbar_widget</span>
 
     <span class="k">def</span> <span class="nf">toolbar_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Reset the toolbar so that no tool is selected.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Reset the toolbar so that no tool is selected.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;toolbar&quot;</span><span class="p">):</span>
             <span class="n">toolbar_grid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">toolbar</span>
             <span class="k">for</span> <span class="n">tool</span> <span class="ow">in</span> <span class="n">toolbar_grid</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
@@ -2486,7 +2486,7 @@ Canvas        </code>
     <span class="n">map_refresh</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Initialize the Canvas.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Initialize the Canvas.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        map (go.FigureWidget): The map to display.</span>
@@ -2540,7 +2540,7 @@ Canvas        </code>
         <details class="quote">
           <summary>Source code in <code>leafmap/plotlymap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">toolbar_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Reset the toolbar so that no tool is selected.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Reset the toolbar so that no tool is selected.&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;toolbar&quot;</span><span class="p">):</span>
         <span class="n">toolbar_grid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">toolbar</span>
         <span class="k">for</span> <span class="n">tool</span> <span class="ow">in</span> <span class="n">toolbar_grid</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
@@ -2583,12 +2583,12 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
         <details class="quote">
           <summary>Source code in <code>leafmap/plotlymap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Map</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">FigureWidget</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;The Map class inherits the Plotly FigureWidget class. More info at https://plotly.com/python/figurewidget.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The Map class inherits the Plotly FigureWidget class. More info at https://plotly.com/python/figurewidget.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="s2">&quot;open-street-map&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Initializes a map. More info at https://plotly.com/python/mapbox-layers/</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initializes a map. More info at https://plotly.com/python/mapbox-layers/</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            center (tuple, optional): Center of the map. Defaults to (20, 0).</span>
@@ -2618,7 +2618,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
         <span class="n">refresh</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Shows the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Shows the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            toolbar (bool, optional): Whether to show the toolbar. Defaults to True.</span>
@@ -2641,7 +2641,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
             <span class="k">return</span> <span class="n">canvas</span><span class="o">.</span><span class="n">canvas</span>
 
     <span class="k">def</span> <span class="nf">clear_controls</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Removes all controls from the map.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Removes all controls from the map.&quot;&quot;&quot;</span>
         <span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s2">&quot;scrollZoom&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
             <span class="s2">&quot;displayModeBar&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
@@ -2652,7 +2652,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
         <span class="bp">self</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">toolbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_controls</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">controls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds controls to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds controls to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            controls (list): List of controls to add, e.g., [&#39;drawline&#39;, &#39;drawopenpath&#39;, &#39;drawclosedpath&#39;, &#39;drawcircle&#39;, &#39;drawrect&#39;, &#39;eraseshape&#39;] See https://bit.ly/33Tmqxr</span>
@@ -2667,7 +2667,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
         <span class="bp">self</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">modebar_add</span><span class="o">=</span><span class="n">controls</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">remove_controls</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">controls</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Removes controls to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Removes controls to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            controls (list): List of controls to remove, e.g., [&quot;zoomin&quot;, &quot;zoomout&quot;, &quot;toimage&quot;, &quot;pan&quot;, &quot;resetview&quot;]. See https://bit.ly/3Jk7wkb</span>
@@ -2682,7 +2682,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
         <span class="bp">self</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">modebar_remove</span><span class="o">=</span><span class="n">controls</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">set_center</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Sets the center of the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Sets the center of the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            lat (float): Latitude.</span>
@@ -2697,7 +2697,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_basemap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="s2">&quot;ROADMAP&quot;</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a basemap to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a basemap to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            basemap (str, optional): Can be one of string from basemaps. Defaults to &#39;ROADMAP&#39;.</span>
@@ -2713,7 +2713,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
         <span class="bp">self</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">mapbox_layers</span><span class="o">=</span><span class="n">layers</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">remove_basemap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Removes a basemap from the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Removes a basemap from the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            name (str): Name of the basemap to remove.</span>
@@ -2723,7 +2723,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
         <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">mapbox</span><span class="o">.</span><span class="n">layers</span> <span class="o">=</span> <span class="n">layers</span>
 
     <span class="k">def</span> <span class="nf">add_mapbox_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">style</span><span class="p">,</span> <span class="n">access_token</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a mapbox layer to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a mapbox layer to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            layer (str | dict): Layer to add. Can be &quot;basic&quot;, &quot;streets&quot;, &quot;outdoors&quot;, &quot;light&quot;, &quot;dark&quot;, &quot;satellite&quot;, or &quot;satellite-streets&quot;. See https://plotly.com/python/mapbox-layers/ and https://docs.mapbox.com/mapbox-gl-js/style-spec/</span>
@@ -2738,7 +2738,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a layer to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a layer to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            layer (plotly.graph_objects): Layer to add.</span>
@@ -2749,7 +2749,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
         <span class="bp">self</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">remove_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Removes a layer from the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Removes a layer from the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            name (str): Name of the layer to remove.</span>
@@ -2762,7 +2762,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
             <span class="p">]</span>
 
     <span class="k">def</span> <span class="nf">clear_layers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">clear_basemap</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Clears all layers from the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Clears all layers from the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            clear_basemap (bool, optional): If True, clears the basemap. Defaults to False.</span>
@@ -2774,7 +2774,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
                 <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span>
 
     <span class="k">def</span> <span class="nf">get_layers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns a dictionary of all layers in the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns a dictionary of all layers in the map.</span>
 <span class="sd">        Returns:</span>
 <span class="sd">            dict: A dictionary of all layers in the map.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -2791,7 +2791,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
         <span class="k">return</span> <span class="n">layers</span>
 
     <span class="k">def</span> <span class="nf">get_tile_layers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns a dictionary of tile layers in the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns a dictionary of tile layers in the map.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            dict: A dictionary of tile layers in the map.</span>
@@ -2806,7 +2806,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
         <span class="k">return</span> <span class="n">layers</span>
 
     <span class="k">def</span> <span class="nf">get_data_layers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns a dictionary of data layers in the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns a dictionary of data layers in the map.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            dict: A dictionary of data layers in the map.</span>
@@ -2821,7 +2821,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
         <span class="k">return</span> <span class="n">layers</span>
 
     <span class="k">def</span> <span class="nf">find_layer_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Finds the index of a layer.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Finds the index of a layer.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            name (str): Name of the layer to find.</span>
@@ -2840,7 +2840,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
         <span class="k">return</span> <span class="kc">None</span>
 
     <span class="k">def</span> <span class="nf">set_layer_visibility</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Sets the visibility of a layer.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Sets the visibility of a layer.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            name (str): Name of the layer to set.</span>
@@ -2857,7 +2857,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Layer </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> not found.&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">set_layer_opacity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Sets the visibility of a layer.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Sets the visibility of a layer.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            name (str): Name of the layer to set.</span>
@@ -2885,7 +2885,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
         <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a TileLayer to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a TileLayer to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            url (str): The URL of the tile layer.</span>
@@ -2915,7 +2915,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
         <span class="n">titiler_endpoint</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a COG TileLayer to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a COG TileLayer to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            url (str): The URL of the COG tile layer, e.g., &#39;https://opendata.digitalglobe.com/events/california-fire-2020/pre-event/2018-02-16/pine-gulch-fire20/1030010076004E00.tif&#39;</span>
@@ -2947,7 +2947,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
         <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a STAC TileLayer to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a STAC TileLayer to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            url (str): HTTP URL to a STAC item, e.g., https://canada-spot-ortho.s3.amazonaws.com/canada_spot_orthoimages/canada_spot5_orthoimages/S5_2007/S5_11055_6057_20070622/S5_11055_6057_20070622.json</span>
@@ -2976,7 +2976,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
         <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a STAC TileLayer to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a STAC TileLayer to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            url (str): HTTP URL to a MosaicJSON.</span>
@@ -3000,7 +3000,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
         <span class="n">attribution</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
         <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds Planet global mosaic by month to the map. To get a Planet API key, see https://developers.planet.com/quickstart/apis/</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds Planet global mosaic by month to the map. To get a Planet API key, see https://developers.planet.com/quickstart/apis/</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            year (int, optional): The year of Planet global mosaic, must be &gt;=2016. Defaults to 2016.</span>
@@ -3028,7 +3028,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
         <span class="n">attribution</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
         <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds Planet global mosaic by month to the map. To get a Planet API key, see https://developers.planet.com/quickstart/apis/</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds Planet global mosaic by month to the map. To get a Planet API key, see https://developers.planet.com/quickstart/apis/</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            year (int, optional): The year of Planet global mosaic, must be &gt;=2016. Defaults to 2016.</span>
@@ -3047,7 +3047,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Convert a map to a static image and write it to a file or writeable object</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert a map to a static image and write it to a file or writeable object</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            file (str): A string representing a local file path or a writeable object (e.g. a pathlib.Path object or an open file descriptor)</span>
@@ -3063,7 +3063,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
     <span class="k">def</span> <span class="nf">add_choropleth_map</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">colorscale</span><span class="o">=</span><span class="s2">&quot;Viridis&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a choropleth map to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a choropleth map to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            data (str): File path to vector data, e.g., https://raw.githubusercontent.com/giswqs/leafmap/master/examples/data/countries.geojson</span>
@@ -3088,7 +3088,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_scatter_plot_demo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a scatter plot to the map.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a scatter plot to the map.&quot;&quot;&quot;</span>
         <span class="n">lons</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="o">*</span> <span class="mf">360.0</span>
         <span class="n">lats</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="o">*</span> <span class="mf">180.0</span> <span class="o">-</span> <span class="mf">90.0</span>
         <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="o">*</span> <span class="mf">50.0</span>
@@ -3107,7 +3107,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
         <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Heat map&quot;</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a heat map to the map. Reference: https://plotly.com/python/mapbox-density-heatmaps</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a heat map to the map. Reference: https://plotly.com/python/mapbox-density-heatmaps</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            data (str | pd.DataFrame): File path or HTTP URL to the input file or a . For example, https://raw.githubusercontent.com/plotly/datasets/master/earthquakes-23k.csv</span>
@@ -3139,7 +3139,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
         <span class="bp">self</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">heatmap</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_heatmap_demo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a heatmap to the map.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a heatmap to the map.&quot;&quot;&quot;</span>
         <span class="n">quakes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
             <span class="s2">&quot;https://raw.githubusercontent.com/plotly/datasets/master/earthquakes-23k.csv&quot;</span>
         <span class="p">)</span>
@@ -3204,7 +3204,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
         <span class="n">color_continuous_scale</span><span class="o">=</span><span class="s2">&quot;Viridis&quot;</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a GeoDataFrame to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a GeoDataFrame to the map.</span>
 <span class="sd">        Args:</span>
 <span class="sd">            gdf (GeoDataFrame): A GeoDataFrame.</span>
 <span class="sd">            label_col (str, optional): The column name of locations. Defaults to None.</span>
@@ -3253,7 +3253,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
         <span class="bp">self</span><span class="o">.</span><span class="n">set_center</span><span class="p">(</span><span class="n">center_lat</span><span class="p">,</span> <span class="n">center_lon</span><span class="p">,</span> <span class="n">zoom</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_geojson_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">geojson_in</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Prepare proper and give style for different type of Geometry</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Prepare proper and give style for different type of Geometry</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            in_geojson (str | dict): The file path or http URL to the input GeoJSON or a dictionary containing the geojson.</span>
@@ -3275,7 +3275,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
         <span class="k">else</span><span class="p">:</span>
             <span class="n">data</span> <span class="o">=</span> <span class="n">geojson_in</span>
 
-        <span class="sd">&quot;&quot;&quot; Only Checking Geometry of first feature( todo : handle multiple type of Geometry in same geojson ) &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Only Checking Geometry of first feature( todo : handle multiple type of Geometry in same geojson ) &quot;&quot;&quot;</span>
         <span class="n">first_feature</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;features&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
         <span class="n">geometry_type</span> <span class="o">=</span> <span class="n">first_feature</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">][</span><span class="s2">&quot;type&quot;</span><span class="p">]</span>
 
@@ -3291,7 +3291,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
         <span class="bp">self</span><span class="o">.</span><span class="n">add_geojson</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">opacity</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_geojson</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">opacity</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add layers to the Map</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add layers to the Map</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            data (dict): Geojson in Dict form</span>
@@ -3388,7 +3388,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="s2">&quot;open-street-map&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Initializes a map. More info at https://plotly.com/python/mapbox-layers/</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Initializes a map. More info at https://plotly.com/python/mapbox-layers/</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        center (tuple, optional): Center of the map. Defaults to (20, 0).</span>
@@ -3453,7 +3453,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
         <details class="quote">
           <summary>Source code in <code>leafmap/plotlymap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_basemap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="s2">&quot;ROADMAP&quot;</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a basemap to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a basemap to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        basemap (str, optional): Can be one of string from basemaps. Defaults to &#39;ROADMAP&#39;.</span>
@@ -3531,7 +3531,7 @@ Map            (<span title="plotly.graph_objs._figurewidget.FigureWidget">Figur
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_choropleth_map</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">colorscale</span><span class="o">=</span><span class="s2">&quot;Viridis&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a choropleth map to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a choropleth map to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        data (str): File path to vector data, e.g., https://raw.githubusercontent.com/giswqs/leafmap/master/examples/data/countries.geojson</span>
@@ -3646,7 +3646,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
     <span class="n">titiler_endpoint</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a COG TileLayer to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a COG TileLayer to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        url (str): The URL of the COG tile layer, e.g., &#39;https://opendata.digitalglobe.com/events/california-fire-2020/pre-event/2018-02-16/pine-gulch-fire20/1030010076004E00.tif&#39;</span>
@@ -3708,7 +3708,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
         <details class="quote">
           <summary>Source code in <code>leafmap/plotlymap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_controls</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">controls</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds controls to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds controls to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        controls (list): List of controls to add, e.g., [&#39;drawline&#39;, &#39;drawopenpath&#39;, &#39;drawclosedpath&#39;, &#39;drawcircle&#39;, &#39;drawrect&#39;, &#39;eraseshape&#39;] See https://bit.ly/33Tmqxr</span>
@@ -3787,7 +3787,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
     <span class="n">color_continuous_scale</span><span class="o">=</span><span class="s2">&quot;Viridis&quot;</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a GeoDataFrame to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a GeoDataFrame to the map.</span>
 <span class="sd">    Args:</span>
 <span class="sd">        gdf (GeoDataFrame): A GeoDataFrame.</span>
 <span class="sd">        label_col (str, optional): The column name of locations. Defaults to None.</span>
@@ -3897,7 +3897,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
         <details class="quote">
           <summary>Source code in <code>leafmap/plotlymap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_geojson</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">opacity</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Add layers to the Map</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add layers to the Map</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        data (dict): Geojson in Dict form</span>
@@ -3982,7 +3982,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
         <details class="quote">
           <summary>Source code in <code>leafmap/plotlymap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_geojson_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">geojson_in</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Prepare proper and give style for different type of Geometry</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Prepare proper and give style for different type of Geometry</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        in_geojson (str | dict): The file path or http URL to the input GeoJSON or a dictionary containing the geojson.</span>
@@ -4004,7 +4004,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
     <span class="k">else</span><span class="p">:</span>
         <span class="n">data</span> <span class="o">=</span> <span class="n">geojson_in</span>
 
-    <span class="sd">&quot;&quot;&quot; Only Checking Geometry of first feature( todo : handle multiple type of Geometry in same geojson ) &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Only Checking Geometry of first feature( todo : handle multiple type of Geometry in same geojson ) &quot;&quot;&quot;</span>
     <span class="n">first_feature</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;features&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">geometry_type</span> <span class="o">=</span> <span class="n">first_feature</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">][</span><span class="s2">&quot;type&quot;</span><span class="p">]</span>
 
@@ -4108,7 +4108,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
     <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Heat map&quot;</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a heat map to the map. Reference: https://plotly.com/python/mapbox-density-heatmaps</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a heat map to the map. Reference: https://plotly.com/python/mapbox-density-heatmaps</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        data (str | pd.DataFrame): File path or HTTP URL to the input file or a . For example, https://raw.githubusercontent.com/plotly/datasets/master/earthquakes-23k.csv</span>
@@ -4163,7 +4163,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
         <details class="quote">
           <summary>Source code in <code>leafmap/plotlymap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_heatmap_demo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a heatmap to the map.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a heatmap to the map.&quot;&quot;&quot;</span>
     <span class="n">quakes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
         <span class="s2">&quot;https://raw.githubusercontent.com/plotly/datasets/master/earthquakes-23k.csv&quot;</span>
     <span class="p">)</span>
@@ -4228,7 +4228,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
         <details class="quote">
           <summary>Source code in <code>leafmap/plotlymap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a layer to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a layer to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        layer (plotly.graph_objects): Layer to add.</span>
@@ -4287,7 +4287,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
         <details class="quote">
           <summary>Source code in <code>leafmap/plotlymap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_mapbox_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">style</span><span class="p">,</span> <span class="n">access_token</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a mapbox layer to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a mapbox layer to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        layer (str | dict): Layer to add. Can be &quot;basic&quot;, &quot;streets&quot;, &quot;outdoors&quot;, &quot;light&quot;, &quot;dark&quot;, &quot;satellite&quot;, or &quot;satellite-streets&quot;. See https://plotly.com/python/mapbox-layers/ and https://docs.mapbox.com/mapbox-gl-js/style-spec/</span>
@@ -4376,7 +4376,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
     <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a STAC TileLayer to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a STAC TileLayer to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        url (str): HTTP URL to a MosaicJSON.</span>
@@ -4478,7 +4478,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
     <span class="n">attribution</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
     <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds Planet global mosaic by month to the map. To get a Planet API key, see https://developers.planet.com/quickstart/apis/</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds Planet global mosaic by month to the map. To get a Planet API key, see https://developers.planet.com/quickstart/apis/</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        year (int, optional): The year of Planet global mosaic, must be &gt;=2016. Defaults to 2016.</span>
@@ -4584,7 +4584,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
     <span class="n">attribution</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
     <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds Planet global mosaic by month to the map. To get a Planet API key, see https://developers.planet.com/quickstart/apis/</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds Planet global mosaic by month to the map. To get a Planet API key, see https://developers.planet.com/quickstart/apis/</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        year (int, optional): The year of Planet global mosaic, must be &gt;=2016. Defaults to 2016.</span>
@@ -4626,7 +4626,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
         <details class="quote">
           <summary>Source code in <code>leafmap/plotlymap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_scatter_plot_demo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a scatter plot to the map.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a scatter plot to the map.&quot;&quot;&quot;</span>
     <span class="n">lons</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="o">*</span> <span class="mf">360.0</span>
     <span class="n">lats</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="o">*</span> <span class="mf">180.0</span> <span class="o">-</span> <span class="mf">90.0</span>
     <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="o">*</span> <span class="mf">50.0</span>
@@ -4737,7 +4737,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
     <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a STAC TileLayer to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a STAC TileLayer to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        url (str): HTTP URL to a STAC item, e.g., https://canada-spot-ortho.s3.amazonaws.com/canada_spot_orthoimages/canada_spot5_orthoimages/S5_2007/S5_11055_6057_20070622/S5_11055_6057_20070622.json</span>
@@ -4825,7 +4825,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
     <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a TileLayer to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a TileLayer to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        url (str): The URL of the tile layer.</span>
@@ -4869,7 +4869,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
         <details class="quote">
           <summary>Source code in <code>leafmap/plotlymap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">clear_controls</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Removes all controls from the map.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Removes all controls from the map.&quot;&quot;&quot;</span>
     <span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s2">&quot;scrollZoom&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
         <span class="s2">&quot;displayModeBar&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
@@ -4922,7 +4922,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
         <details class="quote">
           <summary>Source code in <code>leafmap/plotlymap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">clear_layers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">clear_basemap</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Clears all layers from the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Clears all layers from the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        clear_basemap (bool, optional): If True, clears the basemap. Defaults to False.</span>
@@ -4991,7 +4991,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
         <details class="quote">
           <summary>Source code in <code>leafmap/plotlymap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">find_layer_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Finds the index of a layer.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Finds the index of a layer.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        name (str): Name of the layer to find.</span>
@@ -5048,7 +5048,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
         <details class="quote">
           <summary>Source code in <code>leafmap/plotlymap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_data_layers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns a dictionary of data layers in the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a dictionary of data layers in the map.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        dict: A dictionary of data layers in the map.</span>
@@ -5101,7 +5101,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
         <details class="quote">
           <summary>Source code in <code>leafmap/plotlymap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_layers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns a dictionary of all layers in the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a dictionary of all layers in the map.</span>
 <span class="sd">    Returns:</span>
 <span class="sd">        dict: A dictionary of all layers in the map.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -5156,7 +5156,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
         <details class="quote">
           <summary>Source code in <code>leafmap/plotlymap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_tile_layers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns a dictionary of tile layers in the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a dictionary of tile layers in the map.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        dict: A dictionary of tile layers in the map.</span>
@@ -5213,7 +5213,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
         <details class="quote">
           <summary>Source code in <code>leafmap/plotlymap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">remove_basemap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Removes a basemap from the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Removes a basemap from the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        name (str): Name of the basemap to remove.</span>
@@ -5265,7 +5265,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
         <details class="quote">
           <summary>Source code in <code>leafmap/plotlymap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">remove_controls</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">controls</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Removes controls to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Removes controls to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        controls (list): List of controls to remove, e.g., [&quot;zoomin&quot;, &quot;zoomout&quot;, &quot;toimage&quot;, &quot;pan&quot;, &quot;resetview&quot;]. See https://bit.ly/3Jk7wkb</span>
@@ -5322,7 +5322,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
         <details class="quote">
           <summary>Source code in <code>leafmap/plotlymap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">remove_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Removes a layer from the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Removes a layer from the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        name (str): Name of the layer to remove.</span>
@@ -5401,7 +5401,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
         <details class="quote">
           <summary>Source code in <code>leafmap/plotlymap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Convert a map to a static image and write it to a file or writeable object</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert a map to a static image and write it to a file or writeable object</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        file (str): A string representing a local file path or a writeable object (e.g. a pathlib.Path object or an open file descriptor)</span>
@@ -5469,7 +5469,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
         <details class="quote">
           <summary>Source code in <code>leafmap/plotlymap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">set_center</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Sets the center of the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sets the center of the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        lat (float): Latitude.</span>
@@ -5532,7 +5532,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
         <details class="quote">
           <summary>Source code in <code>leafmap/plotlymap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">set_layer_opacity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Sets the visibility of a layer.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sets the visibility of a layer.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        name (str): Name of the layer to set.</span>
@@ -5601,7 +5601,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
         <details class="quote">
           <summary>Source code in <code>leafmap/plotlymap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">set_layer_visibility</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Sets the visibility of a layer.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sets the visibility of a layer.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        name (str): Name of the layer to set.</span>
@@ -5700,7 +5700,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
     <span class="n">refresh</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Shows the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Shows the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        toolbar (bool, optional): Whether to show the toolbar. Defaults to True.</span>
@@ -5758,7 +5758,7 @@ Adopted from: https://github.com/plotly/plotly.py/issues/2570#issuecomment-73873
         <details class="quote">
           <summary>Source code in <code>leafmap/plotlymap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">fix_widget_error</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Fix FigureWidget - &#39;mapbox._derived&#39; Value Error.</span>
 <span class="sd">    Adopted from: https://github.com/plotly/plotly.py/issues/2570#issuecomment-738735816</span>
 <span class="sd">    &quot;&quot;&quot;</span>

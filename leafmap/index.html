@@ -2992,7 +2992,7 @@ ImageOverlay            (<span title="ipyleaflet.leaflet.ImageOverlay">ImageOver
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ImageOverlay</span><span class="p">(</span><span class="n">ipyleaflet</span><span class="o">.</span><span class="n">ImageOverlay</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;ImageOverlay class.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;ImageOverlay class.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        url (str): http URL or local file path to the image.</span>
@@ -3105,7 +3105,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Map</span><span class="p">(</span><span class="n">ipyleaflet</span><span class="o">.</span><span class="n">Map</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;The Map class inherits ipyleaflet.Map. The arguments you can pass to the Map can be found at https://ipyleaflet.readthedocs.io/en/latest/api_reference/map.html. By default, the Map will add OpenStreetMap as the basemap.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The Map class inherits ipyleaflet.Map. The arguments you can pass to the Map can be found at https://ipyleaflet.readthedocs.io/en/latest/api_reference/map.html. By default, the Map will add OpenStreetMap as the basemap.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        object: ipyleaflet map object.</span>
@@ -3280,7 +3280,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;use_voila&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
 
     <span class="k">def</span> <span class="nf">set_center</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Centers the map view at a given coordinates with the given zoom level.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Centers the map view at a given coordinates with the given zoom level.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            lon (float): The longitude of the center, in degrees.</span>
@@ -3292,7 +3292,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="bp">self</span><span class="o">.</span><span class="n">zoom</span> <span class="o">=</span> <span class="n">zoom</span>
 
     <span class="k">def</span> <span class="nf">zoom_to_bounds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bounds</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Zooms to a bounding box in the form of [minx, miny, maxx, maxy].</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Zooms to a bounding box in the form of [minx, miny, maxx, maxy].</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            bounds (list | tuple): A list/tuple containing minx, miny, maxx, maxy values for the bounds.</span>
@@ -3301,7 +3301,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="bp">self</span><span class="o">.</span><span class="n">fit_bounds</span><span class="p">([[</span><span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">bounds</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">2</span><span class="p">]]])</span>
 
     <span class="k">def</span> <span class="nf">zoom_to_gdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gdf</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Zooms to the bounding box of a GeoPandas GeoDataFrame.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Zooms to the bounding box of a GeoPandas GeoDataFrame.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            gdf (GeoDataFrame): A GeoPandas GeoDataFrame.</span>
@@ -3310,7 +3310,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="bp">self</span><span class="o">.</span><span class="n">zoom_to_bounds</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">get_scale</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns the approximate pixel scale of the current map view, in meters.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the approximate pixel scale of the current map view, in meters.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            float: Map resolution in meters.</span>
@@ -3323,7 +3323,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="k">return</span> <span class="n">resolution</span>
 
     <span class="k">def</span> <span class="nf">get_layer_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Gets layer names as a list.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Gets layer names as a list.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            list: A list of layer names.</span>
@@ -3337,7 +3337,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="k">return</span> <span class="n">layer_names</span>
 
     <span class="k">def</span> <span class="nf">add_marker</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a marker to the map. More info about marker at https://ipyleaflet.readthedocs.io/en/latest/api_reference/marker.html.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a marker to the map. More info about marker at https://ipyleaflet.readthedocs.io/en/latest/api_reference/marker.html.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            location (list | tuple): The location of the marker in the format of [lat, lng].</span>
@@ -3353,7 +3353,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;The location must be a list or a tuple.&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_basemap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="s2">&quot;HYBRID&quot;</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a basemap to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a basemap to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            basemap (str, optional): Can be one of string from basemaps. Defaults to &#39;HYBRID&#39;.</span>
@@ -3395,7 +3395,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">find_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Finds layer by name</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Finds layer by name</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            name (str): Name of the layer to find.</span>
@@ -3411,7 +3411,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="k">return</span> <span class="kc">None</span>
 
     <span class="k">def</span> <span class="nf">find_layer_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Finds layer index by name</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Finds layer index by name</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            name (str): Name of the layer to find.</span>
@@ -3428,7 +3428,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
 
     <span class="k">def</span> <span class="nf">add_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a layer to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a layer to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            layer (ipyleaflet layer): The layer to be added.</span>
@@ -3439,7 +3439,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">layer_opacity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Changes layer opacity.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Changes layer opacity.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            name (str): The name of the layer to change opacity.</span>
@@ -3463,7 +3463,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">shown</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add a WMS layer to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a WMS layer to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            url (str): The URL of the WMS web service.</span>
@@ -3506,7 +3506,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">shown</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a TileLayer to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a TileLayer to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            url (str): The URL of the tile layer.</span>
@@ -3543,7 +3543,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">vector_tile_layer_styles</span><span class="o">=</span><span class="nb">dict</span><span class="p">(),</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a VectorTileLayer to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a VectorTileLayer to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            url (str, optional): The URL of the tile layer. Defaults to &#39;https://tile.nextzen.org/tilezen/vector/v1/512/all/{z}/{x}/{y}.mvt?api_key=gCZXZglvRQa6sB2z7JzL1w&#39;.</span>
@@ -3576,7 +3576,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
         <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds OSM data of place(s) by name or ID to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds OSM data of place(s) by name or ID to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            query (str | dict | list): Query string(s) or structured dict(s) to geocode.</span>
@@ -3620,7 +3620,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
         <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds OSM entities within some distance N, S, E, W of address to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds OSM entities within some distance N, S, E, W of address to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            address (str): The address to geocode and use as the central point around which to get the geometries.</span>
@@ -3661,7 +3661,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
         <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds OSM entities within boundaries of geocodable place(s) to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds OSM entities within boundaries of geocodable place(s) to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            query (str | dict | list): Query string(s) or structured dict(s) to geocode.</span>
@@ -3702,7 +3702,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
         <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds OSM entities within some distance N, S, E, W of a point to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds OSM entities within some distance N, S, E, W of a point to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            center_point (tuple): The (lat, lng) center point around which to get the geometries.</span>
@@ -3741,7 +3741,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
         <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds OSM entities within boundaries of a (multi)polygon to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds OSM entities within boundaries of a (multi)polygon to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            polygon (shapely.geometry.Polygon | shapely.geometry.MultiPolygon): Geographic boundaries to fetch geometries within</span>
@@ -3782,7 +3782,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
         <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds OSM entities within a N, S, E, W bounding box to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds OSM entities within a N, S, E, W bounding box to the map.</span>
 
 
 <span class="sd">        Args:</span>
@@ -3823,7 +3823,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
         <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds OSM entities within the current map view to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds OSM entities within the current map view to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            tags (dict): Dict of tags used for finding objects in the selected area. Results returned are the union, not intersection of each individual tag. Each result matches at least one given tag. The dict keys should be OSM tags, (e.g., building, landuse, highway, etc) and the dict values should be either True to retrieve all items with the given tag, or a string to get a single tag-value combination, or a list of strings to get multiple values for the given tag. For example, tags = {‘building’: True} would return all building footprints in the area. tags = {‘amenity’:True, ‘landuse’:[‘retail’,’commercial’], ‘highway’:’bus_stop’} would return all amenities, landuse=retail, landuse=commercial, and highway=bus_stop.</span>
@@ -3873,7 +3873,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">titiler_endpoint</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a COG TileLayer to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a COG TileLayer to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            url (str): The URL of the COG tile layer.</span>
@@ -3929,7 +3929,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">shown</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a STAC TileLayer to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a STAC TileLayer to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            url (str): HTTP URL to a STAC item, e.g., https://canada-spot-ortho.s3.amazonaws.com/canada_spot_orthoimages/canada_spot5_orthoimages/S5_2007/S5_11055_6057_20070622/S5_11055_6057_20070622.json</span>
@@ -3979,7 +3979,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">shown</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a STAC TileLayer to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a STAC TileLayer to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            url (str): HTTP URL to a MosaicJSON.</span>
@@ -3996,7 +3996,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="bp">self</span><span class="o">.</span><span class="n">fit_bounds</span><span class="p">([[</span><span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">bounds</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">2</span><span class="p">]]])</span>
 
     <span class="k">def</span> <span class="nf">add_minimap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a minimap (overview) to the ipyleaflet map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a minimap (overview) to the ipyleaflet map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            zoom (int, optional): Initial map zoom level. Defaults to 5.</span>
@@ -4017,7 +4017,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="bp">self</span><span class="o">.</span><span class="n">add_control</span><span class="p">(</span><span class="n">minimap_control</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_marker_cluster</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="o">=</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="n">add_marker</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Captures user inputs and add markers to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Captures user inputs and add markers to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            event (str, optional): [description]. Defaults to &#39;click&#39;.</span>
@@ -4060,7 +4060,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">popup</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a marker cluster to the map. For a list of options, see https://ipyleaflet.readthedocs.io/en/latest/api_reference/circle_marker.html</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a marker cluster to the map. For a list of options, see https://ipyleaflet.readthedocs.io/en/latest/api_reference/circle_marker.html</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            data (str | pd.DataFrame): A csv or Pandas DataFrame containing x, y, z values.</span>
@@ -4122,7 +4122,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">right_position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span>
         <span class="n">widget_layout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds split map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds split map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            left_layer (str, optional): The left tile layer. Can be a local file path, HTTP URL, or a basemap name. Defaults to &#39;TERRAIN&#39;.</span>
@@ -4305,7 +4305,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">basemap_demo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;A demo for using leafmap basemaps.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;A demo for using leafmap basemaps.&quot;&quot;&quot;</span>
         <span class="n">dropdown</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
             <span class="n">options</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">basemaps</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span>
             <span class="n">value</span><span class="o">=</span><span class="s2">&quot;HYBRID&quot;</span><span class="p">,</span>
@@ -4332,7 +4332,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">layer_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a customized basemap to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a customized basemap to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            title (str, optional): Title of the legend. Defaults to &#39;Legend&#39;.</span>
@@ -4525,7 +4525,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add a branca colorbar to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a branca colorbar to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            colors (list): The set of colors to be used for interpolation. Colors can be provided in the form: * tuples of RGBA ints between 0 and 255 (e.g: (255, 255, 0) or (255, 255, 0, 255)) * tuples of RGBA floats between 0. and 1. (e.g: (1.,1.,0.) or (1., 1., 0., 1.)) * HTML-like string (e.g: “#ffff00) * a color name or shortcut (e.g: “y” or “yellow”)</span>
@@ -4602,7 +4602,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a matplotlib colormap to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a matplotlib colormap to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            cmap (str, optional): Matplotlib colormap. Defaults to &quot;gray&quot;. See https://matplotlib.org/3.3.4/tutorials/colors/colormaps.html#sphx-glr-tutorials-colors-colormaps-py for options.</span>
@@ -4651,7 +4651,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="bp">self</span><span class="o">.</span><span class="n">add_control</span><span class="p">(</span><span class="n">colormap_ctrl</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">image_overlay</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">bounds</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Overlays an image from the Internet or locally on the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Overlays an image from the Internet or locally on the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            url (str): http URL or local file path to the image.</span>
@@ -4701,7 +4701,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">video_overlay</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">bounds</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Overlays a video from the Internet on the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Overlays a video from the Internet on the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            url (str): http URL of the video, such as &quot;https://www.mapbox.com/bites/00188/patricia_nasa.webm&quot;</span>
@@ -4725,7 +4725,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">add_layer_control</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Saves the map as an HTML file.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Saves the map as an HTML file.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            outfile (str, optional): The output file path to the HTML file.</span>
@@ -4793,7 +4793,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">to_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">outfile</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">monitor</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Saves the map as a PNG or JPG image.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Saves the map as a PNG or JPG image.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            outfile (str, optional): The output file path to the image. Defaults to None.</span>
@@ -4816,7 +4816,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="bp">self</span><span class="o">.</span><span class="n">screenshot</span> <span class="o">=</span> <span class="n">screenshot</span>
 
     <span class="k">def</span> <span class="nf">to_streamlit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">scrolling</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Renders map figure in a Streamlit app.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Renders map figure in a Streamlit app.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            width (int, optional): Width of the map. Defaults to None.</span>
@@ -4846,7 +4846,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">toolbar_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Reset the toolbar so that no tool is selected.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Reset the toolbar so that no tool is selected.&quot;&quot;&quot;</span>
         <span class="n">toolbar_grid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">toolbar</span>
         <span class="k">for</span> <span class="n">tool</span> <span class="ow">in</span> <span class="n">toolbar_grid</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
             <span class="n">tool</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">False</span>
@@ -4863,7 +4863,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Local COG&quot;</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add a local raster dataset to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a local raster dataset to the map.</span>
 <span class="sd">            If you are using this function in JupyterHub on a remote server (e.g., Binder, Microsoft Planetary Computer) and</span>
 <span class="sd">            if the raster does not render properly, try running the following code before calling this function:</span>
 
@@ -4935,7 +4935,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">layer_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add a remote Cloud Optimized GeoTIFF (COG) to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a remote Cloud Optimized GeoTIFF (COG) to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            source (str): The path to the remote Cloud Optimized GeoTIFF.</span>
@@ -4980,7 +4980,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Generate an ipyleaflet/folium TileLayer from a netCDF file.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Generate an ipyleaflet/folium TileLayer from a netCDF file.</span>
 <span class="sd">            If you are using this function in JupyterHub on a remote server (e.g., Binder, Microsoft Planetary Computer),</span>
 <span class="sd">            try adding to following two lines to the beginning of the notebook if the raster does not render properly.</span>
 
@@ -5049,7 +5049,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">y_dim</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span>
         <span class="n">fit_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a local raster dataset to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a local raster dataset to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            image (str): The image file path.</span>
@@ -5145,7 +5145,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
         <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a shapefile to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a shapefile to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            in_shp (str): The input file path or HTTP URL (*.zip) to the shapefile.</span>
@@ -5205,7 +5205,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
         <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a GeoJSON file to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a GeoJSON file to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            in_geojson (str | dict): The file path or http URL to the input GeoJSON or a dictionary containing the geojson.</span>
@@ -5394,7 +5394,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
     <span class="k">def</span> <span class="nf">add_search_control</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;topleft&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a search control to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a search control to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            url (str): The url to the search API. For example, &quot;https://nominatim.openstreetmap.org/search?format=json&amp;q={s}&quot;.</span>
@@ -5430,7 +5430,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">zoom_to_layer</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a GeoDataFrame to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a GeoDataFrame to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            gdf (GeoDataFrame): A GeoPandas GeoDataFrame.</span>
@@ -5480,7 +5480,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">zoom_to_layer</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Reads a PostGIS database and returns data as a GeoDataFrame to be added to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Reads a PostGIS database and returns data as a GeoDataFrame to be added to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            sql (str): SQL query to execute in selecting entries from database, or name of the table to read from the database.</span>
@@ -5516,7 +5516,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
         <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a KML file to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a KML file to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            in_kml (str): The input file path or HTTP URL to the KML.</span>
@@ -5568,7 +5568,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds any geopandas-supported vector dataset to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds any geopandas-supported vector dataset to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            filename (str): Either the absolute or relative path to the file or URL to be opened, or any object with a read() method (such as an open file or StringIO).</span>
@@ -5640,7 +5640,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Marker cluster&quot;</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds points from a CSV file containing lat/lon information and display data on the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds points from a CSV file containing lat/lon information and display data on the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            in_csv (str): The file path to the input CSV file.</span>
@@ -5704,7 +5704,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
     <span class="k">def</span> <span class="nf">add_point_layer</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">popup</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Marker Cluster&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a point layer to the map with a popup attribute.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a point layer to the map with a popup attribute.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            filename (str): str, http url, path object or file-like object. Either the absolute or relative path to the file or URL to be opened, or any object with a read() method (such as an open file or StringIO)</span>
@@ -5808,7 +5808,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">add_legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a marker cluster to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a marker cluster to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            data (str | pd.DataFrame): A csv or Pandas DataFrame containing x, y, z values.</span>
@@ -6035,7 +6035,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">radius</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a heat map to the map. Reference: https://ipyleaflet.readthedocs.io/en/latest/api_reference/heatmap.html</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a heat map to the map. Reference: https://ipyleaflet.readthedocs.io/en/latest/api_reference/heatmap.html</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            data (str | list | pd.DataFrame): File path or HTTP URL to the input file or a list of data points in the format of [[x1, y1, z1], [x2, y2, z2]]. For example, https://raw.githubusercontent.com/giswqs/leafmap/master/examples/data/world_cities.csv</span>
@@ -6083,7 +6083,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Labels&quot;</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a label layer to the map. Reference: https://ipyleaflet.readthedocs.io/en/latest/api_reference/divicon.html</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a label layer to the map. Reference: https://ipyleaflet.readthedocs.io/en/latest/api_reference/divicon.html</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            data (pd.DataFrame | gpd.GeoDataFrame | str): The input data to label.</span>
@@ -6160,7 +6160,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="bp">self</span><span class="o">.</span><span class="n">labels</span> <span class="o">=</span> <span class="n">layer_group</span>
 
     <span class="k">def</span> <span class="nf">remove_labels</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Removes all labels from the map.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Removes all labels from the map.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;labels&quot;</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">remove_layer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">labels</span><span class="p">)</span>
             <span class="nb">delattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;labels&quot;</span><span class="p">)</span>
@@ -6174,7 +6174,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">token_name</span><span class="o">=</span><span class="s2">&quot;PLANET_API_KEY&quot;</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a Planet global mosaic by month to the map. To get a Planet API key, see https://developers.planet.com/quickstart/apis</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a Planet global mosaic by month to the map. To get a Planet API key, see https://developers.planet.com/quickstart/apis</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            year (int, optional): The year of Planet global mosaic, must be &gt;=2016. Defaults to 2016.</span>
@@ -6197,7 +6197,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">token_name</span><span class="o">=</span><span class="s2">&quot;PLANET_API_KEY&quot;</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a Planet global mosaic by quarter to the map. To get a Planet API key, see https://developers.planet.com/quickstart/apis</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a Planet global mosaic by quarter to the map. To get a Planet API key, see https://developers.planet.com/quickstart/apis</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            year (int, optional): The year of Planet global mosaic, must be &gt;=2016. Defaults to 2016.</span>
@@ -6219,7 +6219,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span>
         <span class="n">slider_length</span><span class="o">=</span><span class="s2">&quot;150px&quot;</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a time slider to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a time slider to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            layers_dict (dict, optional): The dictionary containing a set of XYZ tile layers.</span>
@@ -6234,7 +6234,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">time_slider</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layers_dict</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">time_interval</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">slider_length</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">static_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">950</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">out_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Display an ipyleaflet static map in a Jupyter Notebook.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Display an ipyleaflet static map in a Jupyter Notebook.</span>
 
 <span class="sd">        Args</span>
 <span class="sd">            m (ipyleaflet.Map): An ipyleaflet map.</span>
@@ -6256,7 +6256,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;The provided map is not an ipyleaflet map.&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_census_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wms</span><span class="p">,</span> <span class="n">layer</span><span class="p">,</span> <span class="n">census_dict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a census data layer to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a census data layer to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            wms (str): The wms to use. For example, &quot;Current&quot;, &quot;ACS 2021&quot;, &quot;Census 2020&quot;.  See the complete list at https://tigerweb.geo.census.gov/tigerwebmain/TIGERweb_wms.html</span>
@@ -6295,7 +6295,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_xyz_service</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">provider</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add a XYZ tile layer to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a XYZ tile layer to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            provider (str): A tile layer name starts with xyz or qms. For example, xyz.OpenTopoMap,</span>
@@ -6331,12 +6331,12 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The ipyleaflet map does not support titles.&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">get_pc_collections</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Get the list of Microsoft Planetary Computer collections.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the list of Microsoft Planetary Computer collections.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;pc_collections&quot;</span><span class="p">):</span>
             <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;pc_collections&quot;</span><span class="p">,</span> <span class="n">get_pc_collections</span><span class="p">())</span>
 
     <span class="k">def</span> <span class="nf">save_draw_features</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">out_file</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Save the draw features to a file.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Save the draw features to a file.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            out_file (str): The output file path.</span>
@@ -6373,7 +6373,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">out_geojson</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">update_draw_features</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Update the draw features by removing features that have been edited and no longer exist.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Update the draw features by removing features that have been edited and no longer exist.&quot;&quot;&quot;</span>
 
         <span class="n">geometries</span> <span class="o">=</span> <span class="p">[</span><span class="n">feature</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">feature</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">draw_control</span><span class="o">.</span><span class="n">data</span><span class="p">]</span>
 
@@ -6382,7 +6382,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
                 <span class="bp">self</span><span class="o">.</span><span class="n">draw_features</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">feature</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">get_draw_props</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_df</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Get the properties of the draw features.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the properties of the draw features.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            n (int, optional): The maximum number of attributes to return. Defaults to None.</span>
@@ -6413,7 +6413,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="k">return</span> <span class="n">props</span>
 
     <span class="k">def</span> <span class="nf">update_draw_props</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Update the draw features properties.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Update the draw features properties.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            df (pd.DataFrame): A pandas dataframe containing the properties of the draw features.</span>
@@ -6440,7 +6440,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
                     <span class="bp">self</span><span class="o">.</span><span class="n">edit_props</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">edit_vector</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Edit a vector layer.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Edit a vector layer.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            data (dict | str): The data to edit. It can be a GeoJSON dictionary or a file path.</span>
@@ -6475,7 +6475,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">display_options</span><span class="o">=</span><span class="p">{},</span>
         <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Velocity&quot;</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add a velocity layer to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a velocity layer to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            data (str | xr.Dataset): The data to use for the velocity layer. It can be a file path to a NetCDF file or an xarray Dataset.</span>
@@ -6559,7 +6559,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add vector data to the map with a variety of classification schemes.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add vector data to the map with a variety of classification schemes.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            data (str | pd.DataFrame | gpd.GeoDataFrame): The data to classify. It can be a filepath to a vector dataset, a pandas dataframe, or a geopandas geodataframe.</span>
@@ -6670,7 +6670,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">user_roi_bounds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Get the bounds of the user drawn ROI as a tuple of (minx, miny, maxx, maxy).</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the bounds of the user drawn ROI as a tuple of (minx, miny, maxx, maxy).</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            decimals (int, optional): The number of decimals to round the coordinates to. Defaults to 4.</span>
@@ -6684,7 +6684,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="k">return</span> <span class="kc">None</span>
 
     <span class="k">def</span> <span class="nf">add_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add a widget (e.g., text, HTML, figure) to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a widget (e.g., text, HTML, figure) to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            content (str | ipywidgets.Widget | object): The widget to add.</span>
@@ -6714,7 +6714,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error adding widget: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add an image to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add an image to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            image (str | ipywidgets.Image): The image to add.</span>
@@ -6737,7 +6737,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="bp">self</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_html</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">html</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add HTML to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add HTML to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            html (str): The HTML to add.</span>
@@ -6759,7 +6759,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add text to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add text to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            text (str): The text to add.</span>
@@ -6774,11 +6774,11 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="k">if</span> <span class="n">background</span><span class="p">:</span>
-            <span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;&lt;div style=&quot;font-size: </span><span class="si">{</span><span class="n">fontsize</span><span class="si">}</span><span class="s2">px; color: </span><span class="si">{</span><span class="n">fontcolor</span><span class="si">}</span><span class="s2">; font-weight: </span><span class="si">{</span><span class="s1">&#39;bold&#39;</span> <span class="k">if</span> <span class="n">bold</span> <span class="k">else</span> <span class="s1">&#39;normal&#39;</span><span class="si">}</span><span class="s2">; </span>
+            <span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;&lt;div style=&quot;font-size: </span><span class="si">{</span><span class="n">fontsize</span><span class="si">}</span><span class="s2">px; color: </span><span class="si">{</span><span class="n">fontcolor</span><span class="si">}</span><span class="s2">; font-weight: </span><span class="si">{</span><span class="s1">&#39;bold&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">bold</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;normal&#39;</span><span class="si">}</span><span class="s2">; </span>
 <span class="s2">            padding: </span><span class="si">{</span><span class="n">padding</span><span class="si">}</span><span class="s2">; background-color: </span><span class="si">{</span><span class="n">bg_color</span><span class="si">}</span><span class="s2">; </span>
 <span class="s2">            border-radius: </span><span class="si">{</span><span class="n">border_radius</span><span class="si">}</span><span class="s2">;&quot;&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&lt;/div&gt;&quot;&quot;&quot;</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;&lt;div style=&quot;font-size: </span><span class="si">{</span><span class="n">fontsize</span><span class="si">}</span><span class="s2">px; color: </span><span class="si">{</span><span class="n">fontcolor</span><span class="si">}</span><span class="s2">; font-weight: </span><span class="si">{</span><span class="s1">&#39;bold&#39;</span> <span class="k">if</span> <span class="n">bold</span> <span class="k">else</span> <span class="s1">&#39;normal&#39;</span><span class="si">}</span><span class="s2">; </span>
+            <span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;&lt;div style=&quot;font-size: </span><span class="si">{</span><span class="n">fontsize</span><span class="si">}</span><span class="s2">px; color: </span><span class="si">{</span><span class="n">fontcolor</span><span class="si">}</span><span class="s2">; font-weight: </span><span class="si">{</span><span class="s1">&#39;bold&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">bold</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;normal&#39;</span><span class="si">}</span><span class="s2">; </span>
 <span class="s2">            padding: </span><span class="si">{</span><span class="n">padding</span><span class="si">}</span><span class="s2">;&quot;&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&lt;/div&gt;&quot;&quot;&quot;</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">add_html</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -6834,7 +6834,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_basemap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="s2">&quot;HYBRID&quot;</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a basemap to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a basemap to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        basemap (str, optional): Can be one of string from basemaps. Defaults to &#39;HYBRID&#39;.</span>
@@ -6930,7 +6930,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_census_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wms</span><span class="p">,</span> <span class="n">layer</span><span class="p">,</span> <span class="n">census_dict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a census data layer to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a census data layer to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        wms (str): The wms to use. For example, &quot;Current&quot;, &quot;ACS 2021&quot;, &quot;Census 2020&quot;.  See the complete list at https://tigerweb.geo.census.gov/tigerwebmain/TIGERweb_wms.html</span>
@@ -7043,7 +7043,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
     <span class="n">popup</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a marker cluster to the map. For a list of options, see https://ipyleaflet.readthedocs.io/en/latest/api_reference/circle_marker.html</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a marker cluster to the map. For a list of options, see https://ipyleaflet.readthedocs.io/en/latest/api_reference/circle_marker.html</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        data (str | pd.DataFrame): A csv or Pandas DataFrame containing x, y, z values.</span>
@@ -7188,7 +7188,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
     <span class="n">titiler_endpoint</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a COG TileLayer to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a COG TileLayer to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        url (str): The URL of the COG tile layer.</span>
@@ -7332,7 +7332,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
     <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Add a branca colorbar to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add a branca colorbar to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        colors (list): The set of colors to be used for interpolation. Colors can be provided in the form: * tuples of RGBA ints between 0 and 255 (e.g: (255, 255, 0) or (255, 255, 0, 255)) * tuples of RGBA floats between 0. and 1. (e.g: (1.,1.,0.) or (1., 1., 0., 1.)) * HTML-like string (e.g: “#ffff00) * a color name or shortcut (e.g: “y” or “yellow”)</span>
@@ -7529,7 +7529,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
     <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a matplotlib colormap to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a matplotlib colormap to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        cmap (str, optional): Matplotlib colormap. Defaults to &quot;gray&quot;. See https://matplotlib.org/3.3.4/tutorials/colors/colormaps.html#sphx-glr-tutorials-colors-colormaps-py for options.</span>
@@ -7779,7 +7779,7 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
     <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Add vector data to the map with a variety of classification schemes.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add vector data to the map with a variety of classification schemes.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        data (str | pd.DataFrame | gpd.GeoDataFrame): The data to classify. It can be a filepath to a vector dataset, a pandas dataframe, or a geopandas geodataframe.</span>
@@ -7991,7 +7991,7 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
     <span class="n">zoom_to_layer</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a GeoDataFrame to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a GeoDataFrame to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        gdf (GeoDataFrame): A GeoPandas GeoDataFrame.</span>
@@ -8131,7 +8131,7 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
     <span class="n">zoom_to_layer</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Reads a PostGIS database and returns data as a GeoDataFrame to be added to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Reads a PostGIS database and returns data as a GeoDataFrame to be added to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        sql (str): SQL query to execute in selecting entries from database, or name of the table to read from the database.</span>
@@ -8267,7 +8267,7 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
     <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
     <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a GeoJSON file to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a GeoJSON file to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        in_geojson (str | dict): The file path or http URL to the input GeoJSON or a dictionary containing the geojson.</span>
@@ -8550,7 +8550,7 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
     <span class="n">radius</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a heat map to the map. Reference: https://ipyleaflet.readthedocs.io/en/latest/api_reference/heatmap.html</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a heat map to the map. Reference: https://ipyleaflet.readthedocs.io/en/latest/api_reference/heatmap.html</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        data (str | list | pd.DataFrame): File path or HTTP URL to the input file or a list of data points in the format of [[x1, y1, z1], [x2, y2, z2]]. For example, https://raw.githubusercontent.com/giswqs/leafmap/master/examples/data/world_cities.csv</span>
@@ -8634,7 +8634,7 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_html</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">html</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Add HTML to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add HTML to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        html (str): The HTML to add.</span>
@@ -8693,7 +8693,7 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Add an image to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add an image to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        image (str | ipywidgets.Image): The image to add.</span>
@@ -8818,7 +8818,7 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
     <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
     <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a KML file to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a KML file to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        in_kml (str): The input file path or HTTP URL to the KML.</span>
@@ -8965,7 +8965,7 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
     <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Labels&quot;</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a label layer to the map. Reference: https://ipyleaflet.readthedocs.io/en/latest/api_reference/divicon.html</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a label layer to the map. Reference: https://ipyleaflet.readthedocs.io/en/latest/api_reference/divicon.html</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        data (pd.DataFrame | gpd.GeoDataFrame | str): The input data to label.</span>
@@ -9084,7 +9084,7 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a layer to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a layer to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        layer (ipyleaflet layer): The layer to be added.</span>
@@ -9183,7 +9183,7 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
     <span class="n">layer_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a customized basemap to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a customized basemap to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        title (str, optional): Title of the legend. Defaults to &#39;Legend&#39;.</span>
@@ -9464,7 +9464,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Local COG&quot;</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Add a local raster dataset to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add a local raster dataset to the map.</span>
 <span class="sd">        If you are using this function in JupyterHub on a remote server (e.g., Binder, Microsoft Planetary Computer) and</span>
 <span class="sd">        if the raster does not render properly, try running the following code before calling this function:</span>
 
@@ -9571,7 +9571,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_marker</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a marker to the map. More info about marker at https://ipyleaflet.readthedocs.io/en/latest/api_reference/marker.html.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a marker to the map. More info about marker at https://ipyleaflet.readthedocs.io/en/latest/api_reference/marker.html.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        location (list | tuple): The location of the marker in the format of [lat, lng].</span>
@@ -9650,7 +9650,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_marker_cluster</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="o">=</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="n">add_marker</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Captures user inputs and add markers to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Captures user inputs and add markers to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        event (str, optional): [description]. Defaults to &#39;click&#39;.</span>
@@ -9733,7 +9733,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_minimap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a minimap (overview) to the ipyleaflet map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a minimap (overview) to the ipyleaflet map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        zoom (int, optional): Initial map zoom level. Defaults to 5.</span>
@@ -9835,7 +9835,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">shown</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a STAC TileLayer to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a STAC TileLayer to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        url (str): HTTP URL to a MosaicJSON.</span>
@@ -10001,7 +10001,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
     <span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Generate an ipyleaflet/folium TileLayer from a netCDF file.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate an ipyleaflet/folium TileLayer from a netCDF file.</span>
 <span class="sd">        If you are using this function in JupyterHub on a remote server (e.g., Binder, Microsoft Planetary Computer),</span>
 <span class="sd">        try adding to following two lines to the beginning of the notebook if the raster does not render properly.</span>
 
@@ -10162,7 +10162,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
     <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
     <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds OSM entities within some distance N, S, E, W of address to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds OSM entities within some distance N, S, E, W of address to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        address (str): The address to geocode and use as the central point around which to get the geometries.</span>
@@ -10306,7 +10306,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
     <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
     <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds OSM entities within a N, S, E, W bounding box to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds OSM entities within a N, S, E, W bounding box to the map.</span>
 
 
 <span class="sd">    Args:</span>
@@ -10446,7 +10446,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
     <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
     <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds OSM data of place(s) by name or ID to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds OSM data of place(s) by name or ID to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        query (str | dict | list): Query string(s) or structured dict(s) to geocode.</span>
@@ -10587,7 +10587,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
     <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
     <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds OSM entities within boundaries of geocodable place(s) to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds OSM entities within boundaries of geocodable place(s) to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        query (str | dict | list): Query string(s) or structured dict(s) to geocode.</span>
@@ -10718,7 +10718,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
     <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
     <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds OSM entities within some distance N, S, E, W of a point to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds OSM entities within some distance N, S, E, W of a point to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        center_point (tuple): The (lat, lng) center point around which to get the geometries.</span>
@@ -10841,7 +10841,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
     <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
     <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds OSM entities within boundaries of a (multi)polygon to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds OSM entities within boundaries of a (multi)polygon to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        polygon (shapely.geometry.Polygon | shapely.geometry.MultiPolygon): Geographic boundaries to fetch geometries within</span>
@@ -10956,7 +10956,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
     <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
     <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds OSM entities within the current map view to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds OSM entities within the current map view to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        tags (dict): Dict of tags used for finding objects in the selected area. Results returned are the union, not intersection of each individual tag. Each result matches at least one given tag. The dict keys should be OSM tags, (e.g., building, landuse, highway, etc) and the dict values should be either True to retrieve all items with the given tag, or a string to get a single tag-value combination, or a list of strings to get multiple values for the given tag. For example, tags = {‘building’: True} would return all building footprints in the area. tags = {‘amenity’:True, ‘landuse’:[‘retail’,’commercial’], ‘highway’:’bus_stop’} would return all amenities, landuse=retail, landuse=commercial, and highway=bus_stop.</span>
@@ -11070,7 +11070,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
     <span class="n">token_name</span><span class="o">=</span><span class="s2">&quot;PLANET_API_KEY&quot;</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a Planet global mosaic by month to the map. To get a Planet API key, see https://developers.planet.com/quickstart/apis</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a Planet global mosaic by month to the map. To get a Planet API key, see https://developers.planet.com/quickstart/apis</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        year (int, optional): The year of Planet global mosaic, must be &gt;=2016. Defaults to 2016.</span>
@@ -11159,7 +11159,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
     <span class="n">token_name</span><span class="o">=</span><span class="s2">&quot;PLANET_API_KEY&quot;</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a Planet global mosaic by quarter to the map. To get a Planet API key, see https://developers.planet.com/quickstart/apis</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a Planet global mosaic by quarter to the map. To get a Planet API key, see https://developers.planet.com/quickstart/apis</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        year (int, optional): The year of Planet global mosaic, must be &gt;=2016. Defaults to 2016.</span>
@@ -11249,7 +11249,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_point_layer</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">popup</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Marker Cluster&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a point layer to the map with a popup attribute.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a point layer to the map with a popup attribute.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        filename (str): str, http url, path object or file-like object. Either the absolute or relative path to the file or URL to be opened, or any object with a read() method (such as an open file or StringIO)</span>
@@ -11455,7 +11455,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
     <span class="n">add_legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a marker cluster to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a marker cluster to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        data (str | pd.DataFrame): A csv or Pandas DataFrame containing x, y, z values.</span>
@@ -11774,7 +11774,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Local COG&quot;</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Add a local raster dataset to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add a local raster dataset to the map.</span>
 <span class="sd">        If you are using this function in JupyterHub on a remote server (e.g., Binder, Microsoft Planetary Computer) and</span>
 <span class="sd">        if the raster does not render properly, try running the following code before calling this function:</span>
 
@@ -11920,7 +11920,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">y_dim</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span>
     <span class="n">fit_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a local raster dataset to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a local raster dataset to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        image (str): The image file path.</span>
@@ -12101,7 +12101,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">layer_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Add a remote Cloud Optimized GeoTIFF (COG) to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add a remote Cloud Optimized GeoTIFF (COG) to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        source (str): The path to the remote Cloud Optimized GeoTIFF.</span>
@@ -12197,7 +12197,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_search_control</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;topleft&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a search control to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a search control to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        url (str): The url to the search API. For example, &quot;https://nominatim.openstreetmap.org/search?format=json&amp;q={s}&quot;.</span>
@@ -12325,7 +12325,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
     <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a shapefile to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a shapefile to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        in_shp (str): The input file path or HTTP URL (*.zip) to the shapefile.</span>
@@ -12484,7 +12484,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">shown</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a STAC TileLayer to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a STAC TileLayer to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        url (str): HTTP URL to a STAC item, e.g., https://canada-spot-ortho.s3.amazonaws.com/canada_spot_orthoimages/canada_spot5_orthoimages/S5_2007/S5_11055_6057_20070622/S5_11055_6057_20070622.json</span>
@@ -12627,7 +12627,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Add text to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add text to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        text (str): The text to add.</span>
@@ -12642,11 +12642,11 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">if</span> <span class="n">background</span><span class="p">:</span>
-        <span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;&lt;div style=&quot;font-size: </span><span class="si">{</span><span class="n">fontsize</span><span class="si">}</span><span class="s2">px; color: </span><span class="si">{</span><span class="n">fontcolor</span><span class="si">}</span><span class="s2">; font-weight: </span><span class="si">{</span><span class="s1">&#39;bold&#39;</span> <span class="k">if</span> <span class="n">bold</span> <span class="k">else</span> <span class="s1">&#39;normal&#39;</span><span class="si">}</span><span class="s2">; </span>
+        <span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;&lt;div style=&quot;font-size: </span><span class="si">{</span><span class="n">fontsize</span><span class="si">}</span><span class="s2">px; color: </span><span class="si">{</span><span class="n">fontcolor</span><span class="si">}</span><span class="s2">; font-weight: </span><span class="si">{</span><span class="s1">&#39;bold&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">bold</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;normal&#39;</span><span class="si">}</span><span class="s2">; </span>
 <span class="s2">        padding: </span><span class="si">{</span><span class="n">padding</span><span class="si">}</span><span class="s2">; background-color: </span><span class="si">{</span><span class="n">bg_color</span><span class="si">}</span><span class="s2">; </span>
 <span class="s2">        border-radius: </span><span class="si">{</span><span class="n">border_radius</span><span class="si">}</span><span class="s2">;&quot;&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&lt;/div&gt;&quot;&quot;&quot;</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;&lt;div style=&quot;font-size: </span><span class="si">{</span><span class="n">fontsize</span><span class="si">}</span><span class="s2">px; color: </span><span class="si">{</span><span class="n">fontcolor</span><span class="si">}</span><span class="s2">; font-weight: </span><span class="si">{</span><span class="s1">&#39;bold&#39;</span> <span class="k">if</span> <span class="n">bold</span> <span class="k">else</span> <span class="s1">&#39;normal&#39;</span><span class="si">}</span><span class="s2">; </span>
+        <span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;&lt;div style=&quot;font-size: </span><span class="si">{</span><span class="n">fontsize</span><span class="si">}</span><span class="s2">px; color: </span><span class="si">{</span><span class="n">fontcolor</span><span class="si">}</span><span class="s2">; font-weight: </span><span class="si">{</span><span class="s1">&#39;bold&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">bold</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;normal&#39;</span><span class="si">}</span><span class="s2">; </span>
 <span class="s2">        padding: </span><span class="si">{</span><span class="n">padding</span><span class="si">}</span><span class="s2">;&quot;&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&lt;/div&gt;&quot;&quot;&quot;</span>
 
     <span class="bp">self</span><span class="o">.</span><span class="n">add_html</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -12726,7 +12726,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">shown</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a TileLayer to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a TileLayer to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        url (str): The URL of the tile layer.</span>
@@ -12830,7 +12830,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span>
     <span class="n">slider_length</span><span class="o">=</span><span class="s2">&quot;150px&quot;</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a time slider to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a time slider to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        layers_dict (dict, optional): The dictionary containing a set of XYZ tile layers.</span>
@@ -12962,7 +12962,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds any geopandas-supported vector dataset to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds any geopandas-supported vector dataset to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        filename (str): Either the absolute or relative path to the file or URL to be opened, or any object with a read() method (such as an open file or StringIO).</span>
@@ -13087,7 +13087,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">vector_tile_layer_styles</span><span class="o">=</span><span class="nb">dict</span><span class="p">(),</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a VectorTileLayer to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a VectorTileLayer to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        url (str, optional): The URL of the tile layer. Defaults to &#39;https://tile.nextzen.org/tilezen/vector/v1/512/all/{z}/{x}/{y}.mvt?api_key=gCZXZglvRQa6sB2z7JzL1w&#39;.</span>
@@ -13249,7 +13249,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">display_options</span><span class="o">=</span><span class="p">{},</span>
     <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Velocity&quot;</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Add a velocity layer to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add a velocity layer to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        data (str | xr.Dataset): The data to use for the velocity layer. It can be a file path to a NetCDF file or an xarray Dataset.</span>
@@ -13366,7 +13366,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_widget</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Add a widget (e.g., text, HTML, figure) to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add a widget (e.g., text, HTML, figure) to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        content (str | ipywidgets.Widget | object): The widget to add.</span>
@@ -13491,7 +13491,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">shown</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Add a WMS layer to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add a WMS layer to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        url (str): The URL of the WMS web service.</span>
@@ -13626,7 +13626,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Marker cluster&quot;</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds points from a CSV file containing lat/lon information and display data on the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds points from a CSV file containing lat/lon information and display data on the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        in_csv (str): The file path to the input CSV file.</span>
@@ -13745,7 +13745,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_xyz_service</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">provider</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Add a XYZ tile layer to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add a XYZ tile layer to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        provider (str): A tile layer name starts with xyz or qms. For example, xyz.OpenTopoMap,</span>
@@ -13801,7 +13801,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">basemap_demo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;A demo for using leafmap basemaps.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A demo for using leafmap basemaps.&quot;&quot;&quot;</span>
     <span class="n">dropdown</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
         <span class="n">options</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">basemaps</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span>
         <span class="n">value</span><span class="o">=</span><span class="s2">&quot;HYBRID&quot;</span><span class="p">,</span>
@@ -13860,7 +13860,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">edit_vector</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Edit a vector layer.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Edit a vector layer.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        data (dict | str): The data to edit. It can be a GeoJSON dictionary or a file path.</span>
@@ -13938,7 +13938,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">find_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Finds layer by name</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Finds layer by name</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        name (str): Name of the layer to find.</span>
@@ -14011,7 +14011,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">find_layer_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Finds layer index by name</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Finds layer index by name</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        name (str): Name of the layer to find.</span>
@@ -14091,7 +14091,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_draw_props</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_df</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Get the properties of the draw features.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the properties of the draw features.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        n (int, optional): The maximum number of attributes to return. Defaults to None.</span>
@@ -14160,7 +14160,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_layer_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Gets layer names as a list.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gets layer names as a list.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        list: A list of layer names.</span>
@@ -14197,7 +14197,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_pc_collections</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Get the list of Microsoft Planetary Computer collections.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the list of Microsoft Planetary Computer collections.&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;pc_collections&quot;</span><span class="p">):</span>
         <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;pc_collections&quot;</span><span class="p">,</span> <span class="n">get_pc_collections</span><span class="p">())</span>
 </code></pre></div>
@@ -14240,7 +14240,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_scale</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns the approximate pixel scale of the current map view, in meters.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns the approximate pixel scale of the current map view, in meters.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        float: Map resolution in meters.</span>
@@ -14307,7 +14307,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">image_overlay</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">bounds</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Overlays an image from the Internet or locally on the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Overlays an image from the Internet or locally on the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        url (str): http URL or local file path to the image.</span>
@@ -14405,7 +14405,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">layer_opacity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Changes layer opacity.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Changes layer opacity.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        name (str): The name of the layer to change opacity.</span>
@@ -14441,7 +14441,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">remove_labels</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Removes all labels from the map.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Removes all labels from the map.&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;labels&quot;</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">remove_layer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">labels</span><span class="p">)</span>
         <span class="nb">delattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;labels&quot;</span><span class="p">)</span>
@@ -14495,7 +14495,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">save_draw_features</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">out_file</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Save the draw features to a file.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Save the draw features to a file.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        out_file (str): The output file path.</span>
@@ -14586,7 +14586,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">set_center</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Centers the map view at a given coordinates with the given zoom level.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Centers the map view at a given coordinates with the given zoom level.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        lon (float): The longitude of the center, in degrees.</span>
@@ -14672,7 +14672,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">right_position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">,</span>
     <span class="n">widget_layout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds split map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds split map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        left_layer (str, optional): The left tile layer. Can be a local file path, HTTP URL, or a basemap name. Defaults to &#39;TERRAIN&#39;.</span>
@@ -14884,7 +14884,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">static_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">950</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">out_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Display an ipyleaflet static map in a Jupyter Notebook.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Display an ipyleaflet static map in a Jupyter Notebook.</span>
 
 <span class="sd">    Args</span>
 <span class="sd">        m (ipyleaflet.Map): An ipyleaflet map.</span>
@@ -14980,7 +14980,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">add_layer_control</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Saves the map as an HTML file.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Saves the map as an HTML file.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        outfile (str, optional): The output file path to the HTML file.</span>
@@ -15096,7 +15096,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">to_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">outfile</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">monitor</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Saves the map as a PNG or JPG image.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Saves the map as a PNG or JPG image.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        outfile (str, optional): The output file path to the image. Defaults to None.</span>
@@ -15194,7 +15194,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">to_streamlit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">scrolling</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Renders map figure in a Streamlit app.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Renders map figure in a Streamlit app.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        width (int, optional): Width of the map. Defaults to None.</span>
@@ -15247,7 +15247,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">toolbar_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Reset the toolbar so that no tool is selected.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Reset the toolbar so that no tool is selected.&quot;&quot;&quot;</span>
     <span class="n">toolbar_grid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">toolbar</span>
     <span class="k">for</span> <span class="n">tool</span> <span class="ow">in</span> <span class="n">toolbar_grid</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
         <span class="n">tool</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">False</span>
@@ -15276,7 +15276,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">update_draw_features</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Update the draw features by removing features that have been edited and no longer exist.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Update the draw features by removing features that have been edited and no longer exist.&quot;&quot;&quot;</span>
 
     <span class="n">geometries</span> <span class="o">=</span> <span class="p">[</span><span class="n">feature</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">feature</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">draw_control</span><span class="o">.</span><span class="n">data</span><span class="p">]</span>
 
@@ -15327,7 +15327,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">update_draw_props</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Update the draw features properties.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Update the draw features properties.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        df (pd.DataFrame): A pandas dataframe containing the properties of the draw features.</span>
@@ -15411,7 +15411,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">user_roi_bounds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Get the bounds of the user drawn ROI as a tuple of (minx, miny, maxx, maxy).</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the bounds of the user drawn ROI as a tuple of (minx, miny, maxx, maxy).</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        decimals (int, optional): The number of decimals to round the coordinates to. Defaults to 4.</span>
@@ -15479,7 +15479,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">video_overlay</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">bounds</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Overlays a video from the Internet on the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Overlays a video from the Internet on the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        url (str): http URL of the video, such as &quot;https://www.mapbox.com/bites/00188/patricia_nasa.webm&quot;</span>
@@ -15537,7 +15537,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">zoom_to_bounds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bounds</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Zooms to a bounding box in the form of [minx, miny, maxx, maxy].</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Zooms to a bounding box in the form of [minx, miny, maxx, maxy].</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        bounds (list | tuple): A list/tuple containing minx, miny, maxx, maxy values for the bounds.</span>
@@ -15588,7 +15588,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">zoom_to_gdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gdf</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Zooms to the bounding box of a GeoPandas GeoDataFrame.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Zooms to the bounding box of a GeoPandas GeoDataFrame.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        gdf (GeoDataFrame): A GeoPandas GeoDataFrame.</span>
@@ -15715,7 +15715,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
     <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a GeoJSON file to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a GeoJSON file to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        in_geojson (str | dict): The file path or http URL to the input GeoJSON or a dictionary containing the geojson.</span>
@@ -15923,7 +15923,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">layer_args</span><span class="o">=</span><span class="p">[],</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Create linked maps of XYZ tile layers.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create linked maps of XYZ tile layers.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        rows (int, optional): The number of rows of maps to create. Defaults to 2.</span>
@@ -16111,7 +16111,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">right_args</span><span class="o">=</span><span class="p">{},</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds split map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds split map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        left_layer (str, optional): The left tile layer. Can be a local file path, HTTP URL, or a basemap name. Defaults to &#39;TERRAIN&#39;.</span>
@@ -16362,7 +16362,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">zoom</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Creates a time series inspector.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Creates a time series inspector.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        layers_dict (dict, optional): A dictionary of layers to be shown on the map. Defaults to None.</span>

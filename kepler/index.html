@@ -2042,7 +2042,7 @@ Map            (<span title="keplergl.keplergl.KeplerGl">KeplerGl</span>)
         <details class="quote">
           <summary>Source code in <code>leafmap/kepler.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Map</span><span class="p">(</span><span class="n">keplergl</span><span class="o">.</span><span class="n">KeplerGl</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;The Map class inherits keplergl.KeperGl.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The Map class inherits keplergl.KeperGl.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        object: keplergl.KeperGl map object.</span>
@@ -2129,7 +2129,7 @@ Map            (<span title="keplergl.keplergl.KeplerGl">KeplerGl</span>)
     <span class="c1">#     # return bundle</span>
 
     <span class="k">def</span> <span class="nf">add_geojson</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">in_geojson</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Untitled&quot;</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a GeoJSON file to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a GeoJSON file to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            in_geojson (str | dict): The file path or http URL to the input GeoJSON or a dictionary containing the geojson.</span>
@@ -2185,7 +2185,7 @@ Map            (<span title="keplergl.keplergl.KeplerGl">KeplerGl</span>)
         <span class="bp">self</span><span class="o">.</span><span class="n">load_config</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_shp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">in_shp</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Untitled&quot;</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a shapefile to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a shapefile to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            in_shp (str): The input file path to the shapefile.</span>
@@ -2230,7 +2230,7 @@ Map            (<span title="keplergl.keplergl.KeplerGl">KeplerGl</span>)
         <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a GeoDataFrame to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a GeoDataFrame to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            gdf (GeoDataFrame): A GeoPandas GeoDataFrame.</span>
@@ -2250,7 +2250,7 @@ Map            (<span title="keplergl.keplergl.KeplerGl">KeplerGl</span>)
         <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a DataFrame to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a DataFrame to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            df (DataFrame): A Pandas DataFrame.</span>
@@ -2271,7 +2271,7 @@ Map            (<span title="keplergl.keplergl.KeplerGl">KeplerGl</span>)
         <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a CSV to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a CSV to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            in_csv (str): File path to the CSV.</span>
@@ -2290,7 +2290,7 @@ Map            (<span title="keplergl.keplergl.KeplerGl">KeplerGl</span>)
         <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds any geopandas-supported vector dataset to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds any geopandas-supported vector dataset to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            filename (str): Either the absolute or relative path to the file or URL to be opened, or any object with a read() method (such as an open file or StringIO).</span>
@@ -2337,7 +2337,7 @@ Map            (<span title="keplergl.keplergl.KeplerGl">KeplerGl</span>)
         <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a KML file to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a KML file to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            in_kml (str): The input file path to the KML.</span>
@@ -2376,7 +2376,7 @@ Map            (<span title="keplergl.keplergl.KeplerGl">KeplerGl</span>)
         <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Reads a PostGIS database and returns data as a GeoDataFrame to be added to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Reads a PostGIS database and returns data as a GeoDataFrame to be added to the map.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            sql (str): SQL query to execute in selecting entries from database, or name of the table to read from the database.</span>
@@ -2397,7 +2397,7 @@ Map            (<span title="keplergl.keplergl.KeplerGl">KeplerGl</span>)
     <span class="k">def</span> <span class="nf">static_map</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">950</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">read_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">out_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Display a kepler.gl static map in a Jupyter Notebook.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Display a kepler.gl static map in a Jupyter Notebook.</span>
 
 <span class="sd">        Args</span>
 <span class="sd">            width (int, optional): Width of the map. Defaults to 950.</span>
@@ -2428,7 +2428,7 @@ Map            (<span title="keplergl.keplergl.KeplerGl">KeplerGl</span>)
         <span class="n">read_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Saves the map as a HTML file.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Saves the map as a HTML file.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            outfile (str, optional): The output file path to the HTML file.</span>
@@ -2467,7 +2467,7 @@ Map            (<span title="keplergl.keplergl.KeplerGl">KeplerGl</span>)
     <span class="k">def</span> <span class="nf">to_streamlit</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">responsive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">scrolling</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Renders `keplergl.KeplerGl` map figure in a Streamlit app.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Renders `keplergl.KeplerGl` map figure in a Streamlit app.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            width (int, optional): Width of the map. Defaults to 800.</span>
@@ -2504,7 +2504,7 @@ Map            (<span title="keplergl.keplergl.KeplerGl">KeplerGl</span>)
             <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">load_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Loads a kepler.gl config file.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Loads a kepler.gl config file.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            config (str, optional): Local path or HTTP URL to the config file. Defaults to None.</span>
@@ -2530,7 +2530,7 @@ Map            (<span title="keplergl.keplergl.KeplerGl">KeplerGl</span>)
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;The provided config is not a dictionary or filepath.&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">save_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">out_json</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Saves a kepler.gl config file.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Saves a kepler.gl config file.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            out_json (str): Output file path to the config file.</span>
@@ -2622,7 +2622,7 @@ Map            (<span title="keplergl.keplergl.KeplerGl">KeplerGl</span>)
     <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a CSV to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a CSV to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        in_csv (str): File path to the CSV.</span>
@@ -2695,7 +2695,7 @@ Map            (<span title="keplergl.keplergl.KeplerGl">KeplerGl</span>)
     <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a DataFrame to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a DataFrame to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        df (DataFrame): A Pandas DataFrame.</span>
@@ -2770,7 +2770,7 @@ Map            (<span title="keplergl.keplergl.KeplerGl">KeplerGl</span>)
     <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a GeoDataFrame to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a GeoDataFrame to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        gdf (GeoDataFrame): A GeoPandas GeoDataFrame.</span>
@@ -2851,7 +2851,7 @@ Map            (<span title="keplergl.keplergl.KeplerGl">KeplerGl</span>)
     <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Reads a PostGIS database and returns data as a GeoDataFrame to be added to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Reads a PostGIS database and returns data as a GeoDataFrame to be added to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        sql (str): SQL query to execute in selecting entries from database, or name of the table to read from the database.</span>
@@ -2943,7 +2943,7 @@ Map            (<span title="keplergl.keplergl.KeplerGl">KeplerGl</span>)
         <details class="quote">
           <summary>Source code in <code>leafmap/kepler.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_geojson</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">in_geojson</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Untitled&quot;</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a GeoJSON file to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a GeoJSON file to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        in_geojson (str | dict): The file path or http URL to the input GeoJSON or a dictionary containing the geojson.</span>
@@ -3074,7 +3074,7 @@ Map            (<span title="keplergl.keplergl.KeplerGl">KeplerGl</span>)
     <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a KML file to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a KML file to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        in_kml (str): The input file path to the KML.</span>
@@ -3175,7 +3175,7 @@ Map            (<span title="keplergl.keplergl.KeplerGl">KeplerGl</span>)
         <details class="quote">
           <summary>Source code in <code>leafmap/kepler.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_shp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">in_shp</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Untitled&quot;</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds a shapefile to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a shapefile to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        in_shp (str): The input file path to the shapefile.</span>
@@ -3274,7 +3274,7 @@ Map            (<span title="keplergl.keplergl.KeplerGl">KeplerGl</span>)
     <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Adds any geopandas-supported vector dataset to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds any geopandas-supported vector dataset to the map.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        filename (str): Either the absolute or relative path to the file or URL to be opened, or any object with a read() method (such as an open file or StringIO).</span>
@@ -3376,7 +3376,7 @@ Map            (<span title="keplergl.keplergl.KeplerGl">KeplerGl</span>)
         <details class="quote">
           <summary>Source code in <code>leafmap/kepler.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">load_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Loads a kepler.gl config file.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Loads a kepler.gl config file.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        config (str, optional): Local path or HTTP URL to the config file. Defaults to None.</span>
@@ -3463,7 +3463,7 @@ Map            (<span title="keplergl.keplergl.KeplerGl">KeplerGl</span>)
         <details class="quote">
           <summary>Source code in <code>leafmap/kepler.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">save_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">out_json</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Saves a kepler.gl config file.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Saves a kepler.gl config file.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        out_json (str): Output file path to the config file.</span>
@@ -3517,7 +3517,7 @@ Map            (<span title="keplergl.keplergl.KeplerGl">KeplerGl</span>)
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">static_map</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">950</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">read_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">out_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Display a kepler.gl static map in a Jupyter Notebook.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Display a kepler.gl static map in a Jupyter Notebook.</span>
 
 <span class="sd">    Args</span>
 <span class="sd">        width (int, optional): Width of the map. Defaults to 950.</span>
@@ -3596,7 +3596,7 @@ Map            (<span title="keplergl.keplergl.KeplerGl">KeplerGl</span>)
     <span class="n">read_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Saves the map as a HTML file.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Saves the map as a HTML file.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        outfile (str, optional): The output file path to the HTML file.</span>
@@ -3725,7 +3725,7 @@ Map            (<span title="keplergl.keplergl.KeplerGl">KeplerGl</span>)
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">to_streamlit</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">responsive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">scrolling</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Renders `keplergl.KeplerGl` map figure in a Streamlit app.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Renders `keplergl.KeplerGl` map figure in a Streamlit app.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        width (int, optional): Width of the map. Defaults to 800.</span>

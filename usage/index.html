@@ -1824,8 +1824,8 @@
 <p>You can try out leafmap by using Goolge Colab (<a href="https://gishub.org/leafmap-colab"><img alt="image" src="https://colab.research.google.com/assets/colab-badge.svg" /></a>) or Binder (<a href="https://gishub.org/leafmap-binder"><img alt="image" src="https://mybinder.org/badge_logo.svg" /></a>) without having to install anything on your computer.</p>
 <h2 id="launch-jupyter-notebook">Launch Jupyter notebook<a class="headerlink" href="#launch-jupyter-notebook" title="Permanent link">&para;</a></h2>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>conda activate geo
-jupyter notebook
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>conda<span class="w"> </span>activate<span class="w"> </span>geo
+jupyter<span class="w"> </span>notebook
 </code></pre></div></td></tr></table></div>
 <h2 id="use-ipyleaflet-plotting-backend">Use ipyleaflet plotting backend<a class="headerlink" href="#use-ipyleaflet-plotting-backend" title="Permanent link">&para;</a></h2>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">leafmap</span>
@@ -1878,7 +1878,7 @@ jupyter notebook
 <li>An <a href="https://developer.here.com/documentation/identity-access-management/dev_guide/topics/dev-apikey.html">API key</a> from the <a href="https://developer.here.com">HERE Developer Portal</a></li>
 <li>Export API key into environment variable <code>HEREMAPS_API_KEY</code></li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">export</span> <span class="nv">HEREMAPS_API_KEY</span><span class="o">=</span>YOUR-ACTUAL-API-KEY
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">HEREMAPS_API_KEY</span><span class="o">=</span>YOUR-ACTUAL-API-KEY
 </code></pre></div></td></tr></table></div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">leafmap.heremap</span> <span class="k">as</span> <span class="nn">leafmap</span>
 </code></pre></div></td></tr></table></div>
