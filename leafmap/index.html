@@ -747,6 +747,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#leafmap.leafmap.Map.add_layer_control" class="md-nav__link">
+    add_layer_control()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#leafmap.leafmap.Map.add_legend" class="md-nav__link">
     add_legend()
   </a>
@@ -938,6 +945,13 @@
           <li class="md-nav__item">
   <a href="#leafmap.leafmap.Map.add_vector" class="md-nav__link">
     add_vector()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leafmap.leafmap.Map.add_vector_tile" class="md-nav__link">
+    add_vector_tile()
   </a>
   
 </li>
@@ -2472,6 +2486,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#leafmap.leafmap.Map.add_layer_control" class="md-nav__link">
+    add_layer_control()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#leafmap.leafmap.Map.add_legend" class="md-nav__link">
     add_legend()
   </a>
@@ -2663,6 +2684,13 @@
           <li class="md-nav__item">
   <a href="#leafmap.leafmap.Map.add_vector" class="md-nav__link">
     add_vector()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leafmap.leafmap.Map.add_vector_tile" class="md-nav__link">
+    add_vector_tile()
   </a>
   
 </li>
@@ -3452,6 +3480,15 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="bp">self</span><span class="o">.</span><span class="n">remove_layer</span><span class="p">(</span><span class="n">existing_layer</span><span class="p">)</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
 
+    <span class="k">def</span> <span class="nf">add_layer_control</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;topright&quot;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a layer control to the map.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            position (str, optional): The position of the layer control. Defaults to &#39;topright&#39;.</span>
+<span class="sd">        &quot;&quot;&quot;</span>        
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">ipyleaflet</span><span class="o">.</span><span class="n">LayersControl</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">))</span>
+
     <span class="k">def</span> <span class="nf">layer_opacity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Changes layer opacity.</span>
 
@@ -3550,32 +3587,43 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Failed to add the specified TileLayer.&quot;</span><span class="p">)</span>
             <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">add_vector_tile_layer</span><span class="p">(</span>
+    <span class="k">def</span> <span class="nf">add_vector_tile</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://tile.nextzen.org/tilezen/vector/v1/512/all/</span><span class="si">{z}</span><span class="s2">/</span><span class="si">{x}</span><span class="s2">/</span><span class="si">{y}</span><span class="s2">.mvt?api_key=gCZXZglvRQa6sB2z7JzL1w&quot;</span><span class="p">,</span>
+        <span class="n">url</span><span class="p">,</span>
         <span class="n">attribution</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-        <span class="n">vector_tile_layer_styles</span><span class="o">=</span><span class="nb">dict</span><span class="p">(),</span>
+        <span class="n">styles</span><span class="o">=</span><span class="p">{},</span>
+        <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Vector Tile&quot;</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a VectorTileLayer to the map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a VectorTileLayer to the map. It wraps the ipyleaflet.VectorTileLayer class. See</span>
+<span class="sd">            https://ipyleaflet.readthedocs.io/en/latest/layers/vector_tile.html</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            url (str, optional): The URL of the tile layer. Defaults to &#39;https://tile.nextzen.org/tilezen/vector/v1/512/all/{z}/{x}/{y}.mvt?api_key=gCZXZglvRQa6sB2z7JzL1w&#39;.</span>
+<span class="sd">            url (str, optional): The URL of the tile layer, such as</span>
+<span class="sd">                &#39;https://tile.nextzen.org/tilezen/vector/v1/512/all/{z}/{x}/{y}.mvt?api_key=gCZXZglvRQa6sB2z7JzL1w&#39;.</span>
 <span class="sd">            attribution (str, optional): The attribution to use. Defaults to &#39;&#39;.</span>
-<span class="sd">            vector_tile_layer_styles (dict,optional): Style dict, specific to the vector tile source.</span>
+<span class="sd">            styles (dict,optional): Style dict, specific to the vector tile source.</span>
+<span class="sd">            layer_name (str, optional): The layer name to use for the layer. Defaults to &#39;Vector Tile&#39;.</span>
+<span class="sd">            kwargs: Additional keyword arguments to pass to the ipyleaflet.VectorTileLayer class.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="s2">&quot;vector_tile_layer_styles&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">styles</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;vector_tile_layer_styles&quot;</span><span class="p">]</span>
+            <span class="k">del</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;vector_tile_layer_styles&quot;</span><span class="p">]</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">vector_tile_layer</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">VectorTileLayer</span><span class="p">(</span>
                 <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
                 <span class="n">attribution</span><span class="o">=</span><span class="n">attribution</span><span class="p">,</span>
-                <span class="n">vector_tile_layer_styles</span><span class="o">=</span><span class="n">vector_tile_layer_styles</span><span class="p">,</span>
+                <span class="n">vector_tile_layer_styles</span><span class="o">=</span><span class="n">styles</span><span class="p">,</span>
                 <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
             <span class="p">)</span>
+            <span class="n">vector_tile_layer</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">layer_name</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">vector_tile_layer</span><span class="p">)</span>
 
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Failed to add the specified VectorTileLayer.&quot;</span><span class="p">)</span>
             <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+    <span class="n">add_vector_tile_layer</span> <span class="o">=</span> <span class="n">add_vector_tile</span>
 
     <span class="k">def</span> <span class="nf">add_osm_from_geocode</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
@@ -9122,6 +9170,57 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
 
 
 
+<h3 id="leafmap.leafmap.Map.add_layer_control" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">add_layer_control</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s1">&#39;topright&#39;</span><span class="p">)</span></code>
+
+
+<a href="#leafmap.leafmap.Map.add_layer_control" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Adds a layer control to the map.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>position</code></td>
+        <td><code>str</code></td>
+        <td><p>The position of the layer control. Defaults to 'topright'.</p></td>
+        <td><code>&#39;topright&#39;</code></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/leafmap.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_layer_control</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;topright&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a layer control to the map.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        position (str, optional): The position of the layer control. Defaults to &#39;topright&#39;.</span>
+<span class="sd">    &quot;&quot;&quot;</span>        
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">ipyleaflet</span><span class="o">.</span><span class="n">LayersControl</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">))</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
 <h3 id="leafmap.leafmap.Map.add_legend" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">add_legend</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Legend&#39;</span><span class="p">,</span> <span class="n">legend_dict</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s1">&#39;bottomright&#39;</span><span class="p">,</span> <span class="n">builtin_legend</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
@@ -13063,15 +13162,16 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
 
 
 
-<h3 id="leafmap.leafmap.Map.add_vector_tile_layer" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">add_vector_tile_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://tile.nextzen.org/tilezen/vector/v1/512/all/</span><span class="si">{z}</span><span class="s1">/</span><span class="si">{x}</span><span class="s1">/</span><span class="si">{y}</span><span class="s1">.mvt?api_key=gCZXZglvRQa6sB2z7JzL1w&#39;</span><span class="p">,</span> <span class="n">attribution</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">vector_tile_layer_styles</span><span class="o">=</span><span class="p">{},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<h3 id="leafmap.leafmap.Map.add_vector_tile" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">add_vector_tile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">attribution</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">styles</span><span class="o">=</span><span class="p">{},</span> <span class="n">layer_name</span><span class="o">=</span><span class="s1">&#39;Vector Tile&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
-<a href="#leafmap.leafmap.Map.add_vector_tile_layer" class="headerlink" title="Permanent link">&para;</a></h3>
+<a href="#leafmap.leafmap.Map.add_vector_tile" class="headerlink" title="Permanent link">&para;</a></h3>
 
     <div class="doc doc-contents ">
 
-      <p>Adds a VectorTileLayer to the map.</p>
+      <p>Adds a VectorTileLayer to the map. It wraps the ipyleaflet.VectorTileLayer class. See
+    https://ipyleaflet.readthedocs.io/en/latest/layers/vector_tile.html</p>
 
 <p><strong>Parameters:</strong></p>
 <table>
@@ -13087,8 +13187,9 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
       <tr>
         <td><code>url</code></td>
         <td><code>str</code></td>
-        <td><p>The URL of the tile layer. Defaults to 'https://tile.nextzen.org/tilezen/vector/v1/512/all/{z}/{x}/{y}.mvt?api_key=gCZXZglvRQa6sB2z7JzL1w'.</p></td>
-        <td><code>&#39;https://tile.nextzen.org/tilezen/vector/v1/512/all/{z}/{x}/{y}.mvt?api_key=gCZXZglvRQa6sB2z7JzL1w&#39;</code></td>
+        <td><p>The URL of the tile layer, such as
+'https://tile.nextzen.org/tilezen/vector/v1/512/all/{z}/{x}/{y}.mvt?api_key=gCZXZglvRQa6sB2z7JzL1w'.</p></td>
+        <td><em>required</em></td>
       </tr>
       <tr>
         <td><code>attribution</code></td>
@@ -13097,36 +13198,161 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <td><code>&#39;&#39;</code></td>
       </tr>
       <tr>
-        <td><code>vector_tile_layer_styles</code></td>
+        <td><code>styles</code></td>
         <td><code>dict,optional</code></td>
         <td><p>Style dict, specific to the vector tile source.</p></td>
+        <td><code>{}</code></td>
+      </tr>
+      <tr>
+        <td><code>layer_name</code></td>
+        <td><code>str</code></td>
+        <td><p>The layer name to use for the layer. Defaults to 'Vector Tile'.</p></td>
+        <td><code>&#39;Vector Tile&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>kwargs</code></td>
+        <td></td>
+        <td><p>Additional keyword arguments to pass to the ipyleaflet.VectorTileLayer class.</p></td>
         <td><code>{}</code></td>
       </tr>
   </tbody>
 </table>
         <details class="quote">
           <summary>Source code in <code>leafmap/leafmap.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_vector_tile_layer</span><span class="p">(</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_vector_tile</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
-    <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://tile.nextzen.org/tilezen/vector/v1/512/all/</span><span class="si">{z}</span><span class="s2">/</span><span class="si">{x}</span><span class="s2">/</span><span class="si">{y}</span><span class="s2">.mvt?api_key=gCZXZglvRQa6sB2z7JzL1w&quot;</span><span class="p">,</span>
+    <span class="n">url</span><span class="p">,</span>
     <span class="n">attribution</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-    <span class="n">vector_tile_layer_styles</span><span class="o">=</span><span class="nb">dict</span><span class="p">(),</span>
+    <span class="n">styles</span><span class="o">=</span><span class="p">{},</span>
+    <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Vector Tile&quot;</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a VectorTileLayer to the map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a VectorTileLayer to the map. It wraps the ipyleaflet.VectorTileLayer class. See</span>
+<span class="sd">        https://ipyleaflet.readthedocs.io/en/latest/layers/vector_tile.html</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        url (str, optional): The URL of the tile layer. Defaults to &#39;https://tile.nextzen.org/tilezen/vector/v1/512/all/{z}/{x}/{y}.mvt?api_key=gCZXZglvRQa6sB2z7JzL1w&#39;.</span>
+<span class="sd">        url (str, optional): The URL of the tile layer, such as</span>
+<span class="sd">            &#39;https://tile.nextzen.org/tilezen/vector/v1/512/all/{z}/{x}/{y}.mvt?api_key=gCZXZglvRQa6sB2z7JzL1w&#39;.</span>
 <span class="sd">        attribution (str, optional): The attribution to use. Defaults to &#39;&#39;.</span>
-<span class="sd">        vector_tile_layer_styles (dict,optional): Style dict, specific to the vector tile source.</span>
+<span class="sd">        styles (dict,optional): Style dict, specific to the vector tile source.</span>
+<span class="sd">        layer_name (str, optional): The layer name to use for the layer. Defaults to &#39;Vector Tile&#39;.</span>
+<span class="sd">        kwargs: Additional keyword arguments to pass to the ipyleaflet.VectorTileLayer class.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="s2">&quot;vector_tile_layer_styles&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+        <span class="n">styles</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;vector_tile_layer_styles&quot;</span><span class="p">]</span>
+        <span class="k">del</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;vector_tile_layer_styles&quot;</span><span class="p">]</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">vector_tile_layer</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">VectorTileLayer</span><span class="p">(</span>
             <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
             <span class="n">attribution</span><span class="o">=</span><span class="n">attribution</span><span class="p">,</span>
-            <span class="n">vector_tile_layer_styles</span><span class="o">=</span><span class="n">vector_tile_layer_styles</span><span class="p">,</span>
+            <span class="n">vector_tile_layer_styles</span><span class="o">=</span><span class="n">styles</span><span class="p">,</span>
             <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
         <span class="p">)</span>
+        <span class="n">vector_tile_layer</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">layer_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">vector_tile_layer</span><span class="p">)</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Failed to add the specified VectorTileLayer.&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="leafmap.leafmap.Map.add_vector_tile_layer" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">add_vector_tile_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">attribution</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">styles</span><span class="o">=</span><span class="p">{},</span> <span class="n">layer_name</span><span class="o">=</span><span class="s1">&#39;Vector Tile&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+
+<a href="#leafmap.leafmap.Map.add_vector_tile_layer" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Adds a VectorTileLayer to the map. It wraps the ipyleaflet.VectorTileLayer class. See
+    https://ipyleaflet.readthedocs.io/en/latest/layers/vector_tile.html</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>url</code></td>
+        <td><code>str</code></td>
+        <td><p>The URL of the tile layer, such as
+'https://tile.nextzen.org/tilezen/vector/v1/512/all/{z}/{x}/{y}.mvt?api_key=gCZXZglvRQa6sB2z7JzL1w'.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>attribution</code></td>
+        <td><code>str</code></td>
+        <td><p>The attribution to use. Defaults to ''.</p></td>
+        <td><code>&#39;&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>styles</code></td>
+        <td><code>dict,optional</code></td>
+        <td><p>Style dict, specific to the vector tile source.</p></td>
+        <td><code>{}</code></td>
+      </tr>
+      <tr>
+        <td><code>layer_name</code></td>
+        <td><code>str</code></td>
+        <td><p>The layer name to use for the layer. Defaults to 'Vector Tile'.</p></td>
+        <td><code>&#39;Vector Tile&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>kwargs</code></td>
+        <td></td>
+        <td><p>Additional keyword arguments to pass to the ipyleaflet.VectorTileLayer class.</p></td>
+        <td><code>{}</code></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/leafmap.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_vector_tile</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">url</span><span class="p">,</span>
+    <span class="n">attribution</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="n">styles</span><span class="o">=</span><span class="p">{},</span>
+    <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Vector Tile&quot;</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a VectorTileLayer to the map. It wraps the ipyleaflet.VectorTileLayer class. See</span>
+<span class="sd">        https://ipyleaflet.readthedocs.io/en/latest/layers/vector_tile.html</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        url (str, optional): The URL of the tile layer, such as</span>
+<span class="sd">            &#39;https://tile.nextzen.org/tilezen/vector/v1/512/all/{z}/{x}/{y}.mvt?api_key=gCZXZglvRQa6sB2z7JzL1w&#39;.</span>
+<span class="sd">        attribution (str, optional): The attribution to use. Defaults to &#39;&#39;.</span>
+<span class="sd">        styles (dict,optional): Style dict, specific to the vector tile source.</span>
+<span class="sd">        layer_name (str, optional): The layer name to use for the layer. Defaults to &#39;Vector Tile&#39;.</span>
+<span class="sd">        kwargs: Additional keyword arguments to pass to the ipyleaflet.VectorTileLayer class.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="s2">&quot;vector_tile_layer_styles&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+        <span class="n">styles</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;vector_tile_layer_styles&quot;</span><span class="p">]</span>
+        <span class="k">del</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;vector_tile_layer_styles&quot;</span><span class="p">]</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">vector_tile_layer</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">VectorTileLayer</span><span class="p">(</span>
+            <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
+            <span class="n">attribution</span><span class="o">=</span><span class="n">attribution</span><span class="p">,</span>
+            <span class="n">vector_tile_layer_styles</span><span class="o">=</span><span class="n">styles</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">vector_tile_layer</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">layer_name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">vector_tile_layer</span><span class="p">)</span>
 
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
