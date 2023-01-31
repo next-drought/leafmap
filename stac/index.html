@@ -1982,6 +1982,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/64_stac_search/" class="md-nav__link">
+        64 stac search
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -5179,7 +5193,7 @@ into child assets to access data from non-public sources. Defaults to None.</p><
 
 
 <h2 id="leafmap.stac.stac_search" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">stac_search</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span> <span class="n">max_items</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">ids</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">collections</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">intersects</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">datetime</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">query</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">filter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filter_lang</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sortby</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">get_item_col</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">get_items</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">get_links</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">get_gdf</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">get_info</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">stac_search</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span> <span class="n">max_items</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">ids</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">collections</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">intersects</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">datetime</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">query</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">filter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filter_lang</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sortby</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">get_collection</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">get_items</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">get_assets</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">get_links</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">get_gdf</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">get_info</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
 <a href="#leafmap.stac.stac_search" class="headerlink" title="Permanent link">&para;</a></h2>
@@ -5316,7 +5330,7 @@ unmarshalling errors. Defaults to None.</p></td>
         <td><code>None</code></td>
       </tr>
       <tr>
-        <td><code>get_item_col</code></td>
+        <td><code>get_collection</code></td>
         <td><code>bool</code></td>
         <td><p>True to return a pystac.ItemCollection. Defaults to False.</p></td>
         <td><code>False</code></td>
@@ -5325,6 +5339,12 @@ unmarshalling errors. Defaults to None.</p></td>
         <td><code>get_items</code></td>
         <td><code>bool</code></td>
         <td><p>True to return a list of pystac.Item. Defaults to False.</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>get_assets</code></td>
+        <td><code>bool</code></td>
+        <td><p>True to return a list of pystac.Asset. Defaults to False.</p></td>
         <td><code>False</code></td>
       </tr>
       <tr>
@@ -5379,8 +5399,9 @@ unmarshalling errors. Defaults to None.</p></td>
     <span class="n">filter_lang</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">sortby</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">fields</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">get_item_col</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">get_collection</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="n">get_items</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">get_assets</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="n">get_links</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="n">get_gdf</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="n">get_info</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
@@ -5435,8 +5456,9 @@ unmarshalling errors. Defaults to None.</p></td>
 <span class="sd">        fields (list, optional): A list of fields to include in the response. Note this may result in</span>
 <span class="sd">            invalid STAC objects, as they may not have required fields. Use items_as_dicts to avoid object</span>
 <span class="sd">            unmarshalling errors. Defaults to None.</span>
-<span class="sd">        get_item_col (bool, optional): True to return a pystac.ItemCollection. Defaults to False.</span>
+<span class="sd">        get_collection (bool, optional): True to return a pystac.ItemCollection. Defaults to False.</span>
 <span class="sd">        get_items (bool, optional): True to return a list of pystac.Item. Defaults to False.</span>
+<span class="sd">        get_assets (bool, optional): True to return a list of pystac.Asset. Defaults to False.</span>
 <span class="sd">        get_links (bool, optional): True to return a list of links. Defaults to False.</span>
 <span class="sd">        get_gdf (bool, optional): True to return a GeoDataFrame. Defaults to False.</span>
 <span class="sd">        **kwargs: Additional keyword arguments to pass to the stac_client() function.</span>
@@ -5473,10 +5495,17 @@ unmarshalling errors. Defaults to None.</p></td>
             <span class="n">fields</span><span class="o">=</span><span class="n">fields</span><span class="p">,</span>
         <span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">get_item_col</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">get_collection</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">search</span><span class="o">.</span><span class="n">item_collection</span><span class="p">()</span>
         <span class="k">elif</span> <span class="n">get_items</span><span class="p">:</span>
-            <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">search</span><span class="o">.</span><span class="n">item_collection</span><span class="p">())</span>
+            <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">search</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+        <span class="k">elif</span> <span class="n">get_assets</span><span class="p">:</span>
+            <span class="n">assets</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">search</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">assets</span><span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+                <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">item</span><span class="o">.</span><span class="n">get_assets</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="n">assets</span><span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">id</span><span class="p">][</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">href</span>
+            <span class="k">return</span> <span class="n">assets</span>
         <span class="k">elif</span> <span class="n">get_links</span><span class="p">:</span>
             <span class="k">return</span> <span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">get_self_href</span><span class="p">()</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">search</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
         <span class="k">elif</span> <span class="n">get_gdf</span><span class="p">:</span>
@@ -5487,7 +5516,7 @@ unmarshalling errors. Defaults to None.</p></td>
             <span class="p">)</span>
             <span class="k">return</span> <span class="n">gdf</span>
         <span class="k">elif</span> <span class="n">get_info</span><span class="p">:</span>
-            <span class="n">items</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">search</span><span class="o">.</span><span class="n">item_collection</span><span class="p">())</span>
+            <span class="n">items</span> <span class="o">=</span> <span class="n">search</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
             <span class="n">info</span> <span class="o">=</span> <span class="p">{}</span>
             <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
                 <span class="n">info</span><span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
