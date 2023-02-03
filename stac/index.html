@@ -5681,6 +5681,11 @@ unmarshalling errors. Defaults to None.</p></td>
             <span class="s2">&quot;bands&quot;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">get_assets</span><span class="p">()</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span>
             <span class="s2">&quot;assets&quot;</span><span class="p">:</span> <span class="n">item</span><span class="o">.</span><span class="n">get_assets</span><span class="p">(),</span>
         <span class="p">}</span>
+        <span class="n">links</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">assets</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">get_assets</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">assets</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">links</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">href</span>
+        <span class="n">info</span><span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">id</span><span class="p">][</span><span class="s2">&quot;links&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">links</span>
     <span class="k">return</span> <span class="n">info</span>
 </code></pre></div>
         </details>
