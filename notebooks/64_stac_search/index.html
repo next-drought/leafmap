@@ -2929,9 +2929,10 @@ bbox = [-122.2751, 47.5469, -121.9613, 47.7458]</div>
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">search</span> <span class="o">=</span> <span class="n">leafmap</span><span class="o">.</span><span class="n">stac_search</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
+    <span class="n">max_items</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">collections</span><span class="o">=</span><span class="p">[</span><span class="n">collection</span><span class="p">],</span>
     <span class="n">bbox</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span>
     <span class="n">datetime</span><span class="o">=</span><span class="n">time_range</span><span class="p">,</span>
-    <span class="n">max_items</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
     <span class="n">query</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;eo:cloud_cover&quot;</span><span class="p">:{</span><span class="s2">&quot;lt&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">}},</span>
     <span class="n">sortby</span><span class="o">=</span><span class="p">[{</span> <span class="s1">&#39;field&#39;</span><span class="p">:</span> <span class="s1">&#39;properties.eo:cloud_cover&#39;</span><span class="p">,</span> <span class="s1">&#39;direction&#39;</span><span class="p">:</span> <span class="s1">&#39;asc&#39;</span> <span class="p">}],</span>
 <span class="p">)</span>
@@ -2939,9 +2940,10 @@ bbox = [-122.2751, 47.5469, -121.9613, 47.7458]</div>
 </pre></div>
 <div id="cell-4" class="clipboard-copy-txt">search = leafmap.stac_search(
     url=url,
+    max_items=10,
+    collections=[collection],
     bbox=bbox,
     datetime=time_range,
-    max_items=10,
     query={"eo:cloud_cover":{"lt":10}},
     sortby=[{ 'field': 'properties.eo:cloud_cover', 'direction': 'asc' }],
 )
@@ -2969,7 +2971,7 @@ search</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;pystac_client.item_search.ItemSearch at 0x7fc027ecc640&gt;</pre>
+<pre>&lt;pystac_client.item_search.ItemSearch at 0x7f7666194760&gt;</pre>
 </div>
 
 </div>
@@ -3002,18 +3004,20 @@ search</div>
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">search</span> <span class="o">=</span> <span class="n">leafmap</span><span class="o">.</span><span class="n">stac_search</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
+    <span class="n">max_items</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">collections</span><span class="o">=</span><span class="p">[</span><span class="n">collection</span><span class="p">],</span>
     <span class="n">bbox</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span>
     <span class="n">datetime</span><span class="o">=</span><span class="n">time_range</span><span class="p">,</span>
-    <span class="n">max_items</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
     <span class="n">get_collection</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="c1"># search</span>
 </pre></div>
 <div id="cell-5" class="clipboard-copy-txt">search = leafmap.stac_search(
     url=url,
+    max_items=10,
+    collections=[collection],
     bbox=bbox,
     datetime=time_range,
-    max_items=10,
     get_collection=True,
 )
 # search</div>
@@ -3048,18 +3052,20 @@ search</div>
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">search</span> <span class="o">=</span> <span class="n">leafmap</span><span class="o">.</span><span class="n">stac_search</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
+    <span class="n">max_items</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">collections</span><span class="o">=</span><span class="p">[</span><span class="n">collection</span><span class="p">],</span>
     <span class="n">bbox</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span>
     <span class="n">datetime</span><span class="o">=</span><span class="n">time_range</span><span class="p">,</span>
-    <span class="n">max_items</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
     <span class="n">get_gdf</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">search</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 <div id="cell-6" class="clipboard-copy-txt">search = leafmap.stac_search(
     url=url,
+    max_items=10,
+    collections=[collection],
     bbox=bbox,
     datetime=time_range,
-    max_items=10,
     get_gdf=True,
 )
 search.head()</div>
@@ -3114,16 +3120,16 @@ search.head()</div>
       <th>mgrs:latitude_band</th>
       <th>mgrs:grid_square</th>
       <th>...</th>
-      <th>proj:transform</th>
-      <th>landsat:cloud_cover_land</th>
-      <th>landsat:wrs_type</th>
-      <th>landsat:wrs_path</th>
-      <th>landsat:wrs_row</th>
-      <th>landsat:collection_category</th>
-      <th>landsat:collection_number</th>
-      <th>landsat:correction</th>
-      <th>landsat:scene_id</th>
-      <th>sci:doi</th>
+      <th>s2:datastrip_id</th>
+      <th>s2:granule_id</th>
+      <th>s2:reflectance_conversion_factor</th>
+      <th>datetime</th>
+      <th>s2:sequence</th>
+      <th>earthsearch:s3_path</th>
+      <th>earthsearch:payload_id</th>
+      <th>earthsearch:boa_offset_applied</th>
+      <th>processing:software</th>
+      <th>updated</th>
     </tr>
   </thead>
   <tbody>
@@ -3136,71 +3142,23 @@ search.head()</div>
       <td>[msi]</td>
       <td>64.642105</td>
       <td>32610</td>
-      <td>10.0</td>
+      <td>10</td>
       <td>T</td>
       <td>ET</td>
       <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>S2B_OPER_MSI_L2A_DS_EPAE_20201231T212743_S2020...</td>
+      <td>S2B_OPER_MSI_L2A_TL_EPAE_20201231T212743_A0199...</td>
+      <td>1.034125</td>
+      <td>2020-12-31T19:21:21.475000Z</td>
+      <td>0</td>
+      <td>s3://sentinel-cogs/sentinel-s2-l2a-cogs/10/T/E...</td>
+      <td>roda-sentinel2/workflow-sentinel2-to-stac/6658...</td>
+      <td>False</td>
+      <td>{'sentinel2-to-stac': '0.1.0'}</td>
+      <td>2022-11-06T15:26:41.911Z</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>POLYGON ((-123.00025 47.85369, -121.53274 47.8...</td>
-      <td>2022-11-06T15:26:41.813Z</td>
-      <td>sentinel-2b</td>
-      <td>sentinel-2</td>
-      <td>[msi]</td>
-      <td>62.463000</td>
-      <td>32610</td>
-      <td>10.0</td>
-      <td>T</td>
-      <td>ET</td>
-      <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>POLYGON ((-122.72529 48.50871, -123.34702 46.8...</td>
-      <td>2022-11-07T02:55:45.791Z</td>
-      <td>landsat-8</td>
-      <td>NaN</td>
-      <td>[oli, tirs]</td>
-      <td>100.000000</td>
-      <td>32610</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>[30, 0, 471585, 0, -30, 5373315]</td>
-      <td>100.0</td>
-      <td>2</td>
-      <td>046</td>
-      <td>027</td>
-      <td>T2</td>
-      <td>02</td>
-      <td>L2SP</td>
-      <td>LC80460272020364LGN00</td>
-      <td>10.5066/P9OGBGM6</td>
-    </tr>
-    <tr>
-      <th>3</th>
       <td>POLYGON ((-122.79462 47.85351, -121.53274 47.8...</td>
       <td>2022-11-06T15:29:35.737Z</td>
       <td>sentinel-2b</td>
@@ -3208,48 +3166,96 @@ search.head()</div>
       <td>[msi]</td>
       <td>22.943574</td>
       <td>32610</td>
-      <td>10.0</td>
+      <td>10</td>
       <td>T</td>
       <td>ET</td>
       <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>S2B_OPER_MSI_L2A_DS_EPAE_20201228T211944_S2020...</td>
+      <td>S2B_OPER_MSI_L2A_TL_EPAE_20201228T211944_A0199...</td>
+      <td>1.033888</td>
+      <td>2020-12-28T19:11:24.522000Z</td>
+      <td>0</td>
+      <td>s3://sentinel-cogs/sentinel-s2-l2a-cogs/10/T/E...</td>
+      <td>roda-sentinel2/workflow-sentinel2-to-stac/e6b4...</td>
+      <td>False</td>
+      <td>{'sentinel2-to-stac': '0.1.0'}</td>
+      <td>2022-11-06T15:29:35.737Z</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>POLYGON ((-123.00025 47.85369, -121.53274 47.8...</td>
+      <td>2022-11-06T14:24:17.700Z</td>
+      <td>sentinel-2a</td>
+      <td>sentinel-2</td>
+      <td>[msi]</td>
+      <td>92.082709</td>
+      <td>32610</td>
+      <td>10</td>
+      <td>T</td>
+      <td>ET</td>
+      <td>...</td>
+      <td>S2A_OPER_MSI_L2A_DS_VGS2_20201226T212843_S2020...</td>
+      <td>S2A_OPER_MSI_L2A_TL_VGS2_20201226T212843_A0287...</td>
+      <td>1.033680</td>
+      <td>2020-12-26T19:21:22.738000Z</td>
+      <td>0</td>
+      <td>s3://sentinel-cogs/sentinel-s2-l2a-cogs/10/T/E...</td>
+      <td>roda-sentinel2/workflow-sentinel2-to-stac/438c...</td>
+      <td>False</td>
+      <td>{'sentinel2-to-stac': '0.1.0'}</td>
+      <td>2022-11-06T14:24:17.700Z</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>POLYGON ((-122.79970 47.85352, -121.53274 47.8...</td>
+      <td>2022-11-06T14:24:14.443Z</td>
+      <td>sentinel-2a</td>
+      <td>sentinel-2</td>
+      <td>[msi]</td>
+      <td>72.393963</td>
+      <td>32610</td>
+      <td>10</td>
+      <td>T</td>
+      <td>ET</td>
+      <td>...</td>
+      <td>S2A_OPER_MSI_L2A_DS_VGS2_20201223T213941_S2020...</td>
+      <td>S2A_OPER_MSI_L2A_TL_VGS2_20201223T213941_A0287...</td>
+      <td>1.033289</td>
+      <td>2020-12-23T19:11:25.818000Z</td>
+      <td>0</td>
+      <td>s3://sentinel-cogs/sentinel-s2-l2a-cogs/10/T/E...</td>
+      <td>roda-sentinel2/workflow-sentinel2-to-stac/fc27...</td>
+      <td>False</td>
+      <td>{'sentinel2-to-stac': '0.1.0'}</td>
+      <td>2022-11-06T14:24:14.443Z</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>POLYGON ((-122.79462 47.85351, -121.53274 47.8...</td>
-      <td>2022-11-06T15:29:35.672Z</td>
+      <td>POLYGON ((-123.00025 47.85369, -121.53274 47.8...</td>
+      <td>2022-11-06T14:24:20.015Z</td>
       <td>sentinel-2b</td>
       <td>sentinel-2</td>
       <td>[msi]</td>
-      <td>15.923800</td>
+      <td>92.342769</td>
       <td>32610</td>
-      <td>10.0</td>
+      <td>10</td>
       <td>T</td>
       <td>ET</td>
       <td>...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>S2B_OPER_MSI_L2A_DS_EPAE_20201221T211842_S2020...</td>
+      <td>S2B_OPER_MSI_L2A_TL_EPAE_20201221T211842_A0198...</td>
+      <td>1.032979</td>
+      <td>2020-12-21T19:21:19.594000Z</td>
+      <td>0</td>
+      <td>s3://sentinel-cogs/sentinel-s2-l2a-cogs/10/T/E...</td>
+      <td>roda-sentinel2/workflow-sentinel2-to-stac/f67b...</td>
+      <td>False</td>
+      <td>{'sentinel2-to-stac': '0.1.0'}</td>
+      <td>2022-11-06T14:24:20.015Z</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 56 columns</p>
+<p>5 rows × 42 columns</p>
 </div>
 </div>
 
@@ -3283,18 +3289,20 @@ search.head()</div>
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">search</span> <span class="o">=</span> <span class="n">leafmap</span><span class="o">.</span><span class="n">stac_search</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
+    <span class="n">max_items</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">collections</span><span class="o">=</span><span class="p">[</span><span class="n">collection</span><span class="p">],</span>
     <span class="n">bbox</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span>
     <span class="n">datetime</span><span class="o">=</span><span class="n">time_range</span><span class="p">,</span>
-    <span class="n">max_items</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
     <span class="n">get_assets</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="c1"># search</span>
 </pre></div>
 <div id="cell-7" class="clipboard-copy-txt">search = leafmap.stac_search(
     url=url,
+    max_items=10,
+    collections=[collection],
     bbox=bbox,
     datetime=time_range,
-    max_items=10,
     get_assets=True,
 )
 # search</div>
@@ -3329,18 +3337,20 @@ search.head()</div>
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">search</span> <span class="o">=</span> <span class="n">leafmap</span><span class="o">.</span><span class="n">stac_search</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
+    <span class="n">max_items</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">collections</span><span class="o">=</span><span class="p">[</span><span class="n">collection</span><span class="p">],</span>
     <span class="n">bbox</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span>
     <span class="n">datetime</span><span class="o">=</span><span class="n">time_range</span><span class="p">,</span>
-    <span class="n">max_items</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
     <span class="n">get_info</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="c1"># search</span>
 </pre></div>
 <div id="cell-8" class="clipboard-copy-txt">search = leafmap.stac_search(
     url=url,
+    max_items=10,
+    collections=[collection],
     bbox=bbox,
     datetime=time_range,
-    max_items=10,
     get_info=True,
 )
 # search</div>
@@ -3375,18 +3385,20 @@ search.head()</div>
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">search</span> <span class="o">=</span> <span class="n">leafmap</span><span class="o">.</span><span class="n">stac_search</span><span class="p">(</span>
     <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
+    <span class="n">max_items</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">collections</span><span class="o">=</span><span class="p">[</span><span class="n">collection</span><span class="p">],</span>
     <span class="n">bbox</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span>
     <span class="n">datetime</span><span class="o">=</span><span class="n">time_range</span><span class="p">,</span>
-    <span class="n">max_items</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
     <span class="n">get_links</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">search</span>
 </pre></div>
 <div id="cell-9" class="clipboard-copy-txt">search = leafmap.stac_search(
     url=url,
+    max_items=10,
+    collections=[collection],
     bbox=bbox,
     datetime=time_range,
-    max_items=10,
     get_links=True,
 )
 search</div>
@@ -3414,15 +3426,15 @@ search</div>
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
 <pre>[&#39;https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_10TET_20201231_0_L2A&#39;,
- &#39;https://earth-search.aws.element84.com/v1/collections/sentinel-2-l1c/items/S2B_10TET_20201231_0_L1C&#39;,
- &#39;https://earth-search.aws.element84.com/v1/collections/landsat-c2-l2/items/LC08_L2SP_046027_20201229_02_T2&#39;,
  &#39;https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_10TET_20201228_0_L2A&#39;,
- &#39;https://earth-search.aws.element84.com/v1/collections/sentinel-2-l1c/items/S2B_10TET_20201228_0_L1C&#39;,
- &#39;https://earth-search.aws.element84.com/v1/collections/landsat-c2-l2/items/LE07_L2SP_047027_20201228_02_T1&#39;,
  &#39;https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_10TET_20201226_0_L2A&#39;,
- &#39;https://earth-search.aws.element84.com/v1/collections/sentinel-2-l1c/items/S2A_10TET_20201226_0_L1C&#39;,
  &#39;https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_10TET_20201223_0_L2A&#39;,
- &#39;https://earth-search.aws.element84.com/v1/collections/sentinel-2-l1c/items/S2A_10TET_20201223_0_L1C&#39;]</pre>
+ &#39;https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_10TET_20201221_0_L2A&#39;,
+ &#39;https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_10TET_20201218_0_L2A&#39;,
+ &#39;https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_10TET_20201216_0_L2A&#39;,
+ &#39;https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_10TET_20201213_0_L2A&#39;,
+ &#39;https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_10TET_20201211_0_L2A&#39;,
+ &#39;https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_10TET_20201208_0_L2A&#39;]</pre>
 </div>
 
 </div>
@@ -3507,7 +3519,7 @@ search</div>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-01-31T20:44:34+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-01-31</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-02-03T04:53:04+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-02-03</span>
       
         <br>
         Created:
