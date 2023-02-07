@@ -1312,6 +1312,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#leafmap.common.is_studio_lab" class="md-nav__link">
+    is_studio_lab()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#leafmap.common.is_tool" class="md-nav__link">
     is_tool()
   </a>
@@ -3837,6 +3844,13 @@
         <li class="md-nav__item">
   <a href="#leafmap.common.is_on_aws" class="md-nav__link">
     is_on_aws()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.common.is_studio_lab" class="md-nav__link">
+    is_studio_lab()
   </a>
   
 </li>
@@ -13058,8 +13072,15 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
             <span class="s2">&quot;LOCALTILESERVER_CLIENT_PREFIX&quot;</span>
         <span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;JUPYTERHUB_SERVICE_PREFIX&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">/proxy/</span><span class="se">{{</span><span class="s2">port</span><span class="se">}}</span><span class="s2">&quot;</span>
 
-    <span class="k">if</span> <span class="n">is_on_aws</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">is_studio_lab</span><span class="p">():</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span>
+            <span class="s2">&quot;LOCALTILESERVER_CLIENT_PREFIX&quot;</span>
+        <span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;studiolab/default/jupyter/proxy/</span><span class="se">{{</span><span class="s2">port</span><span class="se">}}</span><span class="s2">&quot;</span>
+    <span class="k">elif</span> <span class="n">is_on_aws</span><span class="p">():</span>
         <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LOCALTILESERVER_CLIENT_PREFIX&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;proxy/</span><span class="si">{port}</span><span class="s2">&quot;</span>
+    <span class="k">elif</span> <span class="s2">&quot;prefix&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;LOCALTILESERVER_CLIENT_PREFIX&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;prefix&quot;</span><span class="p">]</span>
+        <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;prefix&quot;</span><span class="p">)</span>
 
     <span class="kn">from</span> <span class="nn">localtileserver</span> <span class="kn">import</span> <span class="p">(</span>
         <span class="n">get_leaflet_tile_layer</span><span class="p">,</span>
@@ -15930,9 +15951,64 @@ see https://numpy.org/doc/stable/user/basics.types.html. Defaults to 'uint8'.</p
 
     <span class="n">on_aws</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">output</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.aws&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">&quot;studiolab/bin&quot;</span> <span class="ow">in</span> <span class="n">item</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.aws&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">&quot;ec2-user&quot;</span> <span class="ow">in</span> <span class="n">item</span><span class="p">:</span>
             <span class="n">on_aws</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="k">return</span> <span class="n">on_aws</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="leafmap.common.is_studio_lab" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">is_studio_lab</span><span class="p">()</span></code>
+
+
+<a href="#leafmap.common.is_studio_lab" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Check if the current notebook is running on Studio Lab.</p>
+
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>bool</code></td>
+      <td><p>True if the notebook is running on Studio Lab.</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/common.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">is_studio_lab</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Check if the current notebook is running on Studio Lab.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        bool: True if the notebook is running on Studio Lab.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="kn">import</span> <span class="nn">psutil</span>
+
+    <span class="n">output</span> <span class="o">=</span> <span class="n">psutil</span><span class="o">.</span><span class="n">Process</span><span class="p">()</span><span class="o">.</span><span class="n">parent</span><span class="p">()</span><span class="o">.</span><span class="n">cmdline</span><span class="p">()</span>
+
+    <span class="n">on_studio_lab</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">output</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s2">&quot;studiolab/bin&quot;</span> <span class="ow">in</span> <span class="n">item</span><span class="p">:</span>
+            <span class="n">on_studio_lab</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="n">on_studio_lab</span>
 </code></pre></div>
         </details>
     </div>
