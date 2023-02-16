@@ -5311,6 +5311,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
         <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
         <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a GeoJSON file to the map.</span>
 
@@ -5450,12 +5451,23 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
 
         <span class="n">close_button</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">close_btn_click</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">)</span>
 
-        <span class="k">def</span> <span class="nf">update_html</span><span class="p">(</span><span class="n">feature</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="s2">&quot;fields&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">fields</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;fields&quot;</span><span class="p">]</span>
+            <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;fields&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">fields</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">def</span> <span class="nf">update_html</span><span class="p">(</span><span class="n">feature</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="n">fields</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+            <span class="k">if</span> <span class="n">fields</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">fields</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">feature</span><span class="p">[</span><span class="s2">&quot;properties&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+                <span class="k">if</span> <span class="s2">&quot;style&quot;</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">:</span>
+                    <span class="n">fields</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;style&quot;</span><span class="p">)</span>
 
             <span class="n">value</span> <span class="o">=</span> <span class="p">[</span>
                 <span class="s2">&quot;&lt;b&gt;</span><span class="si">{}</span><span class="s2">: &lt;/b&gt;</span><span class="si">{}</span><span class="s2">&lt;br&gt;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">feature</span><span class="p">[</span><span class="s2">&quot;properties&quot;</span><span class="p">][</span><span class="n">prop</span><span class="p">])</span>
-                <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">feature</span><span class="p">[</span><span class="s2">&quot;properties&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
-            <span class="p">][:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">fields</span>
+            <span class="p">]</span>
 
             <span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span><span class="si">{}</span><span class="s2">&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
             <span class="n">html</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
@@ -5536,6 +5548,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
         <span class="n">zoom_to_layer</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a GeoDataFrame to the map.</span>
 
@@ -5562,6 +5575,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="n">fill_colors</span><span class="p">,</span>
             <span class="n">info_mode</span><span class="p">,</span>
             <span class="n">encoding</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
         <span class="p">)</span>
 
         <span class="k">if</span> <span class="n">zoom_to_layer</span><span class="p">:</span>
@@ -6723,6 +6737,8 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
 <span class="sd">                style_callback = lambda feat: {&quot;fillColor&quot;: feat[&quot;properties&quot;][&quot;color&quot;]}</span>
 <span class="sd">            info_mode (str, optional): Displays the attributes by either on_hover or on_click. Any value other than &quot;on_hover&quot; or &quot;on_click&quot; will be treated as None. Defaults to &quot;on_hover&quot;.</span>
 <span class="sd">            encoding (str, optional): The encoding of the GeoJSON file. Defaults to &quot;utf-8&quot;.</span>
+<span class="sd">            **kwargs: Additional keyword arguments to pass to the GeoJSON class, such as fields, which can be a list of column names to be included in the popup.</span>
+
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="n">gdf</span><span class="p">,</span> <span class="n">legend_dict</span> <span class="o">=</span> <span class="n">classify</span><span class="p">(</span>
@@ -7860,6 +7876,12 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
         <td><p>The encoding of the GeoJSON file. Defaults to "utf-8".</p></td>
         <td><code>&#39;utf-8&#39;</code></td>
       </tr>
+      <tr>
+        <td><code>**kwargs</code></td>
+        <td></td>
+        <td><p>Additional keyword arguments to pass to the GeoJSON class, such as fields, which can be a list of column names to be included in the popup.</p></td>
+        <td><code>{}</code></td>
+      </tr>
   </tbody>
 </table>
         <details class="quote">
@@ -7943,6 +7965,8 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
 <span class="sd">            style_callback = lambda feat: {&quot;fillColor&quot;: feat[&quot;properties&quot;][&quot;color&quot;]}</span>
 <span class="sd">        info_mode (str, optional): Displays the attributes by either on_hover or on_click. Any value other than &quot;on_hover&quot; or &quot;on_click&quot; will be treated as None. Defaults to &quot;on_hover&quot;.</span>
 <span class="sd">        encoding (str, optional): The encoding of the GeoJSON file. Defaults to &quot;utf-8&quot;.</span>
+<span class="sd">        **kwargs: Additional keyword arguments to pass to the GeoJSON class, such as fields, which can be a list of column names to be included in the popup.</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">gdf</span><span class="p">,</span> <span class="n">legend_dict</span> <span class="o">=</span> <span class="n">classify</span><span class="p">(</span>
@@ -8008,7 +8032,7 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
 
 
 <h3 id="leafmap.leafmap.Map.add_gdf" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">add_gdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gdf</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s1">&#39;Untitled&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="p">{},</span> <span class="n">hover_style</span><span class="o">=</span><span class="p">{},</span> <span class="n">style_callback</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;black&#39;</span><span class="p">],</span> <span class="n">info_mode</span><span class="o">=</span><span class="s1">&#39;on_hover&#39;</span><span class="p">,</span> <span class="n">zoom_to_layer</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">add_gdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gdf</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s1">&#39;Untitled&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="p">{},</span> <span class="n">hover_style</span><span class="o">=</span><span class="p">{},</span> <span class="n">style_callback</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;black&#39;</span><span class="p">],</span> <span class="n">info_mode</span><span class="o">=</span><span class="s1">&#39;on_hover&#39;</span><span class="p">,</span> <span class="n">zoom_to_layer</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
 <a href="#leafmap.leafmap.Map.add_gdf" class="headerlink" title="Permanent link">&para;</a></h3>
@@ -8097,6 +8121,7 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
     <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
     <span class="n">zoom_to_layer</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a GeoDataFrame to the map.</span>
 
@@ -8123,6 +8148,7 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
         <span class="n">fill_colors</span><span class="p">,</span>
         <span class="n">info_mode</span><span class="p">,</span>
         <span class="n">encoding</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">)</span>
 
     <span class="k">if</span> <span class="n">zoom_to_layer</span><span class="p">:</span>
@@ -8276,7 +8302,7 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
 
 
 <h3 id="leafmap.leafmap.Map.add_geojson" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">add_geojson</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">in_geojson</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s1">&#39;Untitled&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="p">{},</span> <span class="n">hover_style</span><span class="o">=</span><span class="p">{},</span> <span class="n">style_callback</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;black&#39;</span><span class="p">],</span> <span class="n">info_mode</span><span class="o">=</span><span class="s1">&#39;on_hover&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">add_geojson</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">in_geojson</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s1">&#39;Untitled&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="p">{},</span> <span class="n">hover_style</span><span class="o">=</span><span class="p">{},</span> <span class="n">style_callback</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;black&#39;</span><span class="p">],</span> <span class="n">info_mode</span><span class="o">=</span><span class="s1">&#39;on_hover&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
 <a href="#leafmap.leafmap.Map.add_geojson" class="headerlink" title="Permanent link">&para;</a></h3>
@@ -8373,6 +8399,7 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
     <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
     <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
     <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a GeoJSON file to the map.</span>
 
@@ -8512,12 +8539,23 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
 
     <span class="n">close_button</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">close_btn_click</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">update_html</span><span class="p">(</span><span class="n">feature</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">if</span> <span class="s2">&quot;fields&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;fields&quot;</span><span class="p">]</span>
+        <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;fields&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">update_html</span><span class="p">(</span><span class="n">feature</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="n">fields</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="n">fields</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">fields</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">feature</span><span class="p">[</span><span class="s2">&quot;properties&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+            <span class="k">if</span> <span class="s2">&quot;style&quot;</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">:</span>
+                <span class="n">fields</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;style&quot;</span><span class="p">)</span>
 
         <span class="n">value</span> <span class="o">=</span> <span class="p">[</span>
             <span class="s2">&quot;&lt;b&gt;</span><span class="si">{}</span><span class="s2">: &lt;/b&gt;</span><span class="si">{}</span><span class="s2">&lt;br&gt;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">feature</span><span class="p">[</span><span class="s2">&quot;properties&quot;</span><span class="p">][</span><span class="n">prop</span><span class="p">])</span>
-            <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">feature</span><span class="p">[</span><span class="s2">&quot;properties&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
-        <span class="p">][:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">fields</span>
+        <span class="p">]</span>
 
         <span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span><span class="si">{}</span><span class="s2">&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
         <span class="n">html</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>

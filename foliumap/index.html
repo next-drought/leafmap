@@ -4642,7 +4642,11 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">tooltip</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="n">popup</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">if</span> <span class="n">info_mode</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">props</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;features&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;properties&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+            <span class="k">if</span> <span class="s2">&quot;fields&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+                <span class="n">props</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;fields&quot;</span><span class="p">]</span>
+                <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;fields&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">props</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;features&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;properties&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
             <span class="k">if</span> <span class="n">info_mode</span> <span class="o">==</span> <span class="s2">&quot;on_hover&quot;</span><span class="p">:</span>
                 <span class="n">tooltip</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">GeoJsonTooltip</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="n">props</span><span class="p">)</span>
             <span class="k">elif</span> <span class="n">info_mode</span> <span class="o">==</span> <span class="s2">&quot;on_click&quot;</span><span class="p">:</span>
@@ -5842,6 +5846,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
 <span class="sd">                highlight_function = lambda feat: {&quot;fillColor&quot;: feat[&quot;properties&quot;][&quot;color&quot;]}</span>
 <span class="sd">            info_mode (str, optional): Displays the attributes by either on_hover or on_click. Any value other than &quot;on_hover&quot; or &quot;on_click&quot; will be treated as None. Defaults to &quot;on_hover&quot;.</span>
 <span class="sd">            encoding (str, optional): The encoding of the GeoJSON file. Defaults to &quot;utf-8&quot;.</span>
+<span class="sd">            **kwargs: Additional keyword arguments to pass to the GeoJSON class, such as fields, which can be a list of column names to be included in the popup.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="kn">import</span> <span class="nn">warnings</span>
@@ -7311,6 +7316,12 @@ highlight_function = lambda feat: {"fillColor": feat["properties"][&quot;color&q
         <td><p>The encoding of the GeoJSON file. Defaults to "utf-8".</p></td>
         <td><code>&#39;utf-8&#39;</code></td>
       </tr>
+      <tr>
+        <td><code>**kwargs</code></td>
+        <td></td>
+        <td><p>Additional keyword arguments to pass to the GeoJSON class, such as fields, which can be a list of column names to be included in the popup.</p></td>
+        <td><code>{}</code></td>
+      </tr>
   </tbody>
 </table>
         <details class="quote">
@@ -7392,6 +7403,7 @@ highlight_function = lambda feat: {"fillColor": feat["properties"][&quot;color&q
 <span class="sd">            highlight_function = lambda feat: {&quot;fillColor&quot;: feat[&quot;properties&quot;][&quot;color&quot;]}</span>
 <span class="sd">        info_mode (str, optional): Displays the attributes by either on_hover or on_click. Any value other than &quot;on_hover&quot; or &quot;on_click&quot; will be treated as None. Defaults to &quot;on_hover&quot;.</span>
 <span class="sd">        encoding (str, optional): The encoding of the GeoJSON file. Defaults to &quot;utf-8&quot;.</span>
+<span class="sd">        **kwargs: Additional keyword arguments to pass to the GeoJSON class, such as fields, which can be a list of column names to be included in the popup.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="kn">import</span> <span class="nn">warnings</span>
@@ -7837,7 +7849,11 @@ highlight_function = lambda feat: {"fillColor": feat["properties"][&quot;color&q
     <span class="n">tooltip</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">popup</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="k">if</span> <span class="n">info_mode</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">props</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;features&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;properties&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="k">if</span> <span class="s2">&quot;fields&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">props</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;fields&quot;</span><span class="p">]</span>
+            <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;fields&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">props</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;features&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;properties&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
         <span class="k">if</span> <span class="n">info_mode</span> <span class="o">==</span> <span class="s2">&quot;on_hover&quot;</span><span class="p">:</span>
             <span class="n">tooltip</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">GeoJsonTooltip</span><span class="p">(</span><span class="n">fields</span><span class="o">=</span><span class="n">props</span><span class="p">)</span>
         <span class="k">elif</span> <span class="n">info_mode</span> <span class="o">==</span> <span class="s2">&quot;on_click&quot;</span><span class="p">:</span>
