@@ -3431,7 +3431,6 @@ Map            (<span title="folium.folium.Map">Map</span>)
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-
         <span class="c1"># Default map center location and zoom level</span>
         <span class="n">latlon</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
         <span class="n">zoom</span> <span class="o">=</span> <span class="mi">2</span>
@@ -3677,7 +3676,6 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">styles</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
-
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a WMS layer to the map.</span>
 
 <span class="sd">        Args:</span>
@@ -3947,7 +3945,6 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
         <span class="k">try</span><span class="p">:</span>
-
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
                 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
                 <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="n">latitude</span><span class="p">,</span> <span class="n">longitude</span><span class="p">,</span> <span class="n">value</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
@@ -4562,9 +4559,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="kn">import</span> <span class="nn">random</span>
 
         <span class="k">try</span><span class="p">:</span>
-
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">in_geojson</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-
                 <span class="k">if</span> <span class="n">in_geojson</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">):</span>
                     <span class="k">if</span> <span class="n">is_jupyterlite</span><span class="p">():</span>
                         <span class="kn">import</span> <span class="nn">pyodide</span>
@@ -4895,7 +4890,6 @@ Map            (<span title="folium.folium.Map">Map</span>)
             <span class="n">dp</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
 
         <span class="k">try</span><span class="p">:</span>
-
             <span class="n">dp</span><span class="o">.</span><span class="n">Report</span><span class="p">(</span><span class="n">dp</span><span class="o">.</span><span class="n">Plot</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span><span class="o">.</span><span class="n">upload</span><span class="p">(</span>
                 <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
                 <span class="n">description</span><span class="o">=</span><span class="n">description</span><span class="p">,</span>
@@ -4980,7 +4974,6 @@ Map            (<span title="folium.folium.Map">Map</span>)
                 <span class="n">output</span> <span class="o">=</span> <span class="n">st_folium</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">)</span>
                 <span class="k">return</span> <span class="n">output</span>
             <span class="k">else</span><span class="p">:</span>
-
                 <span class="c1"># if responsive:</span>
                 <span class="c1">#     make_map_responsive = &quot;&quot;&quot;</span>
                 <span class="c1">#     &lt;style&gt;</span>
@@ -5042,7 +5035,6 @@ Map            (<span title="folium.folium.Map">Map</span>)
             <span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
 
             <span class="k">if</span> <span class="s2">&quot;map_bounds&quot;</span> <span class="ow">in</span> <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="p">:</span>
-
                 <span class="n">bounds</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="p">[</span><span class="s2">&quot;map_bounds&quot;</span><span class="p">]</span>
 
                 <span class="bp">self</span><span class="o">.</span><span class="n">fit_bounds</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span>
@@ -5396,7 +5388,6 @@ Map            (<span title="folium.folium.Map">Map</span>)
                 <span class="p">)</span>
 
         <span class="k">if</span> <span class="n">items</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">icon_colors</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
                 <span class="n">icon_colors</span> <span class="o">=</span> <span class="n">icon_colors</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
             <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">icon_colors</span><span class="p">):</span>
@@ -5660,7 +5651,6 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">bounds</span> <span class="o">=</span> <span class="kc">None</span>
 
         <span class="k">try</span><span class="p">:</span>
-
             <span class="k">if</span> <span class="n">left_label</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">left_name</span> <span class="o">=</span> <span class="n">left_label</span>
             <span class="k">else</span><span class="p">:</span>
@@ -5937,7 +5927,6 @@ Map            (<span title="folium.folium.Map">Map</span>)
                 <span class="bp">self</span><span class="o">.</span><span class="n">add_html</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
             <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
-
                 <span class="k">if</span> <span class="n">position</span> <span class="o">==</span> <span class="s2">&quot;bottomleft&quot;</span><span class="p">:</span>
                     <span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
                 <span class="k">elif</span> <span class="n">position</span> <span class="o">==</span> <span class="s2">&quot;bottomright&quot;</span><span class="p">:</span>
@@ -5978,7 +5967,6 @@ Map            (<span title="folium.folium.Map">Map</span>)
             <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;position must be one of </span><span class="si">{</span><span class="n">allowed_positions</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
         <span class="k">try</span><span class="p">:</span>
-
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
                 <span class="n">widget</span> <span class="o">=</span> <span class="n">CustomControl</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">)</span>
                 <span class="n">widget</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
@@ -6284,7 +6272,6 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="n">display_options</span><span class="o">=</span><span class="p">{},</span>
         <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Velocity&quot;</span><span class="p">,</span>
     <span class="p">):</span>
-
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The folium plotting backend does not support this function.&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">user_roi_bounds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
@@ -7769,9 +7756,7 @@ highlight_function = lambda feat: {"fillColor": feat["properties"][&quot;color&q
     <span class="kn">import</span> <span class="nn">random</span>
 
     <span class="k">try</span><span class="p">:</span>
-
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">in_geojson</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-
             <span class="k">if</span> <span class="n">in_geojson</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">):</span>
                 <span class="k">if</span> <span class="n">is_jupyterlite</span><span class="p">():</span>
                     <span class="kn">import</span> <span class="nn">pyodide</span>
@@ -7977,7 +7962,6 @@ highlight_function = lambda feat: {"fillColor": feat["properties"][&quot;color&q
     <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
     <span class="k">try</span><span class="p">:</span>
-
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
             <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
             <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="n">latitude</span><span class="p">,</span> <span class="n">longitude</span><span class="p">,</span> <span class="n">value</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
@@ -8119,7 +8103,6 @@ the percentage ranging from 0 to 100, starting from the lower-left corner. Defau
             <span class="bp">self</span><span class="o">.</span><span class="n">add_html</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
         <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
-
             <span class="k">if</span> <span class="n">position</span> <span class="o">==</span> <span class="s2">&quot;bottomleft&quot;</span><span class="p">:</span>
                 <span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
             <span class="k">elif</span> <span class="n">position</span> <span class="o">==</span> <span class="s2">&quot;bottomright&quot;</span><span class="p">:</span>
@@ -10588,7 +10571,6 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
             <span class="p">)</span>
 
     <span class="k">if</span> <span class="n">items</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">icon_colors</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
             <span class="n">icon_colors</span> <span class="o">=</span> <span class="n">icon_colors</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
         <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">icon_colors</span><span class="p">):</span>
@@ -11899,7 +11881,6 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;position must be one of </span><span class="si">{</span><span class="n">allowed_positions</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
     <span class="k">try</span><span class="p">:</span>
-
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
             <span class="n">widget</span> <span class="o">=</span> <span class="n">CustomControl</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">)</span>
             <span class="n">widget</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
@@ -12036,7 +12017,6 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">styles</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Add a WMS layer to the map.</span>
 
 <span class="sd">    Args:</span>
@@ -12621,7 +12601,6 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <span class="n">dp</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
 
     <span class="k">try</span><span class="p">:</span>
-
         <span class="n">dp</span><span class="o">.</span><span class="n">Report</span><span class="p">(</span><span class="n">dp</span><span class="o">.</span><span class="n">Plot</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span><span class="o">.</span><span class="n">upload</span><span class="p">(</span>
             <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
             <span class="n">description</span><span class="o">=</span><span class="n">description</span><span class="p">,</span>
@@ -12884,7 +12863,6 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">bounds</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="k">try</span><span class="p">:</span>
-
         <span class="k">if</span> <span class="n">left_label</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">left_name</span> <span class="o">=</span> <span class="n">left_label</span>
         <span class="k">else</span><span class="p">:</span>
@@ -13111,7 +13089,6 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
 
         <span class="k">if</span> <span class="s2">&quot;map_bounds&quot;</span> <span class="ow">in</span> <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="p">:</span>
-
             <span class="n">bounds</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="p">[</span><span class="s2">&quot;map_bounds&quot;</span><span class="p">]</span>
 
             <span class="bp">self</span><span class="o">.</span><span class="n">fit_bounds</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span>
@@ -13836,7 +13813,6 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
             <span class="n">output</span> <span class="o">=</span> <span class="n">st_folium</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">output</span>
         <span class="k">else</span><span class="p">:</span>
-
             <span class="c1"># if responsive:</span>
             <span class="c1">#     make_map_responsive = &quot;&quot;&quot;</span>
             <span class="c1">#     &lt;style&gt;</span>
@@ -14575,9 +14551,7 @@ sidebyside.add_to(m)</p>
     <span class="kn">import</span> <span class="nn">random</span>
 
     <span class="k">try</span><span class="p">:</span>
-
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">in_geojson</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-
             <span class="k">if</span> <span class="n">in_geojson</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">):</span>
                 <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">in_geojson</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
             <span class="k">else</span><span class="p">:</span>

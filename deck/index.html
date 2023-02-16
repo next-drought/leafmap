@@ -2235,7 +2235,6 @@ Map            (<span title="pydeck.bindings.deck.Deck">Deck</span>)
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="k">try</span><span class="p">:</span>
-
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">layer</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">):</span>
                 <span class="n">pdk</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">custom_libraries</span> <span class="o">=</span> <span class="p">[</span>
                     <span class="p">{</span>
@@ -2264,7 +2263,6 @@ Map            (<span title="pydeck.bindings.deck.Deck">Deck</span>)
                 <span class="bp">self</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 
             <span class="k">elif</span> <span class="n">basemap</span> <span class="ow">in</span> <span class="n">basemaps</span><span class="p">:</span>
-
                 <span class="n">pdk</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">custom_libraries</span> <span class="o">=</span> <span class="p">[</span>
                     <span class="p">{</span>
                         <span class="s2">&quot;libraryName&quot;</span><span class="p">:</span> <span class="s2">&quot;MyTileLayerLibrary&quot;</span><span class="p">,</span>
@@ -2367,7 +2365,6 @@ Map            (<span title="pydeck.bindings.deck.Deck">Deck</span>)
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="k">try</span><span class="p">:</span>
-
             <span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
             <span class="kn">import</span> <span class="nn">fiona</span>
 
@@ -2560,7 +2557,6 @@ Map            (<span title="pydeck.bindings.deck.Deck">Deck</span>)
             <span class="bp">self</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 
         <span class="k">elif</span> <span class="n">basemap</span> <span class="ow">in</span> <span class="n">basemaps</span><span class="p">:</span>
-
             <span class="n">pdk</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">custom_libraries</span> <span class="o">=</span> <span class="p">[</span>
                 <span class="p">{</span>
                     <span class="s2">&quot;libraryName&quot;</span><span class="p">:</span> <span class="s2">&quot;MyTileLayerLibrary&quot;</span><span class="p">,</span>
@@ -2935,7 +2931,6 @@ Map            (<span title="pydeck.bindings.deck.Deck">Deck</span>)
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">try</span><span class="p">:</span>
-
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">layer</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">):</span>
             <span class="n">pdk</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">custom_libraries</span> <span class="o">=</span> <span class="p">[</span>
                 <span class="p">{</span>
@@ -3113,7 +3108,6 @@ Map            (<span title="pydeck.bindings.deck.Deck">Deck</span>)
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">try</span><span class="p">:</span>
-
         <span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
         <span class="kn">import</span> <span class="nn">fiona</span>
 

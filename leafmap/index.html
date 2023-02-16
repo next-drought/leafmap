@@ -3084,7 +3084,6 @@ ImageOverlay            (<span title="ipyleaflet.leaflet.ImageOverlay">ImageOver
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-
         <span class="kn">from</span> <span class="nn">base64</span> <span class="kn">import</span> <span class="n">b64encode</span>
         <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageSequence</span>
         <span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
@@ -3092,7 +3091,6 @@ ImageOverlay            (<span title="ipyleaflet.leaflet.ImageOverlay">ImageOver
         <span class="k">try</span><span class="p">:</span>
             <span class="n">url</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;url&quot;</span><span class="p">)</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="n">url</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">):</span>
-
                 <span class="n">url</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
                 <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
                     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">&quot;The provided file does not exist.&quot;</span><span class="p">)</span>
@@ -3196,7 +3194,6 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-
         <span class="k">if</span> <span class="s2">&quot;center&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
             <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;center&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
 
@@ -3282,13 +3279,11 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="bp">self</span><span class="o">.</span><span class="n">add_control</span><span class="p">(</span><span class="n">control</span><span class="p">)</span>
 
             <span class="k">def</span> <span class="nf">handle_draw</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">geo_json</span><span class="p">):</span>
-
                 <span class="k">if</span> <span class="s2">&quot;style&quot;</span> <span class="ow">in</span> <span class="n">geo_json</span><span class="p">[</span><span class="s2">&quot;properties&quot;</span><span class="p">]:</span>
                     <span class="k">del</span> <span class="n">geo_json</span><span class="p">[</span><span class="s2">&quot;properties&quot;</span><span class="p">][</span><span class="s2">&quot;style&quot;</span><span class="p">]</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">user_roi</span> <span class="o">=</span> <span class="n">geo_json</span>
 
                 <span class="k">if</span> <span class="n">action</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;created&quot;</span><span class="p">,</span> <span class="s2">&quot;edited&quot;</span><span class="p">]:</span>
-
                     <span class="c1"># feature = {</span>
                     <span class="c1">#     &quot;type&quot;: &quot;Feature&quot;,</span>
                     <span class="c1">#     &quot;geometry&quot;: geo_json[&quot;geometry&quot;],</span>
@@ -4256,7 +4251,6 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">bounds</span> <span class="o">=</span> <span class="kc">None</span>
 
         <span class="k">try</span><span class="p">:</span>
-
             <span class="n">controls</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">controls</span>
             <span class="n">layers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">clear_controls</span><span class="p">()</span>
@@ -4343,7 +4337,6 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
                 <span class="k">elif</span> <span class="n">right_layer</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">right_layer</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span>
                     <span class="s2">&quot;.geojson&quot;</span>
                 <span class="p">):</span>
-
                     <span class="k">if</span> <span class="s2">&quot;max_zoom&quot;</span> <span class="ow">in</span> <span class="n">right_args</span><span class="p">:</span>
                         <span class="k">del</span> <span class="n">right_args</span><span class="p">[</span><span class="s2">&quot;max_zoom&quot;</span><span class="p">]</span>
                     <span class="k">if</span> <span class="s2">&quot;max_native_zoom&quot;</span> <span class="ow">in</span> <span class="n">right_args</span><span class="p">:</span>
@@ -4395,7 +4388,6 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
                 <span class="bp">self</span><span class="o">.</span><span class="n">add_control</span><span class="p">(</span><span class="n">left_control</span><span class="p">)</span>
 
             <span class="k">if</span> <span class="n">right_label</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-
                 <span class="k">if</span> <span class="n">widget_layout</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                     <span class="n">widget_layout</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">padding</span><span class="o">=</span><span class="s2">&quot;0px 4px 0px 4px&quot;</span><span class="p">)</span>
                 <span class="n">right_widget</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">right_label</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="n">widget_layout</span><span class="p">)</span>
@@ -4591,7 +4583,6 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">legend_text</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">legend_html</span><span class="p">)</span>
 
         <span class="k">try</span><span class="p">:</span>
-
             <span class="n">legend_output_widget</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Output</span><span class="p">(</span>
                 <span class="n">layout</span><span class="o">=</span><span class="p">{</span>
                     <span class="c1"># &quot;border&quot;: &quot;1px solid black&quot;,</span>
@@ -4771,7 +4762,6 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
 
         <span class="k">try</span><span class="p">:</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="n">url</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">):</span>
-
                 <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
                     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The provided file does not exist.&quot;</span><span class="p">)</span>
                     <span class="k">return</span>
@@ -4843,7 +4833,6 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
-
             <span class="n">save</span> <span class="o">=</span> <span class="kc">True</span>
             <span class="k">if</span> <span class="n">outfile</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="k">if</span> <span class="ow">not</span> <span class="n">outfile</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.html&quot;</span><span class="p">):</span>
@@ -5338,11 +5327,8 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="n">style_callback_only</span> <span class="o">=</span> <span class="kc">True</span>
 
         <span class="k">try</span><span class="p">:</span>
-
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">in_geojson</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-
                 <span class="k">if</span> <span class="n">in_geojson</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">):</span>
-
                     <span class="k">if</span> <span class="n">is_jupyterlite</span><span class="p">():</span>
                         <span class="kn">import</span> <span class="nn">pyodide</span>
 
@@ -5458,7 +5444,6 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="n">fields</span> <span class="o">=</span> <span class="kc">None</span>
 
         <span class="k">def</span> <span class="nf">update_html</span><span class="p">(</span><span class="n">feature</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="n">fields</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-
             <span class="k">if</span> <span class="n">fields</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">fields</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">feature</span><span class="p">[</span><span class="s2">&quot;properties&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
                 <span class="k">if</span> <span class="s2">&quot;style&quot;</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">:</span>
@@ -5548,7 +5533,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
         <span class="n">zoom_to_layer</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span>
-        <span class="o">**</span><span class="n">kwargs</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a GeoDataFrame to the map.</span>
 
@@ -6005,7 +5990,6 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
                 <span class="p">)</span>
 
         <span class="k">if</span> <span class="n">items</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">icon_colors</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
                 <span class="n">icon_colors</span> <span class="o">=</span> <span class="n">icon_colors</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
             <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">icon_colors</span><span class="p">):</span>
@@ -6048,7 +6032,6 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
 
                 <span class="n">markers</span> <span class="o">=</span> <span class="p">[]</span>
                 <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">point</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">points</span><span class="p">):</span>
-
                     <span class="k">if</span> <span class="n">items</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                         <span class="n">marker_color</span> <span class="o">=</span> <span class="n">marker_colors</span><span class="p">[</span>
                             <span class="n">items</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">color_column</span><span class="p">][</span><span class="n">index</span><span class="p">])</span>
@@ -6173,7 +6156,6 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="kn">from</span> <span class="nn">ipyleaflet</span> <span class="kn">import</span> <span class="n">Heatmap</span>
 
         <span class="k">try</span><span class="p">:</span>
-
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
                 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
                 <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="n">latitude</span><span class="p">,</span> <span class="n">longitude</span><span class="p">,</span> <span class="n">value</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
@@ -6486,7 +6468,6 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="k">if</span> <span class="n">ext</span> <span class="o">==</span> <span class="s2">&quot;.geojson&quot;</span><span class="p">:</span>
             <span class="k">pass</span>
         <span class="k">elif</span> <span class="n">ext</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;.shp&quot;</span><span class="p">,</span> <span class="s2">&quot;.gpkg&quot;</span><span class="p">]:</span>
-
             <span class="k">if</span> <span class="n">ext</span> <span class="o">==</span> <span class="s2">&quot;.shp&quot;</span><span class="p">:</span>
                 <span class="n">geojson_to_shp</span><span class="p">(</span><span class="n">geojson</span><span class="p">,</span> <span class="n">out_file</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
@@ -8121,7 +8102,7 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
     <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
     <span class="n">zoom_to_layer</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span>
-    <span class="o">**</span><span class="n">kwargs</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a GeoDataFrame to the map.</span>
 
@@ -8426,11 +8407,8 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
         <span class="n">style_callback_only</span> <span class="o">=</span> <span class="kc">True</span>
 
     <span class="k">try</span><span class="p">:</span>
-
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">in_geojson</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-
             <span class="k">if</span> <span class="n">in_geojson</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">):</span>
-
                 <span class="k">if</span> <span class="n">is_jupyterlite</span><span class="p">():</span>
                     <span class="kn">import</span> <span class="nn">pyodide</span>
 
@@ -8546,7 +8524,6 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
         <span class="n">fields</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="k">def</span> <span class="nf">update_html</span><span class="p">(</span><span class="n">feature</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="n">fields</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-
         <span class="k">if</span> <span class="n">fields</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">fields</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">feature</span><span class="p">[</span><span class="s2">&quot;properties&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
             <span class="k">if</span> <span class="s2">&quot;style&quot;</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">:</span>
@@ -8712,7 +8689,6 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
     <span class="kn">from</span> <span class="nn">ipyleaflet</span> <span class="kn">import</span> <span class="n">Heatmap</span>
 
     <span class="k">try</span><span class="p">:</span>
-
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
             <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
             <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="n">latitude</span><span class="p">,</span> <span class="n">longitude</span><span class="p">,</span> <span class="n">value</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
@@ -9531,7 +9507,6 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
     <span class="n">legend_text</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">legend_html</span><span class="p">)</span>
 
     <span class="k">try</span><span class="p">:</span>
-
         <span class="n">legend_output_widget</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Output</span><span class="p">(</span>
             <span class="n">layout</span><span class="o">=</span><span class="p">{</span>
                 <span class="c1"># &quot;border&quot;: &quot;1px solid black&quot;,</span>
@@ -11727,7 +11702,6 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
             <span class="p">)</span>
 
     <span class="k">if</span> <span class="n">items</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">icon_colors</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
             <span class="n">icon_colors</span> <span class="o">=</span> <span class="n">icon_colors</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
         <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">icon_colors</span><span class="p">):</span>
@@ -11770,7 +11744,6 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
 
             <span class="n">markers</span> <span class="o">=</span> <span class="p">[]</span>
             <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">point</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">points</span><span class="p">):</span>
-
                 <span class="k">if</span> <span class="n">items</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                     <span class="n">marker_color</span> <span class="o">=</span> <span class="n">marker_colors</span><span class="p">[</span>
                         <span class="n">items</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">color_column</span><span class="p">][</span><span class="n">index</span><span class="p">])</span>
@@ -14652,7 +14625,6 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
 
     <span class="k">try</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">url</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">):</span>
-
             <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
                 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The provided file does not exist.&quot;</span><span class="p">)</span>
                 <span class="k">return</span>
@@ -14856,7 +14828,6 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="k">if</span> <span class="n">ext</span> <span class="o">==</span> <span class="s2">&quot;.geojson&quot;</span><span class="p">:</span>
         <span class="k">pass</span>
     <span class="k">elif</span> <span class="n">ext</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;.shp&quot;</span><span class="p">,</span> <span class="s2">&quot;.gpkg&quot;</span><span class="p">]:</span>
-
         <span class="k">if</span> <span class="n">ext</span> <span class="o">==</span> <span class="s2">&quot;.shp&quot;</span><span class="p">:</span>
             <span class="n">geojson_to_shp</span><span class="p">(</span><span class="n">geojson</span><span class="p">,</span> <span class="n">out_file</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
@@ -15031,7 +15002,6 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">bounds</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="k">try</span><span class="p">:</span>
-
         <span class="n">controls</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">controls</span>
         <span class="n">layers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">clear_controls</span><span class="p">()</span>
@@ -15118,7 +15088,6 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
             <span class="k">elif</span> <span class="n">right_layer</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">right_layer</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span>
                 <span class="s2">&quot;.geojson&quot;</span>
             <span class="p">):</span>
-
                 <span class="k">if</span> <span class="s2">&quot;max_zoom&quot;</span> <span class="ow">in</span> <span class="n">right_args</span><span class="p">:</span>
                     <span class="k">del</span> <span class="n">right_args</span><span class="p">[</span><span class="s2">&quot;max_zoom&quot;</span><span class="p">]</span>
                 <span class="k">if</span> <span class="s2">&quot;max_native_zoom&quot;</span> <span class="ow">in</span> <span class="n">right_args</span><span class="p">:</span>
@@ -15170,7 +15139,6 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
             <span class="bp">self</span><span class="o">.</span><span class="n">add_control</span><span class="p">(</span><span class="n">left_control</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">right_label</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-
             <span class="k">if</span> <span class="n">widget_layout</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">widget_layout</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">padding</span><span class="o">=</span><span class="s2">&quot;0px 4px 0px 4px&quot;</span><span class="p">)</span>
             <span class="n">right_widget</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">right_label</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="n">widget_layout</span><span class="p">)</span>
@@ -15323,7 +15291,6 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">try</span><span class="p">:</span>
-
         <span class="n">save</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="k">if</span> <span class="n">outfile</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="n">outfile</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.html&quot;</span><span class="p">):</span>
@@ -16072,9 +16039,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <span class="n">style_callback_only</span> <span class="o">=</span> <span class="kc">True</span>
 
     <span class="k">try</span><span class="p">:</span>
-
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">in_geojson</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-
             <span class="k">if</span> <span class="n">in_geojson</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">):</span>
                 <span class="n">in_geojson</span> <span class="o">=</span> <span class="n">github_raw_url</span><span class="p">(</span><span class="n">in_geojson</span><span class="p">)</span>
                 <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">in_geojson</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -16550,7 +16515,6 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
                     <span class="n">attribution</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">,</span>
                 <span class="p">)</span>
             <span class="k">elif</span> <span class="n">right_layer</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">right_layer</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.geojson&quot;</span><span class="p">):</span>
-
                 <span class="k">if</span> <span class="s2">&quot;max_zoom&quot;</span> <span class="ow">in</span> <span class="n">right_args</span><span class="p">:</span>
                     <span class="k">del</span> <span class="n">right_args</span><span class="p">[</span><span class="s2">&quot;max_zoom&quot;</span><span class="p">]</span>
                 <span class="k">if</span> <span class="s2">&quot;max_native_zoom&quot;</span> <span class="ow">in</span> <span class="n">right_args</span><span class="p">:</span>

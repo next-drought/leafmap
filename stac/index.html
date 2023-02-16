@@ -821,8 +821,50 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#leafmap.stac.create_mosaicjson" class="md-nav__link">
+    create_mosaicjson()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#leafmap.stac.download_data_catalogs" class="md-nav__link">
     download_data_catalogs()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.stac.maxar_all_items" class="md-nav__link">
+    maxar_all_items()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.stac.maxar_child_collections" class="md-nav__link">
+    maxar_child_collections()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.stac.maxar_collections" class="md-nav__link">
+    maxar_collections()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.stac.maxar_items" class="md-nav__link">
+    maxar_items()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.stac.maxar_refresh" class="md-nav__link">
+    maxar_refresh()
   </a>
   
 </li>
@@ -2181,8 +2223,50 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#leafmap.stac.create_mosaicjson" class="md-nav__link">
+    create_mosaicjson()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#leafmap.stac.download_data_catalogs" class="md-nav__link">
     download_data_catalogs()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.stac.maxar_all_items" class="md-nav__link">
+    maxar_all_items()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.stac.maxar_child_collections" class="md-nav__link">
+    maxar_child_collections()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.stac.maxar_collections" class="md-nav__link">
+    maxar_collections()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.stac.maxar_items" class="md-nav__link">
+    maxar_items()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.stac.maxar_refresh" class="md-nav__link">
+    maxar_refresh()
   </a>
   
 </li>
@@ -3881,6 +3965,115 @@ For example, to apply a rescaling to multiple bands, use something like <code>re
 
 
 
+<h2 id="leafmap.stac.create_mosaicjson" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">create_mosaicjson</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span></code>
+
+
+<a href="#leafmap.stac.create_mosaicjson" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Create a mosaicJSON file from a list of images.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>images</code></td>
+        <td><code>str | list</code></td>
+        <td><p>A list of image URLs or a URL to a text file containing a list of image URLs.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>output</code></td>
+        <td><code>str</code></td>
+        <td><p>The output mosaicJSON file path.</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Exceptions:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>ImportError</code></td>
+        <td><p><em>description</em></p></td>
+      </tr>
+      <tr>
+        <td><code>FileNotFoundError</code></td>
+        <td><p><em>description</em></p></td>
+      </tr>
+      <tr>
+        <td><code>ValueError</code></td>
+        <td><p><em>description</em></p></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/stac.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">create_mosaicjson</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">output</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a mosaicJSON file from a list of images.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        images (str | list): A list of image URLs or a URL to a text file containing a list of image URLs.</span>
+<span class="sd">        output (str): The output mosaicJSON file path.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ImportError: _description_</span>
+<span class="sd">        FileNotFoundError: _description_</span>
+<span class="sd">        ValueError: _description_</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">cogeo_mosaic.mosaic</span> <span class="kn">import</span> <span class="n">MosaicJSON</span>
+        <span class="kn">from</span> <span class="nn">cogeo_mosaic.backends</span> <span class="kn">import</span> <span class="n">MosaicBackend</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
+            <span class="s2">&quot;cogeo-mosaic is required to use this function. &quot;</span>
+            <span class="s2">&quot;Install with `pip install cogeo-mosaic`.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">images</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">):</span>
+            <span class="kn">import</span> <span class="nn">urllib.request</span>
+
+            <span class="k">with</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">images</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">file_contents</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+                <span class="n">images</span> <span class="o">=</span> <span class="n">file_contents</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">images</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">images</span><span class="si">}</span><span class="s2"> does not exist.&quot;</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;images must be a list or a URL.&quot;</span><span class="p">)</span>
+
+    <span class="n">mosaic</span> <span class="o">=</span> <span class="n">MosaicJSON</span><span class="o">.</span><span class="n">from_urls</span><span class="p">(</span><span class="n">images</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">MosaicBackend</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">mosaic_def</span><span class="o">=</span><span class="n">mosaic</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
 <h2 id="leafmap.stac.download_data_catalogs" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">download_data_catalogs</span><span class="p">(</span><span class="n">out_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
@@ -3967,11 +4160,527 @@ For example, to apply a rescaling to multiple bands, use something like <code>re
     <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">work_dir</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">overwrite</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">work_dir</span>
     <span class="k">else</span><span class="p">:</span>
-
         <span class="n">gdown</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">out_file</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="n">quiet</span><span class="p">)</span>
         <span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">out_file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">zip_ref</span><span class="p">:</span>
             <span class="n">zip_ref</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">out_dir</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">work_dir</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="leafmap.stac.maxar_all_items" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">maxar_all_items</span><span class="p">(</span><span class="n">collection_id</span><span class="p">,</span> <span class="n">return_gdf</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">assets</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;visual&#39;</span><span class="p">],</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+
+<a href="#leafmap.stac.maxar_all_items" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Retrieve STAC items from Maxar's public STAC API.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>collection_id</code></td>
+        <td><code>str</code></td>
+        <td><p>The collection ID, e.g., Kahramanmaras-turkey-earthquake-23
+Use maxar_collections() to retrieve all available collection IDs.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>return_gdf</code></td>
+        <td><code>bool</code></td>
+        <td><p>If True, return a GeoDataFrame. Defaults to True.</p></td>
+        <td><code>True</code></td>
+      </tr>
+      <tr>
+        <td><code>assets</code></td>
+        <td><code>list</code></td>
+        <td><p>A list of asset names to include in the GeoDataFrame.
+It can be "visual", "ms_analytic", "pan_analytic", "data-mask". Defaults to ['visual'].</p></td>
+        <td><code>[&#39;visual&#39;]</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>GeoDataFrame | pystac.ItemCollection</code></td>
+      <td><p>If return_gdf is True, return a GeoDataFrame.</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/stac.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">maxar_all_items</span><span class="p">(</span><span class="n">collection_id</span><span class="p">,</span> <span class="n">return_gdf</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">assets</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;visual&#39;</span><span class="p">],</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Retrieve STAC items from Maxar&#39;s public STAC API.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        collection_id (str): The collection ID, e.g., Kahramanmaras-turkey-earthquake-23</span>
+<span class="sd">            Use maxar_collections() to retrieve all available collection IDs.</span>
+<span class="sd">        return_gdf (bool, optional): If True, return a GeoDataFrame. Defaults to True.</span>
+<span class="sd">        assets (list, optional): A list of asset names to include in the GeoDataFrame.</span>
+<span class="sd">            It can be &quot;visual&quot;, &quot;ms_analytic&quot;, &quot;pan_analytic&quot;, &quot;data-mask&quot;. Defaults to [&#39;visual&#39;].</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        GeoDataFrame | pystac.ItemCollection: If return_gdf is True, return a GeoDataFrame.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">child_ids</span> <span class="o">=</span> <span class="n">maxar_child_collections</span><span class="p">(</span><span class="n">collection_id</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">child_id</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">child_ids</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Processing (</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">child_ids</span><span class="p">))))</span><span class="si">}</span><span class="s2"> out of </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">child_ids</span><span class="p">)</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="n">child_id</span><span class="si">}</span><span class="s2"> ...&quot;</span>
+            <span class="p">)</span>
+        <span class="n">items</span> <span class="o">=</span> <span class="n">maxar_items</span><span class="p">(</span><span class="n">collection_id</span><span class="p">,</span> <span class="n">child_id</span><span class="p">,</span> <span class="n">return_gdf</span><span class="p">,</span> <span class="n">assets</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">return_gdf</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">child_id</span> <span class="o">==</span> <span class="n">child_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                <span class="n">gdf</span> <span class="o">=</span> <span class="n">items</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">gdf</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">child_id</span> <span class="o">==</span> <span class="n">child_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                <span class="n">items_all</span> <span class="o">=</span> <span class="n">items</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">items_all</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">return_gdf</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">gdf</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">items_all</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="leafmap.stac.maxar_child_collections" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">maxar_child_collections</span><span class="p">(</span><span class="n">collection_id</span><span class="p">,</span> <span class="n">return_ids</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+
+<a href="#leafmap.stac.maxar_child_collections" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Get a list of Maxar child collections.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>collection_id</code></td>
+        <td><code>str</code></td>
+        <td><p>The collection ID, e.g., Kahramanmaras-turkey-earthquake-23
+Use maxar_collections() to retrieve all available collection IDs.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>return_ids</code></td>
+        <td><code>bool</code></td>
+        <td><p>Whether to return the collection ids. Defaults to True.</p></td>
+        <td><code>True</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>list</code></td>
+      <td><p>A list of Maxar child collections.</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/stac.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">maxar_child_collections</span><span class="p">(</span><span class="n">collection_id</span><span class="p">,</span> <span class="n">return_ids</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get a list of Maxar child collections.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        collection_id (str): The collection ID, e.g., Kahramanmaras-turkey-earthquake-23</span>
+<span class="sd">            Use maxar_collections() to retrieve all available collection IDs.</span>
+<span class="sd">        return_ids (bool, optional): Whether to return the collection ids. Defaults to True.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list: A list of Maxar child collections.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="kn">import</span> <span class="nn">tempfile</span>
+    <span class="kn">from</span> <span class="nn">pystac</span> <span class="kn">import</span> <span class="n">Catalog</span>
+
+    <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">gettempdir</span><span class="p">(),</span> <span class="sa">f</span><span class="s2">&quot;maxar-</span><span class="si">{</span><span class="n">collection_id</span><span class="si">}</span><span class="s2">.txt&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">return_ids</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()]</span>
+
+    <span class="k">if</span> <span class="s2">&quot;MAXAR_STAC_API&quot;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MAXAR_STAC_API&quot;</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://maxar-opendata.s3.amazonaws.com/events/catalog.json&quot;</span>
+
+    <span class="n">root_catalog</span> <span class="o">=</span> <span class="n">Catalog</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+    <span class="n">collections</span> <span class="o">=</span> <span class="n">root_catalog</span><span class="o">.</span><span class="n">get_child</span><span class="p">(</span><span class="n">collection_id</span><span class="p">)</span><span class="o">.</span><span class="n">get_collections</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">return_ids</span><span class="p">:</span>
+        <span class="n">collection_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">collection</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">collection</span> <span class="ow">in</span> <span class="n">collections</span><span class="p">]</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">collection_ids</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">collection_ids</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">collections</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="leafmap.stac.maxar_collections" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">maxar_collections</span><span class="p">(</span><span class="n">return_ids</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+
+<a href="#leafmap.stac.maxar_collections" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Get a list of Maxar collections.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>return_ids</code></td>
+        <td><code>bool</code></td>
+        <td><p>Whether to return the collection ids. Defaults to True.</p></td>
+        <td><code>True</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>list </code></td>
+      <td><p>A list of Maxar collections.</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/stac.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">maxar_collections</span><span class="p">(</span><span class="n">return_ids</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get a list of Maxar collections.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        return_ids (bool, optional): Whether to return the collection ids. Defaults to True.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list : A list of Maxar collections.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="kn">import</span> <span class="nn">tempfile</span>
+    <span class="kn">from</span> <span class="nn">pystac</span> <span class="kn">import</span> <span class="n">Catalog</span>
+
+    <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">gettempdir</span><span class="p">(),</span> <span class="s2">&quot;maxar-collections.txt&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">return_ids</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()]</span>
+
+    <span class="k">if</span> <span class="s2">&quot;MAXAR_STAC_API&quot;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MAXAR_STAC_API&quot;</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://maxar-opendata.s3.amazonaws.com/events/catalog.json&quot;</span>
+
+    <span class="n">root_catalog</span> <span class="o">=</span> <span class="n">Catalog</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+    <span class="n">collections</span> <span class="o">=</span> <span class="n">root_catalog</span><span class="o">.</span><span class="n">get_collections</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">return_ids</span><span class="p">:</span>
+        <span class="n">collection_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">collection</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">collection</span> <span class="ow">in</span> <span class="n">collections</span><span class="p">]</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">collection_ids</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">collection_ids</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">collections</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="leafmap.stac.maxar_items" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">maxar_items</span><span class="p">(</span><span class="n">collection_id</span><span class="p">,</span> <span class="n">child_id</span><span class="p">,</span> <span class="n">return_gdf</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">assets</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;visual&#39;</span><span class="p">])</span></code>
+
+
+<a href="#leafmap.stac.maxar_items" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Retrieve STAC items from Maxar's public STAC API.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>collection_id</code></td>
+        <td><code>str</code></td>
+        <td><p>The collection ID, e.g., Kahramanmaras-turkey-earthquake-23
+Use maxar_collections() to retrieve all available collection IDs.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>child_id</code></td>
+        <td><code>str</code></td>
+        <td><p>The child collection ID, e.g., 1050050044DE7E00
+Use maxar_child_collections() to retrieve all available child collection IDs.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>return_gdf</code></td>
+        <td><code>bool</code></td>
+        <td><p>If True, return a GeoDataFrame. Defaults to True.</p></td>
+        <td><code>True</code></td>
+      </tr>
+      <tr>
+        <td><code>assets</code></td>
+        <td><code>list</code></td>
+        <td><p>A list of asset names to include in the GeoDataFrame.
+It can be "visual", "ms_analytic", "pan_analytic", "data-mask". Defaults to ['visual'].</p></td>
+        <td><code>[&#39;visual&#39;]</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>GeoDataFrame | pystac.ItemCollection</code></td>
+      <td><p>If return_gdf is True, return a GeoDataFrame.</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/stac.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">maxar_items</span><span class="p">(</span><span class="n">collection_id</span><span class="p">,</span> <span class="n">child_id</span><span class="p">,</span> <span class="n">return_gdf</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">assets</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;visual&#39;</span><span class="p">]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Retrieve STAC items from Maxar&#39;s public STAC API.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        collection_id (str): The collection ID, e.g., Kahramanmaras-turkey-earthquake-23</span>
+<span class="sd">            Use maxar_collections() to retrieve all available collection IDs.</span>
+<span class="sd">        child_id (str): The child collection ID, e.g., 1050050044DE7E00</span>
+<span class="sd">            Use maxar_child_collections() to retrieve all available child collection IDs.</span>
+<span class="sd">        return_gdf (bool, optional): If True, return a GeoDataFrame. Defaults to True.</span>
+<span class="sd">        assets (list, optional): A list of asset names to include in the GeoDataFrame.</span>
+<span class="sd">            It can be &quot;visual&quot;, &quot;ms_analytic&quot;, &quot;pan_analytic&quot;, &quot;data-mask&quot;. Defaults to [&#39;visual&#39;].</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        GeoDataFrame | pystac.ItemCollection: If return_gdf is True, return a GeoDataFrame.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="kn">import</span> <span class="nn">pickle</span>
+    <span class="kn">import</span> <span class="nn">tempfile</span>
+    <span class="kn">from</span> <span class="nn">pystac</span> <span class="kn">import</span> <span class="n">Catalog</span><span class="p">,</span> <span class="n">ItemCollection</span>
+
+    <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="n">tempfile</span><span class="o">.</span><span class="n">gettempdir</span><span class="p">(),</span> <span class="sa">f</span><span class="s2">&quot;maxar-</span><span class="si">{</span><span class="n">collection_id</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">child_id</span><span class="si">}</span><span class="s2">.pkl&quot;</span>
+    <span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">items</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">return_gdf</span><span class="p">:</span>
+            <span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+
+            <span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="o">.</span><span class="n">from_features</span><span class="p">(</span>
+                <span class="n">pystac</span><span class="o">.</span><span class="n">ItemCollection</span><span class="p">(</span><span class="n">items</span><span class="p">)</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span> <span class="n">crs</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span>
+            <span class="p">)</span>
+            <span class="c1"># convert bbox column type from list to string</span>
+            <span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;proj:bbox&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">l</span><span class="p">))</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;proj:bbox&#39;</span><span class="p">]]</span>
+            <span class="k">if</span> <span class="n">assets</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">assets</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                    <span class="n">assets</span> <span class="o">=</span> <span class="p">[</span><span class="n">assets</span><span class="p">]</span>
+                <span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">assets</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;assets must be a list or a string.&quot;</span><span class="p">)</span>
+
+                <span class="k">for</span> <span class="n">asset</span> <span class="ow">in</span> <span class="n">assets</span><span class="p">:</span>
+                    <span class="n">links</span> <span class="o">=</span> <span class="p">[]</span>
+                    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">asset</span> <span class="ow">in</span> <span class="n">item</span><span class="o">.</span><span class="n">get_assets</span><span class="p">():</span>
+                            <span class="n">link</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">get_assets</span><span class="p">()[</span><span class="n">asset</span><span class="p">]</span><span class="o">.</span><span class="n">get_absolute_href</span><span class="p">()</span>
+                            <span class="n">links</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">links</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+                    <span class="n">gdf</span><span class="p">[</span><span class="n">asset</span><span class="p">]</span> <span class="o">=</span> <span class="n">links</span>
+
+            <span class="k">return</span> <span class="n">gdf</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">items</span>
+
+    <span class="k">if</span> <span class="s2">&quot;MAXAR_STAC_API&quot;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MAXAR_STAC_API&quot;</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://maxar-opendata.s3.amazonaws.com/events/catalog.json&quot;</span>
+
+    <span class="n">root_catalog</span> <span class="o">=</span> <span class="n">Catalog</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+    <span class="n">collection</span> <span class="o">=</span> <span class="n">root_catalog</span><span class="o">.</span><span class="n">get_child</span><span class="p">(</span><span class="n">collection_id</span><span class="p">)</span>
+    <span class="n">child</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">get_child</span><span class="p">(</span><span class="n">child_id</span><span class="p">)</span>
+
+    <span class="n">items</span> <span class="o">=</span> <span class="n">ItemCollection</span><span class="p">(</span><span class="n">child</span><span class="o">.</span><span class="n">get_all_items</span><span class="p">())</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">return_gdf</span><span class="p">:</span>
+        <span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+
+        <span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="o">.</span><span class="n">from_features</span><span class="p">(</span>
+            <span class="n">pystac</span><span class="o">.</span><span class="n">ItemCollection</span><span class="p">(</span><span class="n">items</span><span class="p">)</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span> <span class="n">crs</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span>
+        <span class="p">)</span>
+        <span class="c1"># convert bbox column type from list to string</span>
+        <span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;proj:bbox&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">l</span><span class="p">))</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">gdf</span><span class="p">[</span><span class="s1">&#39;proj:bbox&#39;</span><span class="p">]]</span>
+        <span class="k">if</span> <span class="n">assets</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">assets</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="n">assets</span> <span class="o">=</span> <span class="p">[</span><span class="n">assets</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">assets</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;assets must be a list or a string.&quot;</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">asset</span> <span class="ow">in</span> <span class="n">assets</span><span class="p">:</span>
+                <span class="n">links</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">asset</span> <span class="ow">in</span> <span class="n">item</span><span class="o">.</span><span class="n">get_assets</span><span class="p">():</span>
+                        <span class="n">link</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">get_assets</span><span class="p">()[</span><span class="n">asset</span><span class="p">]</span><span class="o">.</span><span class="n">get_absolute_href</span><span class="p">()</span>
+                        <span class="n">links</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">links</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+                <span class="n">gdf</span><span class="p">[</span><span class="n">asset</span><span class="p">]</span> <span class="o">=</span> <span class="n">links</span>
+
+        <span class="k">return</span> <span class="n">gdf</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">items</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="leafmap.stac.maxar_refresh" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">maxar_refresh</span><span class="p">()</span></code>
+
+
+<a href="#leafmap.stac.maxar_refresh" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Refresh the cached Maxar STAC items.</p>
+
+        <details class="quote">
+          <summary>Source code in <code>leafmap/stac.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">maxar_refresh</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Refresh the cached Maxar STAC items.&quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">tempfile</span>
+
+    <span class="n">temp_dir</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">gettempdir</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">temp_dir</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;maxar-&quot;</span><span class="p">):</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">temp_dir</span><span class="p">,</span> <span class="n">f</span><span class="p">))</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Maxar STAC items cache has been refreshed.&quot;</span><span class="p">)</span>
 </code></pre></div>
         </details>
     </div>
@@ -4288,12 +4997,19 @@ For example, to apply a rescaling to multiple bands, use something like <code>re
 
     <span class="k">if</span> <span class="n">url</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;url&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">url</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        <span class="k">if</span> <span class="s1">&#39;mosaicjson&#39;</span> <span class="ow">in</span> <span class="n">r</span><span class="p">:</span>
+            <span class="k">if</span> <span class="s1">&#39;bounds&#39;</span> <span class="ow">in</span> <span class="n">r</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">r</span><span class="p">[</span><span class="s1">&#39;bounds&#39;</span><span class="p">]</span>
+
     <span class="k">if</span> <span class="n">collection</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;collection&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">collection</span>
     <span class="k">if</span> <span class="n">item</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;item&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">item</span>
 
     <span class="n">titiler_endpoint</span> <span class="o">=</span> <span class="n">check_titiler_endpoint</span><span class="p">(</span><span class="n">titiler_endpoint</span><span class="p">)</span>
+
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">titiler_endpoint</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
         <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">titiler_endpoint</span><span class="si">}</span><span class="s2">/stac/bounds&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
     <span class="k">else</span><span class="p">:</span>
@@ -4602,7 +5318,6 @@ into child assets to access data from non-public sources. Defaults to None.</p><
         <details class="quote">
           <summary>Source code in <code>leafmap/stac.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">stac_collections</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">return_ids</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the collection IDs of a STAC catalog.</span>
 
 <span class="sd">    Args:</span>
@@ -4617,7 +5332,6 @@ into child assets to access data from non-public sources. Defaults to None.</p><
         <span class="n">collections</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_all_collections</span><span class="p">()</span>
 
         <span class="k">if</span> <span class="n">return_ids</span><span class="p">:</span>
-
             <span class="k">return</span> <span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">collections</span><span class="p">]</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">collections</span>
@@ -5500,7 +6214,6 @@ unmarshalling errors. Defaults to None.</p></td>
     <span class="k">if</span> <span class="n">client</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">None</span>
     <span class="k">else</span><span class="p">:</span>
-
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">intersects</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="ow">and</span> <span class="s2">&quot;geometry&quot;</span> <span class="ow">in</span> <span class="n">intersects</span><span class="p">:</span>
             <span class="n">intersects</span> <span class="o">=</span> <span class="n">intersects</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span>
 
@@ -5854,7 +6567,6 @@ unmarshalling errors. Defaults to None.</p></td>
         <details class="quote">
           <summary>Source code in <code>leafmap/stac.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">stac_search_to_list</span><span class="p">(</span><span class="n">search</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert STAC search result to a list.</span>
 
 <span class="sd">    Args:</span>
@@ -6084,7 +6796,6 @@ unmarshalling errors. Defaults to None.</p></td>
     <span class="n">titiler_endpoint</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
-
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Get a tile layer from a single SpatialTemporal Asset Catalog (STAC) item.</span>
 
 <span class="sd">    Args:</span>
@@ -6123,6 +6834,7 @@ unmarshalling errors. Defaults to None.</p></td>
         <span class="n">assets</span> <span class="o">=</span> <span class="n">assets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
     <span class="n">titiler_endpoint</span> <span class="o">=</span> <span class="n">check_titiler_endpoint</span><span class="p">(</span><span class="n">titiler_endpoint</span><span class="p">)</span>
+    <span class="n">mosaic_json</span> <span class="o">=</span> <span class="kc">False</span>
 
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">titiler_endpoint</span><span class="p">,</span> <span class="n">PlanetaryComputerEndpoint</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">bands</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
@@ -6149,7 +6861,6 @@ unmarshalling errors. Defaults to None.</p></td>
                 <span class="n">titiler_endpoint</span><span class="o">=</span><span class="n">titiler_endpoint</span><span class="p">,</span>
             <span class="p">)</span>
             <span class="k">if</span> <span class="s2">&quot;detail&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stats</span><span class="p">:</span>
-
                 <span class="k">try</span><span class="p">:</span>
                     <span class="n">percentile_2</span> <span class="o">=</span> <span class="nb">min</span><span class="p">([</span><span class="n">stats</span><span class="p">[</span><span class="n">s</span><span class="p">][</span><span class="s2">&quot;percentile_2&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">stats</span><span class="p">])</span>
                     <span class="n">percentile_98</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="n">stats</span><span class="p">[</span><span class="n">s</span><span class="p">][</span><span class="s2">&quot;percentile_98&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">stats</span><span class="p">])</span>
@@ -6181,26 +6892,37 @@ unmarshalling errors. Defaults to None.</p></td>
                 <span class="n">assets</span> <span class="o">=</span> <span class="n">bands</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">bnames</span> <span class="o">=</span> <span class="n">stac_bands</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">bnames</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>
-                    <span class="n">assets</span> <span class="o">=</span> <span class="n">bnames</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">bnames</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">bnames</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>
+                        <span class="n">assets</span> <span class="o">=</span> <span class="n">bnames</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">assets</span> <span class="o">=</span> <span class="n">bnames</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
                 <span class="k">else</span><span class="p">:</span>
-                    <span class="n">assets</span> <span class="o">=</span> <span class="n">bnames</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="n">assets</span> <span class="o">=</span> <span class="kc">None</span>
+                    <span class="k">if</span> <span class="s1">&#39;mosaicjson&#39;</span> <span class="ow">in</span> <span class="n">bnames</span><span class="p">[</span><span class="s1">&#39;detail&#39;</span><span class="p">]:</span>
+                        <span class="n">mosaic_json</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;asset_bidx&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bands</span>
-        <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;assets&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">assets</span>
+        <span class="k">if</span> <span class="n">assets</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;assets&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">assets</span>
 
     <span class="n">TileMatrixSetId</span> <span class="o">=</span> <span class="s2">&quot;WebMercatorQuad&quot;</span>
     <span class="k">if</span> <span class="s2">&quot;TileMatrixSetId&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
         <span class="n">TileMatrixSetId</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;TileMatrixSetId&quot;</span><span class="p">]</span>
         <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;TileMatrixSetId&quot;</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">titiler_endpoint</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">mosaic_json</span><span class="p">:</span>
         <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">titiler_endpoint</span><span class="si">}</span><span class="s2">/stac/</span><span class="si">{</span><span class="n">TileMatrixSetId</span><span class="si">}</span><span class="s2">/tilejson.json&quot;</span><span class="p">,</span>
-            <span class="n">params</span><span class="o">=</span><span class="n">kwargs</span><span class="p">,</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">titiler_endpoint</span><span class="si">}</span><span class="s2">/mosaicjson/tilejson.json&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">kwargs</span>
         <span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">titiler_endpoint</span><span class="o">.</span><span class="n">url_for_stac_item</span><span class="p">(),</span> <span class="n">params</span><span class="o">=</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">titiler_endpoint</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">titiler_endpoint</span><span class="si">}</span><span class="s2">/stac/</span><span class="si">{</span><span class="n">TileMatrixSetId</span><span class="si">}</span><span class="s2">/tilejson.json&quot;</span><span class="p">,</span>
+                <span class="n">params</span><span class="o">=</span><span class="n">kwargs</span><span class="p">,</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">titiler_endpoint</span><span class="o">.</span><span class="n">url_for_stac_item</span><span class="p">(),</span> <span class="n">params</span><span class="o">=</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
     <span class="k">return</span> <span class="n">r</span><span class="p">[</span><span class="s2">&quot;tiles&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 </code></pre></div>

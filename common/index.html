@@ -4711,7 +4711,6 @@ The_national_map_USGS        </code>
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="k">try</span><span class="p">:</span>
-
             <span class="c1"># call locals before creating new locals</span>
             <span class="n">used_locals</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span> <span class="ow">and</span> <span class="n">k</span> <span class="o">!=</span> <span class="s2">&quot;self&quot;</span><span class="p">}</span>
 
@@ -5074,7 +5073,6 @@ extentQuery             integer
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">try</span><span class="p">:</span>
-
         <span class="c1"># call locals before creating new locals</span>
         <span class="n">used_locals</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span> <span class="ow">and</span> <span class="n">k</span> <span class="o">!=</span> <span class="s2">&quot;self&quot;</span><span class="p">}</span>
 
@@ -5327,7 +5325,6 @@ WhiteboxTools            (<span title="whitebox.whitebox_tools.WhiteboxTools">Wh
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;This class inherits the whitebox WhiteboxTools class.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </code></pre></div>
         </details>
@@ -5690,7 +5687,6 @@ WhiteboxTools            (<span title="whitebox.whitebox_tools.WhiteboxTools">Wh
         <span class="p">)</span>
 
     <span class="k">try</span><span class="p">:</span>
-
         <span class="n">frames</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">frame</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ImageSequence</span><span class="o">.</span><span class="n">Iterator</span><span class="p">(</span><span class="n">gif</span><span class="p">)):</span>
             <span class="n">frame</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s2">&quot;RGBA&quot;</span><span class="p">)</span>
@@ -5939,7 +5935,6 @@ WhiteboxTools            (<span title="whitebox.whitebox_tools.WhiteboxTools">Wh
     <span class="p">]</span>
 
     <span class="k">try</span><span class="p">:</span>
-
         <span class="n">frames</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="c1"># Loop over each frame in the animated image</span>
         <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">frame</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ImageSequence</span><span class="o">.</span><span class="n">Iterator</span><span class="p">(</span><span class="n">image</span><span class="p">)):</span>
@@ -6216,7 +6211,6 @@ WhiteboxTools            (<span title="whitebox.whitebox_tools.WhiteboxTools">Wh
         <span class="n">text</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">text_sequence</span><span class="p">]</span>
 
     <span class="k">try</span><span class="p">:</span>
-
         <span class="n">frames</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="c1"># Loop over each frame in the animated image</span>
         <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">frame</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ImageSequence</span><span class="o">.</span><span class="n">Iterator</span><span class="p">(</span><span class="n">image</span><span class="p">)):</span>
@@ -6315,11 +6309,9 @@ WhiteboxTools            (<span title="whitebox.whitebox_tools.WhiteboxTools">Wh
 <span class="sd">        dict: A dictionary containing the converted longitudes</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">try</span><span class="p">:</span>
-
         <span class="n">keys</span> <span class="o">=</span> <span class="n">in_fc</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
 
         <span class="k">if</span> <span class="s2">&quot;geometry&quot;</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
-
             <span class="n">coordinates</span> <span class="o">=</span> <span class="n">in_fc</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">][</span><span class="s2">&quot;coordinates&quot;</span><span class="p">]</span>
 
             <span class="k">if</span> <span class="n">in_fc</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">][</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Point&quot;</span><span class="p">:</span>
@@ -6350,7 +6342,6 @@ WhiteboxTools            (<span title="whitebox.whitebox_tools.WhiteboxTools">Wh
                     <span class="n">in_fc</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">][</span><span class="s2">&quot;coordinates&quot;</span><span class="p">][</span><span class="n">index</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">longitude</span>
 
         <span class="k">elif</span> <span class="s2">&quot;type&quot;</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
-
             <span class="n">coordinates</span> <span class="o">=</span> <span class="n">in_fc</span><span class="p">[</span><span class="s2">&quot;coordinates&quot;</span><span class="p">]</span>
 
             <span class="k">if</span> <span class="n">in_fc</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Point&quot;</span><span class="p">:</span>
@@ -7414,7 +7405,6 @@ WhiteboxTools            (<span title="whitebox.whitebox_tools.WhiteboxTools">Wh
 
     <span class="n">out_color</span> <span class="o">=</span> <span class="s2">&quot;#000000&quot;</span>  <span class="c1"># default black color</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">in_color</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">in_color</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
-
         <span class="c1"># rescale color if necessary</span>
         <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">in_color</span><span class="p">):</span>
             <span class="n">in_color</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="o">/</span> <span class="mf">255.0</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">in_color</span><span class="p">]</span>
@@ -7422,7 +7412,6 @@ WhiteboxTools            (<span title="whitebox.whitebox_tools.WhiteboxTools">Wh
         <span class="k">return</span> <span class="n">colour</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="n">rgb</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="n">in_color</span><span class="p">))</span><span class="o">.</span><span class="n">hex_l</span>
 
     <span class="k">else</span><span class="p">:</span>
-
         <span class="c1"># try to guess the color system</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">colour</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="n">in_color</span><span class="p">)</span><span class="o">.</span><span class="n">hex_l</span>
@@ -8128,7 +8117,6 @@ interval : boolean (default False)
         <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">mask</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mask</span><span class="si">}</span><span class="s2"> does not exist.&quot;</span><span class="p">)</span>
     <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
-
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
             <span class="n">geojson</span> <span class="o">=</span> <span class="p">{</span>
                 <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;FeatureCollection&quot;</span><span class="p">,</span>
@@ -8919,7 +8907,6 @@ style = {
     <span class="n">output</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">style</span><span class="o">=</span><span class="p">{},</span>
 <span class="p">):</span>
-
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a legend in HTML format. Reference: https://bit.ly/3oV6vnH</span>
 
 <span class="sd">    Args:</span>
@@ -9096,7 +9083,6 @@ style = {
         <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
 
     <span class="k">if</span> <span class="n">draggable</span><span class="p">:</span>
-
         <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lines</span><span class="p">):</span>
             <span class="k">if</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="mi">36</span><span class="p">:</span>
                 <span class="n">content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
@@ -9114,9 +9100,7 @@ style = {
         <span class="n">content</span> <span class="o">=</span> <span class="n">content</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
     <span class="k">else</span><span class="p">:</span>
-
         <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lines</span><span class="p">):</span>
-
             <span class="k">if</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">:</span>
                 <span class="n">content</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
             <span class="k">elif</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">8</span><span class="p">:</span>
@@ -10210,7 +10194,6 @@ style = {
     <span class="p">)</span>
 
     <span class="k">if</span> <span class="n">unzip</span> <span class="ow">and</span> <span class="n">output</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.zip&quot;</span><span class="p">):</span>
-
         <span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">zip_ref</span><span class="p">:</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="n">quiet</span><span class="p">:</span>
                 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Extracting files...&quot;</span><span class="p">)</span>
@@ -10324,7 +10307,6 @@ style = {
             <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="k">await</span> <span class="n">response</span><span class="o">.</span><span class="n">bytes</span><span class="p">())</span>
 
     <span class="k">else</span><span class="p">:</span>
-
         <span class="n">obj</span> <span class="o">=</span> <span class="n">pyodide</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">open_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
             <span class="n">shutil</span><span class="o">.</span><span class="n">copyfileobj</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">fd</span><span class="p">)</span>
@@ -10671,11 +10653,9 @@ style = {
             <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
                 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unzipping </span><span class="si">{}</span><span class="s2"> ...&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">out_file_name</span><span class="p">))</span>
             <span class="k">with</span> <span class="n">tarfile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">out_file_path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">tar_ref</span><span class="p">:</span>
-
                 <span class="k">with</span> <span class="n">tarfile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">out_file_path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">tar_ref</span><span class="p">:</span>
 
                     <span class="k">def</span> <span class="nf">is_within_directory</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
-
                         <span class="n">abs_directory</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
                         <span class="n">abs_target</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
 
@@ -10686,7 +10666,6 @@ style = {
                     <span class="k">def</span> <span class="nf">safe_extract</span><span class="p">(</span>
                         <span class="n">tar</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">members</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">numeric_owner</span><span class="o">=</span><span class="kc">False</span>
                     <span class="p">):</span>
-
                         <span class="k">for</span> <span class="n">member</span> <span class="ow">in</span> <span class="n">tar</span><span class="o">.</span><span class="n">getmembers</span><span class="p">():</span>
                             <span class="n">member_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">member</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
                             <span class="k">if</span> <span class="ow">not</span> <span class="n">is_within_directory</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">member_path</span><span class="p">):</span>
@@ -11865,7 +11844,6 @@ ColumnDataSource object.</p>
     <span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
 
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">in_geojson</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-
         <span class="k">if</span> <span class="n">in_geojson</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">):</span>
             <span class="k">with</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">in_geojson</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
                 <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
@@ -12194,9 +12172,7 @@ ColumnDataSource object.</p>
     <span class="kn">import</span> <span class="nn">json</span>
 
     <span class="k">try</span><span class="p">:</span>
-
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">in_geojson</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-
             <span class="k">if</span> <span class="n">in_geojson</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">):</span>
                 <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">in_geojson</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
             <span class="k">else</span><span class="p">:</span>
@@ -12617,7 +12593,6 @@ Source code adapted from https://github.com/mapbox/rasterio/blob/master/rasterio
     <span class="n">census_data</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pkg_dir</span><span class="p">,</span> <span class="s2">&quot;data/census_data.json&quot;</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">reset</span><span class="p">:</span>
-
         <span class="k">try</span><span class="p">:</span>
             <span class="kn">from</span> <span class="nn">owslib.wms</span> <span class="kn">import</span> <span class="n">WebMapService</span>
         <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
@@ -12673,7 +12648,6 @@ Source code adapted from https://github.com/mapbox/rasterio/blob/master/rasterio
             <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">census_dict</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 
     <span class="k">else</span><span class="p">:</span>
-
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">census_data</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
             <span class="n">census_dict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 
@@ -13147,7 +13121,6 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The source must either be a string or TileClient&quot;</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">palette</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-
         <span class="n">palette</span> <span class="o">=</span> <span class="n">get_palette_colors</span><span class="p">(</span><span class="n">palette</span><span class="p">,</span> <span class="n">hashtag</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">tile_format</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;ipyleaflet&quot;</span><span class="p">,</span> <span class="s2">&quot;folium&quot;</span><span class="p">]:</span>
@@ -13448,7 +13421,6 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">palettes</span> <span class="o">=</span> <span class="p">[]</span>
 
     <span class="k">if</span> <span class="s2">&quot;cartocolors&quot;</span> <span class="ow">in</span> <span class="n">types</span><span class="p">:</span>
-
         <span class="n">cartocolors_diverging</span> <span class="o">=</span> <span class="p">[</span>
             <span class="sa">f</span><span class="s2">&quot;cartocolors.diverging.</span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2">&quot;</span>
             <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">palettable</span><span class="o">.</span><span class="n">cartocolors</span><span class="o">.</span><span class="n">diverging</span><span class="p">)[:</span><span class="o">-</span><span class="mi">19</span><span class="p">]</span>
@@ -13470,7 +13442,6 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <span class="p">)</span>
 
     <span class="k">if</span> <span class="s2">&quot;cmocean&quot;</span> <span class="ow">in</span> <span class="n">types</span><span class="p">:</span>
-
         <span class="n">cmocean_diverging</span> <span class="o">=</span> <span class="p">[</span>
             <span class="sa">f</span><span class="s2">&quot;cmocean.diverging.</span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">palettable</span><span class="o">.</span><span class="n">cmocean</span><span class="o">.</span><span class="n">diverging</span><span class="p">)[:</span><span class="o">-</span><span class="mi">19</span><span class="p">]</span>
         <span class="p">]</span>
@@ -13481,7 +13452,6 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <span class="n">palettes</span> <span class="o">=</span> <span class="n">palettes</span> <span class="o">+</span> <span class="n">cmocean_diverging</span> <span class="o">+</span> <span class="n">cmocean_sequential</span>
 
     <span class="k">if</span> <span class="s2">&quot;colorbrewer&quot;</span> <span class="ow">in</span> <span class="n">types</span><span class="p">:</span>
-
         <span class="n">colorbrewer_diverging</span> <span class="o">=</span> <span class="p">[</span>
             <span class="sa">f</span><span class="s2">&quot;colorbrewer.diverging.</span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2">&quot;</span>
             <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">palettable</span><span class="o">.</span><span class="n">colorbrewer</span><span class="o">.</span><span class="n">diverging</span><span class="p">)[:</span><span class="o">-</span><span class="mi">19</span><span class="p">]</span>
@@ -14810,7 +14780,6 @@ Available parameters can be found at https://github.com/radiantearth/stac-api-sp
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">html_to_streamlit</span><span class="p">(</span>
     <span class="n">filename</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scrolling</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">replace_dict</span><span class="o">=</span><span class="p">{}</span>
 <span class="p">):</span>
-
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Renders an HTML file as a Streamlit component.</span>
 <span class="sd">    Args:</span>
 <span class="sd">        filename (str): The filename of the HTML file.</span>
@@ -18255,7 +18224,6 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
     <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">np_array</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-
         <span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">np_array</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">ds</span><span class="p">:</span>
             <span class="n">np_array</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
@@ -19222,7 +19190,6 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
     <span class="n">subfix</span> <span class="o">=</span> <span class="s2">&quot;_mosaic/gmap/</span><span class="si">{z}</span><span class="s2">/</span><span class="si">{x}</span><span class="s2">/</span><span class="si">{y}</span><span class="s2">.png?api_key=&quot;</span>
 
     <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="n">year_now</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-
         <span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
             <span class="n">m_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">month</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 
@@ -19592,7 +19559,6 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
     <span class="n">subfix</span> <span class="o">=</span> <span class="s2">&quot;_mosaic/gmap/</span><span class="si">{z}</span><span class="s2">/</span><span class="si">{x}</span><span class="s2">/</span><span class="si">{y}</span><span class="s2">.png?api_key=&quot;</span>
 
     <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="n">year_now</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-
         <span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
             <span class="n">m_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">month</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 
@@ -19714,7 +19680,6 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
     <span class="n">subfix</span> <span class="o">=</span> <span class="s2">&quot;_mosaic/gmap/</span><span class="si">{z}</span><span class="s2">/</span><span class="si">{x}</span><span class="s2">/</span><span class="si">{y}</span><span class="s2">.png?api_key=&quot;</span>
 
     <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="n">year_now</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-
         <span class="k">for</span> <span class="n">quarter</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
             <span class="n">m_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;q&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">quarter</span><span class="p">)</span>
 
@@ -21940,7 +21905,6 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
         <span class="n">alpha</span> <span class="o">=</span> <span class="mi">1</span>
 
     <span class="k">if</span> <span class="n">cmap</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-
         <span class="n">cmap</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="n">cmap</span><span class="p">)</span>
         <span class="n">norm</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
 
@@ -21958,7 +21922,6 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
             <span class="n">norm</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
 
     <span class="k">elif</span> <span class="n">cmap</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-
         <span class="n">cmap</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="n">cmap</span><span class="p">)</span>
         <span class="n">norm</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
 
@@ -22072,7 +22035,6 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
     <span class="kn">import</span> <span class="nn">uuid</span>
 
     <span class="k">try</span><span class="p">:</span>
-
         <span class="k">if</span> <span class="n">file_ext</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">):</span>
                 <span class="n">_</span><span class="p">,</span> <span class="n">file_ext</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
@@ -22502,7 +22464,6 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">try</span><span class="p">:</span>
-
         <span class="k">if</span> <span class="ow">not</span> <span class="n">ip</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">):</span>
             <span class="n">ip</span> <span class="o">=</span> <span class="s2">&quot;http://&quot;</span> <span class="o">+</span> <span class="n">ip</span>
         <span class="n">proxy</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">:</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ip</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span>
@@ -22605,7 +22566,6 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
 <span class="sd">        ipywidgets.HTML: HTML widget.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">html</span><span class="p">):</span>
-
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
             <span class="n">content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
@@ -22784,7 +22744,6 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
         <details class="quote">
           <summary>Source code in <code>leafmap/common.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">show_youtube_video</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">450</span><span class="p">,</span> <span class="n">allow_autoplay</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Displays a Youtube video in a Jupyter notebook.</span>
 
@@ -22804,7 +22763,6 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
     <span class="k">try</span><span class="p">:</span>
         <span class="n">video_id</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&quot;^[^v]+v=(.</span><span class="si">{11}</span><span class="s2">).*&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
     <span class="k">except</span><span class="p">:</span>
-
         <span class="k">if</span> <span class="s2">&quot;youtube.com&quot;</span> <span class="ow">in</span> <span class="n">url</span> <span class="ow">or</span> <span class="s2">&quot;youtu.be&quot;</span> <span class="ow">in</span> <span class="n">url</span><span class="p">:</span>
             <span class="k">if</span> <span class="s2">&quot;youtube.com&quot;</span> <span class="ow">in</span> <span class="n">url</span><span class="p">:</span>
                 <span class="n">video_id</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;v=&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;&amp;&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
@@ -23162,7 +23120,6 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
         <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-
             <span class="k">if</span> <span class="n">file_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">file_name</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
@@ -23669,7 +23626,6 @@ In this way, I don't have to keep updating pypi and conda-forge with every minor
         <span class="k">if</span> <span class="p">(</span>
             <span class="p">(</span><span class="n">IMGUR_API_ID</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">IMGUR_API_SECRET</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span>
         <span class="p">)</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">credentials_path</span><span class="p">):</span>
-
             <span class="n">proc</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s2">&quot;imgur-uploader&quot;</span><span class="p">,</span> <span class="n">in_gif</span><span class="p">],</span> <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
                 <span class="n">line</span> <span class="o">=</span> <span class="n">proc</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
@@ -24025,14 +23981,12 @@ In this way, I don't have to keep updating pypi and conda-forge with every minor
             <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
         <span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-
         <span class="n">df</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
             <span class="n">filename</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">,</span> <span class="n">rows</span><span class="o">=</span><span class="n">rows</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
         <span class="p">)</span>
     <span class="n">gdf</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">epsg</span><span class="o">=</span><span class="n">epsg</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">out_geojson</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-
         <span class="k">if</span> <span class="ow">not</span> <span class="n">out_geojson</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.geojson&quot;</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The output file must have a geojson file extension.&quot;</span><span class="p">)</span>
 
@@ -24685,7 +24639,6 @@ include 'first', 'last' (default), 'min', 'max', 'sum', 'number'. Defaults to 'l
 
     <span class="n">backend</span> <span class="o">=</span> <span class="n">backend</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">backend</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;pyvista&quot;</span><span class="p">,</span> <span class="s2">&quot;ipygany&quot;</span><span class="p">,</span> <span class="s2">&quot;panel&quot;</span><span class="p">]:</span>
-
         <span class="k">try</span><span class="p">:</span>
             <span class="kn">import</span> <span class="nn">pyntcloud</span>
         <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>

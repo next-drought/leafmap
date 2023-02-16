@@ -466,6 +466,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://leafmap.org/notebooks/67_maxar_open_data/</loc>
+         <lastmod>2023-02-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://leafmap.org/notebooks/zz_notebook_template/</loc>
          <lastmod>2023-02-16</lastmod>
          <changefreq>daily</changefreq>

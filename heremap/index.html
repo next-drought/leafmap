@@ -2098,7 +2098,6 @@ at https://here-map-widget-for-jupyter.readthedocs.io/en/latest/api_reference/ma
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-
         <span class="k">if</span> <span class="n">api_key</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;HEREMAPS_API_KEY&quot;</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">api_key</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -2355,7 +2354,6 @@ at https://here-map-widget-for-jupyter.readthedocs.io/en/latest/api_reference/ma
         <span class="n">close_button</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">_close_btn_click</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">)</span>
 
         <span class="k">def</span> <span class="nf">_update_html</span><span class="p">(</span><span class="n">feature</span><span class="p">,</span> <span class="o">**</span><span class="n">_</span><span class="p">):</span>
-
             <span class="n">value</span> <span class="o">=</span> <span class="p">[</span>
                 <span class="s2">&quot;&lt;h5&gt;&lt;b&gt;</span><span class="si">{}</span><span class="s2">: &lt;/b&gt;</span><span class="si">{}</span><span class="s2">&lt;/h5&gt;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">feature</span><span class="p">[</span><span class="s2">&quot;properties&quot;</span><span class="p">][</span><span class="n">prop</span><span class="p">])</span>
                 <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">feature</span><span class="p">[</span><span class="s2">&quot;properties&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
@@ -3161,7 +3159,6 @@ at https://here-map-widget-for-jupyter.readthedocs.io/en/latest/api_reference/ma
     <span class="n">close_button</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">_close_btn_click</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_update_html</span><span class="p">(</span><span class="n">feature</span><span class="p">,</span> <span class="o">**</span><span class="n">_</span><span class="p">):</span>
-
         <span class="n">value</span> <span class="o">=</span> <span class="p">[</span>
             <span class="s2">&quot;&lt;h5&gt;&lt;b&gt;</span><span class="si">{}</span><span class="s2">: &lt;/b&gt;</span><span class="si">{}</span><span class="s2">&lt;/h5&gt;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">feature</span><span class="p">[</span><span class="s2">&quot;properties&quot;</span><span class="p">][</span><span class="n">prop</span><span class="p">])</span>
             <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">feature</span><span class="p">[</span><span class="s2">&quot;properties&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
