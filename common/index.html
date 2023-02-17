@@ -4699,6 +4699,7 @@ The_national_map_USGS        </code>
 <span class="sd">            From https://apps.nationalmap.gov/tnmaccess/#/product</span>
 <span class="sd">        prodFormats             See: Product Formats (Optional)</span>
 <span class="sd">            Dataset-specific format</span>
+
 <span class="sd">        prodExtents             See: Product Extents (Optional)</span>
 <span class="sd">            Dataset-specific extent</span>
 <span class="sd">        q                       free text</span>
@@ -5001,8 +5002,8 @@ datasets                See: Datasets (Optional)
     Dataset tag name (sbDatasetTag)
     From https://apps.nationalmap.gov/tnmaccess/#/product
 prodFormats             See: Product Formats (Optional)
-    Dataset-specific format
-prodExtents             See: Product Extents (Optional)
+    Dataset-specific format</p>
+<p>prodExtents             See: Product Extents (Optional)
     Dataset-specific extent
 q                       free text
     Text input which can be used to filter by product titles and text descriptions.
@@ -5061,6 +5062,7 @@ extentQuery             integer
 <span class="sd">        From https://apps.nationalmap.gov/tnmaccess/#/product</span>
 <span class="sd">    prodFormats             See: Product Formats (Optional)</span>
 <span class="sd">        Dataset-specific format</span>
+
 <span class="sd">    prodExtents             See: Product Extents (Optional)</span>
 <span class="sd">        Dataset-specific extent</span>
 <span class="sd">    q                       free text</span>
@@ -10708,7 +10710,7 @@ style = {
 
 
 <h2 id="leafmap.common.download_ned" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">download_ned</span><span class="p">(</span><span class="n">region</span><span class="p">,</span> <span class="n">out_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_url</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">download_args</span><span class="o">=</span><span class="p">{},</span> <span class="n">geopandas_args</span><span class="o">=</span><span class="p">{})</span></code>
+<code class="highlight language-python"><span class="n">download_ned</span><span class="p">(</span><span class="n">region</span><span class="p">,</span> <span class="n">out_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_url</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">download_args</span><span class="o">=</span><span class="p">{},</span> <span class="n">geopandas_args</span><span class="o">=</span><span class="p">{},</span> <span class="n">query</span><span class="o">=</span><span class="p">{})</span></code>
 
 
 <a href="#leafmap.common.download_ned" class="headerlink" title="Permanent link">&para;</a></h2>
@@ -10759,6 +10761,13 @@ style = {
 Used for reading a region URL|filepath.</p></td>
         <td><code>{}</code></td>
       </tr>
+      <tr>
+        <td><code>query</code></td>
+        <td><code>dict</code></td>
+        <td><p>A dictionary of arguments to pass to the The_national_map_USGS.find_details() function.
+See https://apps.nationalmap.gov/tnmaccess/#/product for more information.</p></td>
+        <td><code>{}</code></td>
+      </tr>
   </tbody>
 </table>
 <p><strong>Returns:</strong></p>
@@ -10779,7 +10788,7 @@ Used for reading a region URL|filepath.</p></td>
         <details class="quote">
           <summary>Source code in <code>leafmap/common.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">download_ned</span><span class="p">(</span>
-    <span class="n">region</span><span class="p">,</span> <span class="n">out_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_url</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">download_args</span><span class="o">=</span><span class="p">{},</span> <span class="n">geopandas_args</span><span class="o">=</span><span class="p">{}</span>
+    <span class="n">region</span><span class="p">,</span> <span class="n">out_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_url</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">download_args</span><span class="o">=</span><span class="p">{},</span> <span class="n">geopandas_args</span><span class="o">=</span><span class="p">{},</span> <span class="n">query</span><span class="o">=</span><span class="p">{},</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="n">List</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Download the US National Elevation Datasets (NED) for a region.</span>
 
@@ -10790,6 +10799,8 @@ Used for reading a region URL|filepath.</p></td>
 <span class="sd">        download_args (dict, optional): A dictionary of arguments to pass to the download_file function. Defaults to {}.</span>
 <span class="sd">        geopandas_args (dict, optional): A dictionary of arguments to pass to the geopandas.read_file() function.</span>
 <span class="sd">            Used for reading a region URL|filepath.</span>
+<span class="sd">        query (dict, optional): A dictionary of arguments to pass to the The_national_map_USGS.find_details() function.</span>
+<span class="sd">            See https://apps.nationalmap.gov/tnmaccess/#/product for more information.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        list: A list of the download URLs of the files if return_url is True.</span>
@@ -10798,17 +10809,20 @@ Used for reading a region URL|filepath.</p></td>
     <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;USE_MKDOCS&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">return</span>
 
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">query</span><span class="p">:</span>
+        <span class="n">query</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;datasets&quot;</span><span class="p">:</span> <span class="s2">&quot;National Elevation Dataset (NED) 1/3 arc-second&quot;</span><span class="p">,</span> <span class="s1">&#39;prodFormats&#39;</span><span class="p">:</span> <span class="s1">&#39;GeoTIFF&#39;</span><span class="p">}</span>
+
     <span class="n">TNM</span> <span class="o">=</span> <span class="n">The_national_map_USGS</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">return_url</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">TNM</span><span class="o">.</span><span class="n">find_tiles</span><span class="p">(</span>
-            <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span> <span class="n">geopandas_args</span><span class="o">=</span><span class="n">geopandas_args</span><span class="p">,</span> <span class="n">API</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;q&quot;</span><span class="p">:</span> <span class="s2">&quot;NED&quot;</span><span class="p">}</span>
+            <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span> <span class="n">geopandas_args</span><span class="o">=</span><span class="n">geopandas_args</span><span class="p">,</span> <span class="n">API</span><span class="o">=</span><span class="n">query</span>
         <span class="p">)</span>
     <span class="k">return</span> <span class="n">TNM</span><span class="o">.</span><span class="n">download_tiles</span><span class="p">(</span>
         <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span>
         <span class="n">out_dir</span><span class="o">=</span><span class="n">out_dir</span><span class="p">,</span>
         <span class="n">download_args</span><span class="o">=</span><span class="n">download_args</span><span class="p">,</span>
         <span class="n">geopandas_args</span><span class="o">=</span><span class="n">geopandas_args</span><span class="p">,</span>
-        <span class="n">API</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;q&quot;</span><span class="p">:</span> <span class="s2">&quot;NED&quot;</span><span class="p">},</span>
+        <span class="n">API</span><span class="o">=</span><span class="n">query</span><span class="p">,</span>
     <span class="p">)</span>
 </code></pre></div>
         </details>
