@@ -272,6 +272,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../search/" class="md-nav__link">
+        Search
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../installation/" class="md-nav__link">
         Installation
       </a>
@@ -442,18 +457,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14" type="checkbox" id="__nav_14" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_13">
+        <label class="md-nav__link" for="__nav_14">
           API Reference
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="API Reference" data-md-level="1">
-        <label class="md-nav__title" for="__nav_13">
+        <label class="md-nav__title" for="__nav_14">
           <span class="md-nav__icon md-icon"></span>
           API Reference
         </label>
@@ -1417,18 +1432,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14" type="checkbox" id="__nav_14" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15" type="checkbox" id="__nav_15" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_14">
+        <label class="md-nav__link" for="__nav_15">
           Workshops
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Workshops" data-md-level="1">
-        <label class="md-nav__title" for="__nav_14">
+        <label class="md-nav__title" for="__nav_15">
           <span class="md-nav__icon md-icon"></span>
           Workshops
         </label>
@@ -1493,18 +1508,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15" type="checkbox" id="__nav_15" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16" type="checkbox" id="__nav_16" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_15">
+        <label class="md-nav__link" for="__nav_16">
           Notebooks
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Notebooks" data-md-level="1">
-        <label class="md-nav__title" for="__nav_15">
+        <label class="md-nav__title" for="__nav_16">
           <span class="md-nav__icon md-icon"></span>
           Notebooks
         </label>
@@ -4885,7 +4900,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="k">try</span><span class="p">:</span>
             <span class="kn">import</span> <span class="nn">datapane</span> <span class="k">as</span> <span class="nn">dp</span>
         <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-            <span class="n">webbrowser</span><span class="o">.</span><span class="n">open_new_tab</span><span class="p">(</span><span class="s2">&quot;https://docs.datapane.com/tut-getting-started&quot;</span><span class="p">)</span>
+            <span class="n">webbrowser</span><span class="o">.</span><span class="n">open_new_tab</span><span class="p">(</span><span class="s2">&quot;https://docs.datapane.com/&quot;</span><span class="p">)</span>
             <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
                 <span class="s2">&quot;The datapane Python package is not installed. You need to install and authenticate datapane first.&quot;</span>
             <span class="p">)</span>
@@ -4902,7 +4917,8 @@ Map            (<span title="folium.folium.Map">Map</span>)
             <span class="n">dp</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
 
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">dp</span><span class="o">.</span><span class="n">Report</span><span class="p">(</span><span class="n">dp</span><span class="o">.</span><span class="n">Plot</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span><span class="o">.</span><span class="n">upload</span><span class="p">(</span>
+            <span class="n">dp</span><span class="o">.</span><span class="n">upload_report</span><span class="p">(</span>
+                <span class="n">dp</span><span class="o">.</span><span class="n">Plot</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span>
                 <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
                 <span class="n">description</span><span class="o">=</span><span class="n">description</span><span class="p">,</span>
                 <span class="n">source_url</span><span class="o">=</span><span class="n">source_url</span><span class="p">,</span>
@@ -4910,6 +4926,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
                 <span class="n">source_file</span><span class="o">=</span><span class="n">source_file</span><span class="p">,</span>
                 <span class="nb">open</span><span class="o">=</span><span class="nb">open</span><span class="p">,</span>
                 <span class="n">formatting</span><span class="o">=</span><span class="n">formatting</span><span class="p">,</span>
+                <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
             <span class="p">)</span>
 
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -12596,7 +12613,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="k">try</span><span class="p">:</span>
         <span class="kn">import</span> <span class="nn">datapane</span> <span class="k">as</span> <span class="nn">dp</span>
     <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-        <span class="n">webbrowser</span><span class="o">.</span><span class="n">open_new_tab</span><span class="p">(</span><span class="s2">&quot;https://docs.datapane.com/tut-getting-started&quot;</span><span class="p">)</span>
+        <span class="n">webbrowser</span><span class="o">.</span><span class="n">open_new_tab</span><span class="p">(</span><span class="s2">&quot;https://docs.datapane.com/&quot;</span><span class="p">)</span>
         <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
             <span class="s2">&quot;The datapane Python package is not installed. You need to install and authenticate datapane first.&quot;</span>
         <span class="p">)</span>
@@ -12613,7 +12630,8 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <span class="n">dp</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
 
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">dp</span><span class="o">.</span><span class="n">Report</span><span class="p">(</span><span class="n">dp</span><span class="o">.</span><span class="n">Plot</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span><span class="o">.</span><span class="n">upload</span><span class="p">(</span>
+        <span class="n">dp</span><span class="o">.</span><span class="n">upload_report</span><span class="p">(</span>
+            <span class="n">dp</span><span class="o">.</span><span class="n">Plot</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span>
             <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
             <span class="n">description</span><span class="o">=</span><span class="n">description</span><span class="p">,</span>
             <span class="n">source_url</span><span class="o">=</span><span class="n">source_url</span><span class="p">,</span>
@@ -12621,6 +12639,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
             <span class="n">source_file</span><span class="o">=</span><span class="n">source_file</span><span class="p">,</span>
             <span class="nb">open</span><span class="o">=</span><span class="nb">open</span><span class="p">,</span>
             <span class="n">formatting</span><span class="o">=</span><span class="n">formatting</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
         <span class="p">)</span>
 
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
