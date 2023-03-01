@@ -2482,6 +2482,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/68_openaerialmap/" class="md-nav__link">
+        68 openaerialmap
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -13256,7 +13270,7 @@ from ipyleaflet import WidgetControl</div>
 
 <span class="c1"># Add the widget as a control to the map</span>
 <span class="n">output_control</span> <span class="o">=</span> <span class="n">WidgetControl</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">output_widget</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">)</span>
-<span class="n">m</span><span class="o">.</span><span class="n">add_control</span><span class="p">(</span><span class="n">output_control</span><span class="p">)</span>
+<span class="n">m</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">output_control</span><span class="p">)</span>
 </pre></div>
 <div id="cell-199" class="clipboard-copy-txt">m = leafmap.Map()
 
@@ -13282,7 +13296,7 @@ with output_widget:
 
 # Add the widget as a control to the map
 output_control = WidgetControl(widget=output_widget, position="bottomright")
-m.add_control(output_control)</div>
+m.add(output_control)</div>
     
         </div>
     </div>
@@ -13844,11 +13858,11 @@ toolbar</div>
             </clipboard-copy>
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">leafmap</span><span class="o">.</span><span class="n">Map</span><span class="p">()</span>
-<span class="n">m</span><span class="o">.</span><span class="n">add_control</span><span class="p">(</span><span class="n">toolbar_ctrl</span><span class="p">)</span>
+<span class="n">m</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">toolbar_ctrl</span><span class="p">)</span>
 <span class="n">m</span>
 </pre></div>
 <div id="cell-211" class="clipboard-copy-txt">m = leafmap.Map()
-m.add_control(toolbar_ctrl)
+m.add(toolbar_ctrl)
 m</div>
     
         </div>
@@ -13881,11 +13895,11 @@ m</div>
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">output</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Output</span><span class="p">()</span>
 <span class="n">output_ctrl</span> <span class="o">=</span> <span class="n">WidgetControl</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">output</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;bottomright&quot;</span><span class="p">)</span>
-<span class="n">m</span><span class="o">.</span><span class="n">add_control</span><span class="p">(</span><span class="n">output_ctrl</span><span class="p">)</span>
+<span class="n">m</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">output_ctrl</span><span class="p">)</span>
 </pre></div>
 <div id="cell-212" class="clipboard-copy-txt">output = widgets.Output()
 output_ctrl = WidgetControl(widget=output, position="bottomright")
-m.add_control(output_ctrl)</div>
+m.add(output_ctrl)</div>
     
         </div>
     </div>
@@ -13992,7 +14006,7 @@ m.add_control(output_ctrl)</div>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2022-11-25T05:55:47+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2022-11-25</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-03-01T14:44:57+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-03-01</span>
       
         <br>
         Created:

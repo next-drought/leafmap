@@ -848,6 +848,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#leafmap.stac.flatten_dict" class="md-nav__link">
+    flatten_dict()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#leafmap.stac.maxar_all_items" class="md-nav__link">
     maxar_all_items()
   </a>
@@ -878,6 +885,13 @@
         <li class="md-nav__item">
   <a href="#leafmap.stac.maxar_refresh" class="md-nav__link">
     maxar_refresh()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.stac.oam_search" class="md-nav__link">
+    oam_search()
   </a>
   
 </li>
@@ -2093,6 +2107,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/68_openaerialmap/" class="md-nav__link">
+        68 openaerialmap
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -2264,6 +2292,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#leafmap.stac.flatten_dict" class="md-nav__link">
+    flatten_dict()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#leafmap.stac.maxar_all_items" class="md-nav__link">
     maxar_all_items()
   </a>
@@ -2294,6 +2329,13 @@
         <li class="md-nav__item">
   <a href="#leafmap.stac.maxar_refresh" class="md-nav__link">
     maxar_refresh()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.stac.oam_search" class="md-nav__link">
+    oam_search()
   </a>
   
 </li>
@@ -4203,6 +4245,101 @@ For example, to apply a rescaling to multiple bands, use something like <code>re
 
 
 
+<h2 id="leafmap.stac.flatten_dict" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">flatten_dict</span><span class="p">(</span><span class="n">my_dict</span><span class="p">,</span> <span class="n">parent_key</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">)</span></code>
+
+
+<a href="#leafmap.stac.flatten_dict" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Flattens a nested dictionary.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>my_dict</code></td>
+        <td><code>dict</code></td>
+        <td><p>The dictionary to flatten.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>parent_key</code></td>
+        <td><code>bool</code></td>
+        <td><p>Whether to include the parent key. Defaults to False.</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>sep</code></td>
+        <td><code>str</code></td>
+        <td><p>The separator to use. Defaults to '.'.</p></td>
+        <td><code>&#39;.&#39;</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>dict</code></td>
+      <td><p>The flattened dictionary.</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/stac.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">flatten_dict</span><span class="p">(</span><span class="n">my_dict</span><span class="p">,</span> <span class="n">parent_key</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Flattens a nested dictionary.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        my_dict (dict): The dictionary to flatten.</span>
+<span class="sd">        parent_key (bool, optional): Whether to include the parent key. Defaults to False.</span>
+<span class="sd">        sep (str, optional): The separator to use. Defaults to &#39;.&#39;.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: The flattened dictionary.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">flat_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="n">flat_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sub_dict</span> <span class="o">=</span> <span class="n">flatten_dict</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">sub_key</span><span class="p">,</span> <span class="n">sub_value</span> <span class="ow">in</span> <span class="n">sub_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">parent_key</span><span class="p">:</span>
+                    <span class="n">flat_dict</span><span class="p">[</span><span class="n">parent_key</span> <span class="o">+</span> <span class="n">sep</span> <span class="o">+</span> <span class="n">sub_key</span><span class="p">]</span> <span class="o">=</span> <span class="n">sub_value</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">flat_dict</span><span class="p">[</span><span class="n">sub_key</span><span class="p">]</span> <span class="o">=</span> <span class="n">sub_value</span>
+
+    <span class="k">return</span> <span class="n">flat_dict</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
 <h2 id="leafmap.stac.maxar_all_items" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">maxar_all_items</span><span class="p">(</span><span class="n">collection_id</span><span class="p">,</span> <span class="n">return_gdf</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">assets</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;visual&#39;</span><span class="p">],</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
@@ -4708,6 +4845,166 @@ It can be "visual", "ms_analytic", "pan_analytic", "data-mask". Defaults to ['vi
             <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">temp_dir</span><span class="p">,</span> <span class="n">f</span><span class="p">))</span>
 
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Maxar STAC items cache has been refreshed.&quot;</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="leafmap.stac.oam_search" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">oam_search</span><span class="p">(</span><span class="n">bbox</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">start_date</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">end_date</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">return_gdf</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+
+<a href="#leafmap.stac.oam_search" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Search OpenAerialMap (https://openaerialmap.org) and return a GeoDataFrame or list of image metadata.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>bbox</code></td>
+        <td><code>list | str</code></td>
+        <td><p>The bounding box [xmin, ymin, xmax, ymax] to search within. Defaults to None.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>start_date</code></td>
+        <td><code>str</code></td>
+        <td><p>The start date to search within, such as "2015-04-20T00:00:00.000Z". Defaults to None.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>end_date</code></td>
+        <td><code>str</code></td>
+        <td><p>The end date to search within, such as "2015-04-21T00:00:00.000Z". Defaults to None.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>limit</code></td>
+        <td><code>int</code></td>
+        <td><p>The maximum number of results to return. Defaults to 100.</p></td>
+        <td><code>100</code></td>
+      </tr>
+      <tr>
+        <td><code>return_gdf</code></td>
+        <td><code>bool</code></td>
+        <td><p>If True, return a GeoDataFrame, otherwise return a list. Defaults to True.</p></td>
+        <td><code>True</code></td>
+      </tr>
+      <tr>
+        <td><code>**kwargs</code></td>
+        <td></td>
+        <td><p>Additional keyword arguments to pass to the API. See https://hotosm.github.io/oam-api/</p></td>
+        <td><code>{}</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>GeoDataFrame | list</code></td>
+      <td><p>If return_gdf is True, return a GeoDataFrame. Otherwise, return a list.</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/stac.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">oam_search</span><span class="p">(</span>
+    <span class="n">bbox</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">start_date</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">end_date</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">return_gdf</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Search OpenAerialMap (https://openaerialmap.org) and return a GeoDataFrame or list of image metadata.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        bbox (list | str, optional): The bounding box [xmin, ymin, xmax, ymax] to search within. Defaults to None.</span>
+<span class="sd">        start_date (str, optional): The start date to search within, such as &quot;2015-04-20T00:00:00.000Z&quot;. Defaults to None.</span>
+<span class="sd">        end_date (str, optional): The end date to search within, such as &quot;2015-04-21T00:00:00.000Z&quot;. Defaults to None.</span>
+<span class="sd">        limit (int, optional): The maximum number of results to return. Defaults to 100.</span>
+<span class="sd">        return_gdf (bool, optional): If True, return a GeoDataFrame, otherwise return a list. Defaults to True.</span>
+<span class="sd">        **kwargs: Additional keyword arguments to pass to the API. See https://hotosm.github.io/oam-api/</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        GeoDataFrame | list: If return_gdf is True, return a GeoDataFrame. Otherwise, return a list.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">return_gdf</span><span class="p">:</span>
+        <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+        <span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">Polygon</span>
+        <span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+
+    <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://api.openaerialmap.org/meta&#39;</span>
+    <span class="k">if</span> <span class="n">bbox</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">bbox</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">bbox</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">bbox</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">bbox</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;bbox must be a list.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">bbox</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">4</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;bbox must be a list of 4 numbers.&quot;</span><span class="p">)</span>
+        <span class="n">bbox</span> <span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">bbox</span><span class="p">))</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;bbox&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bbox</span>
+
+    <span class="k">if</span> <span class="n">start_date</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;acquisition_from&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">start_date</span>
+
+    <span class="k">if</span> <span class="n">end_date</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;acquisition_to&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">end_date</span>
+
+    <span class="k">if</span> <span class="n">limit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;limit&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">limit</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        <span class="k">if</span> <span class="s1">&#39;results&#39;</span> <span class="ow">in</span> <span class="n">r</span><span class="p">:</span>
+            <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">r</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="s1">&#39;geojson&#39;</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+                    <span class="k">del</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;geojson&#39;</span><span class="p">]</span>
+                <span class="k">if</span> <span class="s1">&#39;projection&#39;</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+                    <span class="k">del</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;projection&#39;</span><span class="p">]</span>
+                <span class="k">if</span> <span class="s1">&#39;footprint&#39;</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+                    <span class="k">del</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;footprint&#39;</span><span class="p">]</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">flatten_dict</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+                <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">return_gdf</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">results</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+
+                <span class="n">polygons</span> <span class="o">=</span> <span class="p">[</span><span class="n">Polygon</span><span class="o">.</span><span class="n">from_bounds</span><span class="p">(</span><span class="o">*</span><span class="n">bbox</span><span class="p">)</span> <span class="k">for</span> <span class="n">bbox</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;bbox&#39;</span><span class="p">]]</span>
+                <span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">geometry</span><span class="o">=</span><span class="n">polygons</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="s2">&quot;epsg:4326&quot;</span><span class="p">)</span>
+
+                <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">gdf</span><span class="p">,</span> <span class="n">df</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No results found.&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
 </code></pre></div>
         </details>
     </div>

@@ -933,6 +933,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#leafmap.common.download_files" class="md-nav__link">
+    download_files()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#leafmap.common.download_folder" class="md-nav__link">
     download_folder()
   </a>
@@ -3109,6 +3116,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/68_openaerialmap/" class="md-nav__link">
+        68 openaerialmap
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -3514,6 +3535,13 @@
         <li class="md-nav__item">
   <a href="#leafmap.common.download_file_lite" class="md-nav__link">
     download_file_lite()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.common.download_files" class="md-nav__link">
+    download_files()
   </a>
   
 </li>
@@ -10353,6 +10381,189 @@ style = {
 
 
 
+<h2 id="leafmap.common.download_files" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">download_files</span><span class="p">(</span><span class="n">urls</span><span class="p">,</span> <span class="n">out_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filenames</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">proxy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">speed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">use_cookies</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verify</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fuzzy</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">resume</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">unzip</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">subfolder</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+
+
+<a href="#leafmap.common.download_files" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Download files from URLs, including Google Drive shared URL.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>urls</code></td>
+        <td><code>list</code></td>
+        <td><p>The list of urls to download. Google Drive URL is also supported.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>out_dir</code></td>
+        <td><code>str</code></td>
+        <td><p>The output directory. Defaults to None.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>filenames</code></td>
+        <td><code>list</code></td>
+        <td><p>Output filename. Default is basename of URL.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>quiet</code></td>
+        <td><code>bool</code></td>
+        <td><p>Suppress terminal output. Default is False.</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>proxy</code></td>
+        <td><code>str</code></td>
+        <td><p>Proxy. Defaults to None.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>speed</code></td>
+        <td><code>float</code></td>
+        <td><p>Download byte size per second (e.g., 256KB/s = 256 * 1024). Defaults to None.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>use_cookies</code></td>
+        <td><code>bool</code></td>
+        <td><p>Flag to use cookies. Defaults to True.</p></td>
+        <td><code>True</code></td>
+      </tr>
+      <tr>
+        <td><code>verify</code></td>
+        <td><code>bool | str</code></td>
+        <td><p>Either a bool, in which case it controls whether the server's TLS certificate is verified, or a string, in which case it must be a path to a CA bundle to use. Default is True.. Defaults to True.</p></td>
+        <td><code>True</code></td>
+      </tr>
+      <tr>
+        <td><code>id</code></td>
+        <td><code>str</code></td>
+        <td><p>Google Drive's file ID. Defaults to None.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>fuzzy</code></td>
+        <td><code>bool</code></td>
+        <td><p>Fuzzy extraction of Google Drive's file Id. Defaults to False.</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>resume</code></td>
+        <td><code>bool</code></td>
+        <td><p>Resume the download from existing tmp file if possible. Defaults to False.</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>unzip</code></td>
+        <td><code>bool</code></td>
+        <td><p>Unzip the file. Defaults to True.</p></td>
+        <td><code>True</code></td>
+      </tr>
+      <tr>
+        <td><code>overwrite</code></td>
+        <td><code>bool</code></td>
+        <td><p>Overwrite the file if it already exists. Defaults to False.</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>subfolder</code></td>
+        <td><code>bool</code></td>
+        <td><p>Create a subfolder with the same name as the file. Defaults to False.</p></td>
+        <td><code>False</code></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/common.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">download_files</span><span class="p">(</span>
+    <span class="n">urls</span><span class="p">,</span>
+    <span class="n">out_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">filenames</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">proxy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">speed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">use_cookies</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">verify</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">fuzzy</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">resume</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">unzip</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">subfolder</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Download files from URLs, including Google Drive shared URL.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        urls (list): The list of urls to download. Google Drive URL is also supported.</span>
+<span class="sd">        out_dir (str, optional): The output directory. Defaults to None.</span>
+<span class="sd">        filenames (list, optional): Output filename. Default is basename of URL.</span>
+<span class="sd">        quiet (bool, optional): Suppress terminal output. Default is False.</span>
+<span class="sd">        proxy (str, optional): Proxy. Defaults to None.</span>
+<span class="sd">        speed (float, optional): Download byte size per second (e.g., 256KB/s = 256 * 1024). Defaults to None.</span>
+<span class="sd">        use_cookies (bool, optional): Flag to use cookies. Defaults to True.</span>
+<span class="sd">        verify (bool | str, optional): Either a bool, in which case it controls whether the server&#39;s TLS certificate is verified, or a string, in which case it must be a path to a CA bundle to use. Default is True.. Defaults to True.</span>
+<span class="sd">        id (str, optional): Google Drive&#39;s file ID. Defaults to None.</span>
+<span class="sd">        fuzzy (bool, optional): Fuzzy extraction of Google Drive&#39;s file Id. Defaults to False.</span>
+<span class="sd">        resume (bool, optional): Resume the download from existing tmp file if possible. Defaults to False.</span>
+<span class="sd">        unzip (bool, optional): Unzip the file. Defaults to True.</span>
+<span class="sd">        overwrite (bool, optional): Overwrite the file if it already exists. Defaults to False.</span>
+<span class="sd">        subfolder (bool, optional): Create a subfolder with the same name as the file. Defaults to False.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">out_dir</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">out_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">filenames</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">filenames</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">urls</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">url</span><span class="p">,</span> <span class="n">output</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">urls</span><span class="p">,</span> <span class="n">filenames</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">output</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">url</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+
+        <span class="n">download_file</span><span class="p">(</span>
+            <span class="n">url</span><span class="p">,</span>
+            <span class="n">filename</span><span class="p">,</span>
+            <span class="n">quiet</span><span class="p">,</span>
+            <span class="n">proxy</span><span class="p">,</span>
+            <span class="n">speed</span><span class="p">,</span>
+            <span class="n">use_cookies</span><span class="p">,</span>
+            <span class="n">verify</span><span class="p">,</span>
+            <span class="nb">id</span><span class="p">,</span>
+            <span class="n">fuzzy</span><span class="p">,</span>
+            <span class="n">resume</span><span class="p">,</span>
+            <span class="n">unzip</span><span class="p">,</span>
+            <span class="n">overwrite</span><span class="p">,</span>
+            <span class="n">subfolder</span><span class="p">,</span>
+        <span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
 <h2 id="leafmap.common.download_folder" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">download_folder</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">proxy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">speed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">use_cookies</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">remaining_ok</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
@@ -10801,7 +11012,12 @@ See https://apps.nationalmap.gov/tnmaccess/#/product for more information.</p></
         <details class="quote">
           <summary>Source code in <code>leafmap/common.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">download_ned</span><span class="p">(</span>
-    <span class="n">region</span><span class="p">,</span> <span class="n">out_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">return_url</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">download_args</span><span class="o">=</span><span class="p">{},</span> <span class="n">geopandas_args</span><span class="o">=</span><span class="p">{},</span> <span class="n">query</span><span class="o">=</span><span class="p">{},</span>
+    <span class="n">region</span><span class="p">,</span>
+    <span class="n">out_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">return_url</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">download_args</span><span class="o">=</span><span class="p">{},</span>
+    <span class="n">geopandas_args</span><span class="o">=</span><span class="p">{},</span>
+    <span class="n">query</span><span class="o">=</span><span class="p">{},</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="n">List</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Download the US National Elevation Datasets (NED) for a region.</span>
 
@@ -10823,13 +11039,14 @@ See https://apps.nationalmap.gov/tnmaccess/#/product for more information.</p></
         <span class="k">return</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">query</span><span class="p">:</span>
-        <span class="n">query</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;datasets&quot;</span><span class="p">:</span> <span class="s2">&quot;National Elevation Dataset (NED) 1/3 arc-second&quot;</span><span class="p">,</span> <span class="s1">&#39;prodFormats&#39;</span><span class="p">:</span> <span class="s1">&#39;GeoTIFF&#39;</span><span class="p">}</span>
+        <span class="n">query</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;datasets&quot;</span><span class="p">:</span> <span class="s2">&quot;National Elevation Dataset (NED) 1/3 arc-second&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;prodFormats&#39;</span><span class="p">:</span> <span class="s1">&#39;GeoTIFF&#39;</span><span class="p">,</span>
+        <span class="p">}</span>
 
     <span class="n">TNM</span> <span class="o">=</span> <span class="n">The_national_map_USGS</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">return_url</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">TNM</span><span class="o">.</span><span class="n">find_tiles</span><span class="p">(</span>
-            <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span> <span class="n">geopandas_args</span><span class="o">=</span><span class="n">geopandas_args</span><span class="p">,</span> <span class="n">API</span><span class="o">=</span><span class="n">query</span>
-        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">TNM</span><span class="o">.</span><span class="n">find_tiles</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span> <span class="n">geopandas_args</span><span class="o">=</span><span class="n">geopandas_args</span><span class="p">,</span> <span class="n">API</span><span class="o">=</span><span class="n">query</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">TNM</span><span class="o">.</span><span class="n">download_tiles</span><span class="p">(</span>
         <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span>
         <span class="n">out_dir</span><span class="o">=</span><span class="n">out_dir</span><span class="p">,</span>
